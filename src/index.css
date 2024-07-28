@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: Sterion;
-  src: url(./fonts/Sterion-BLLld.ttf);
+  src: url(/fonts/Sterion-BLLld.ttf);
 }
 @font-face {
   font-family: SpaceGames;
-  src: url(./fonts/SpaceGames-K7zKD.otf);
+  src: url(/fonts/SpaceGames-K7zKD.otf);
 }
 html body {
   padding: 0;
