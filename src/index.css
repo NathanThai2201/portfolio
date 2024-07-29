@@ -137,6 +137,15 @@ hr {
   background-color: rgb(228, 243, 255);
   padding: 5px;
 }
+.sectionicons {
+  height: 110px;
+  width:100vw;
+  background-color: rgb(16, 57, 139);
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
 .text {
   line-height: 1em;
   text-align: left;
@@ -172,6 +181,18 @@ hr {
   align-items: center;
 }
 .txtMainTitle2{  
+  font-family: Sterion;
+  font-size: 45px;
+  font-size: clamp(40px, 7vw, 90px);
+  color: rgb(146, 186, 255);
+  margin-left: 10px;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.txticons{  
   font-family: Sterion;
   font-size: 45px;
   font-size: clamp(40px, 7vw, 90px);

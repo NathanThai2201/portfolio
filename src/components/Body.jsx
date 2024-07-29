@@ -1,10 +1,8 @@
-import { Scroll, ScrollControls, useScroll } from "@react-three/drei";
 import gsap from "gsap";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
-import baffle from 'baffle'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -135,6 +133,19 @@ export const Body = () => {
                 </div>
             </section>
             <section className="sectionwtb">
+            </section>
+            <section className="sectionicons">
+                <div className="txticons">
+                  <a href="https://github.com/NathanThai2201" class="link1">
+                    <img className="img2" src="./images/github.png" alt="hello"></img>
+                  </a>
+                  <a href="https://www.linkedin.com/in/nathan-thai-762537240/" class="link1">
+                    <img className="img3" src="./images/linkedin.png" alt="hello"></img>
+                  </a>
+                  <a href= "mailto:thainhatanh2201@gmail.com" class="link1" >
+                    <img className="img3" src="./images/gmail.png" alt="hello"></img>
+                  </a>
+                </div>
             </section>
         </div>
     //  </Scroll>

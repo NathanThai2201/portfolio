@@ -9,6 +9,7 @@ import baffle from 'baffle'
 gsap.registerPlugin(ScrollTrigger, useGSAP);
   
 export const Overlay = () => {
+    const isMobile = useRef(window.innerWidth <= 768);
     //const scroll = useScroll();
     //   const tl1 = useRef();
     //   useFrame(() => {
@@ -75,34 +76,35 @@ export const Overlay = () => {
         });
     }, {});
   
-    return ( 
-    //  <Scroll html>
+    const getTextContent = () => {
+        if (isMobile.current) {
+          return ' - SOFTWARE DEVELOPMENT - '.split('');
+        }
+        return ' - SOFTWARE DEVELOPMENT - GRAPHIC DESIGN - ANIMATION - '.split('');
+      };
+    
+      return (
         <div>
-            <section className="sectionscroll">
-                <div className="txt1scroll">
-                    <div className="scrollText"> - SCROLL DOWN - </div>
-                </div>
-            </section>   
-            <section className="sectioncover1"/>  
-            <section className="sectioncover2"/>
-            <section className="sectioncover3"/>  
-            <section className="sectioncover4"/>
-            <section className="sectionwheader">
-                <div className="txt1">
-                    <div className="horizontalTextMap">
-                    {
-                        ' - SOFTWARE DEVELOPMENT - GRAPHIC DESIGN - ANIMATION - '.split('').map((char, index) => {
-                        return (
-                            <div className="word2" key={index}>
-                                {char === ' ' ? '\u00A0' : char}
-                            </div>
-                        );
-                        })
-                    }
-                    </div>
-                </div>
-            </section>
+          <section className="sectionscroll">
+            <div className="txt1scroll">
+              <div className="scrollText"> - SCROLL DOWN - </div>
+            </div>
+          </section>
+          <section className="sectioncover1" />
+          <section className="sectioncover2" />
+          <section className="sectioncover3" />
+          <section className="sectioncover4" />
+          <section className="sectionwheader">
+            <div className="txt1">
+              <div className="horizontalTextMap">
+                {getTextContent().map((char, index) => (
+                  <div className="word2" key={index}>
+                    {char === ' ' ? '\u00A0' : char}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
-    //  </Scroll>
-    )
-  }
+      );
+    };
