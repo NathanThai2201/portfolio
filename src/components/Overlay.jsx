@@ -25,7 +25,7 @@ export const Overlay = () => {
             speed: 140
         })
         target.start()
-        target.reveal(3500)
+        target.reveal(4000)
     })
     useGSAP(() => {
         gsap.from('.word2', {
@@ -47,7 +47,7 @@ export const Overlay = () => {
             duration:2,
             ease: "expo.out",
             opacity:1,
-            delay:0.5,
+            delay:0.7,
         });
         gsap.to('.sectioncover2', {
             scaleY:0,
@@ -55,7 +55,7 @@ export const Overlay = () => {
             duration:2,
             ease: "expo.out",
             opacity:1,
-            delay:0.5,
+            delay:0.7,
         });
         gsap.fromTo('.sectioncover3',{}, {
             scaleX:0,
@@ -64,7 +64,7 @@ export const Overlay = () => {
             duration:2,
             ease: "expo.out",
             opacity:1,
-            delay:0.5,
+            delay:0.7,
         });
         gsap.fromTo('.sectioncover4',{}, {
             scaleX:0,
@@ -72,7 +72,7 @@ export const Overlay = () => {
             duration:2,
             ease: "expo.out",
             opacity:1,
-            delay:0.5,
+            delay:0.7,
         });
     }, {});
   

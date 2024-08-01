@@ -80,14 +80,41 @@ export const Body = () => {
             duration: 2000, 
             ease: "linear", 
         });
-        gsap.to(".sectionwtb", {
-            backgroundColor: "#10398B",
+        gsap.to(".w", {
+            opacity:0,
             scrollTrigger: {
                 trigger: ".sectionwtb",
                 start: "top 30.67%",
                 end: "bottom 100%",
                 scrub: true,
               }, delay: 0.4,
+        });
+        gsap.from(".plane1", {
+          y:50,
+          scrollTrigger: {
+              trigger: ".sectionwtb",
+              start: "top 30.67%",
+              // end: "bottom 100%",
+              scrub: true,
+            }, delay: 0.6,
+        });
+        gsap.from(".plane2", {
+          y:200,
+          scrollTrigger: {
+              trigger: ".sectionwtb",
+              start: "top 30.67%",
+              // end: "bottom 100%",
+              scrub: true,
+            }, delay: 0.6,
+        });
+        gsap.from(".plane3", {
+          y:400,
+          scrollTrigger: {
+              trigger: ".sectionwtb",
+              start: "top 30.67%",
+              // end: "bottom 100%",
+              scrub: true,
+            }, delay: 0.6,
         });
     }, {});
     return (
@@ -133,7 +160,12 @@ export const Body = () => {
                 </div>
             </section>
             <section className="sectionwtb">
+              <img className="plane1" src="./images/plane1.png" alt="hello"></img>
+              <img className="plane2" src="./images/plane2.png" alt="hello"></img>
+              <img className="plane3" src="./images/plane3.png" alt="hello"></img>
+              <img className="w" src="./images/w.png" alt="hello"></img>
             </section>
+            <section className="sectionb2"></section>
             <section className="sectionicons">
                 <div className="txticons">
                   <a href="https://github.com/NathanThai2201" class="link1">
