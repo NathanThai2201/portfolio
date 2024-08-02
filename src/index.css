@@ -8,6 +8,10 @@
   font-family: SpaceGames;
   src: url(/fonts/SpaceGames-K7zKD.otf);
 }
+@font-face {
+  font-family: Fussion;
+  src: url(/fonts/Fussion-3zgAz.ttf);
+}
 html body {
   padding: 0;
   margin: 0;
@@ -27,6 +31,7 @@ hr {
   height: 5px;
   width: 99vw;
   border-top: 1px solid rgb(82, 125, 155);
+  
 }
 #root {
   align-items: center;
@@ -61,13 +66,42 @@ hr {
   padding-left: 5px;
   padding-right: 5px;
 }
-.plane1, .plane2, .plane3 {
-  height: 100vh;
+.plane1 {
+  height: 110vh;
+  width: 100vw;
   position: absolute;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.plane2, .plane3 {
+  height: 110vh;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.proj1wrapper {
+  width: clamp(40px, 60vw, 100vh);
+  height: clamp(40px, 50vw, 100vh);
+  right: 0;
+  border-radius: 20px;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.proj1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute; 
+  top: 0;
+  left: 0;
 }
 .w {
   height: 110vh;
@@ -100,7 +134,7 @@ hr {
   z-index: 2;
 }
 .sectionb2 {
-  height: 110px;
+  height: 100vh;
   width:100vw;
   background-color: rgb(16, 57, 139);
   padding: 5px;
@@ -221,6 +255,17 @@ hr {
   margin-left: 10px;
   margin-top: 5px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.txtspace{  
+  font-family: Fussion;
+  position: absolute;
+  font-size: 25px;
+  color: rgb(228, 243, 255);
+  display: flex;
+  top:160vh;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;

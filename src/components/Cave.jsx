@@ -14,7 +14,7 @@ export function Cave(props) {
 
     
       if (groupRef.current) {
-        groupRef.current.position.y = scrollPercent * 1.2 +0.1;
+        groupRef.current.position.y = scrollPercent * 2.3 +0.1;
       }
     };
 

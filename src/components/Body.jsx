@@ -3,14 +3,41 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
+import StarCanvas from "./StarCanvas";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export const Body = () => {
+    //video hover
+    useEffect(() => {
+      const video = document.querySelector("video");
+      video.muted = true;
+      video.playbackRate = 0.8;
+    function start() {
+      video.currentTime = 1;
+      video.play();
+    }
+    function stop() {
+      video.currentTime = 0;
+      video.pause();
+    }
+    let previewTimeout = null;
+    video.addEventListener("mouseenter", () => {
+      start();
+      previewTimeout = setTimeout(stop, 255000);
+    });
+    video.addEventListener("mouseleave", () => {
+      clearTimeout(previewTimeout);
+      previewTimeout = null;
+      stop();
+    });
+    
+    }, []);
     useGSAP(() => {
         gsap.from('.word3', {
           x: 30,
           opacity: 0,
+          duration:0.65,
           stagger: {
               each: 0.1,
           },scrollTrigger: {
@@ -22,6 +49,8 @@ export const Body = () => {
         });
         gsap.from('.img1', {
             scale: 0,
+            ease: "elastic.out(1,0.3)",
+            duration:1.5,
           //   rotation:-90,
             scrollTrigger: {
               trigger: ".sectionwMainTitle1",
@@ -33,7 +62,7 @@ export const Body = () => {
         gsap.from('.word4', {
         y: 20,
         opacity: 0,
-        duration: 0.65,
+        duration: 1.2,
         scrollTrigger: {
             trigger: ".sectionwMainTitle2",
             start: "top 80.67%",
@@ -44,6 +73,7 @@ export const Body = () => {
         gsap.from('.img2', {
             opacity: 0,
             scaleX: -0.5,
+            duration:1.2,
             scrollTrigger: {
               trigger: ".sectionwMainTitle2",
               start: "top 80.67%",
@@ -54,6 +84,7 @@ export const Body = () => {
         gsap.from('.img3', {
             scaleX: -0.5,
             opacity: 0,
+            duration:1.2,
             scrollTrigger: {
               trigger: ".sectionwMainTitle2",
               start: "top 80.67%",
@@ -69,7 +100,7 @@ export const Body = () => {
                 start: "top 80.67%",
                 end: "bottom 30%",
                 scrub: false,
-              }, delay: 0.4,
+              }, delay: 0.6,
             // repeat: -1,
             // yoyo: true,
             // ease: "linear"
@@ -84,19 +115,23 @@ export const Body = () => {
             opacity:0,
             scrollTrigger: {
                 trigger: ".sectionwtb",
-                start: "top 30.67%",
-                end: "bottom 100%",
+                start: "top 40.67%",
+                end: "bottom 110%",
                 scrub: true,
               }, delay: 0.4,
-        });
-        gsap.from(".plane1", {
-          y:50,
-          scrollTrigger: {
+        }); 
+        gsap.from(".word5", {
+          opacity: 0,
+          scaleX:0,
+          duration:0.5,
+          stagger: {
+              each: 0.05,
+          }, scrollTrigger: {
               trigger: ".sectionwtb",
-              start: "top 30.67%",
-              // end: "bottom 100%",
-              scrub: true,
-            }, delay: 0.6,
+              start: "top 25.67%",
+              end: "bottom 25.67%",
+              scrub: false,
+            }, delay: 0,
         });
         gsap.from(".plane2", {
           y:200,
@@ -115,6 +150,28 @@ export const Body = () => {
               // end: "bottom 100%",
               scrub: true,
             }, delay: 0.6,
+        });
+        gsap.from(".proj1", {
+          scale:5,
+          ease: "expo.out",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb2",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0,
+        });
+        gsap.from(".proj1wrapper", {
+          scale:0,
+          ease: "expo.out",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb2",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.2,
         });
     }, {});
     return (
@@ -160,21 +217,37 @@ export const Body = () => {
                 </div>
             </section>
             <section className="sectionwtb">
+              <StarCanvas/>
               <img className="plane1" src="./images/plane1.png" alt="hello"></img>
               <img className="plane2" src="./images/plane2.png" alt="hello"></img>
               <img className="plane3" src="./images/plane3.png" alt="hello"></img>
               <img className="w" src="./images/w.png" alt="hello"></img>
+                <div className="txtspace">
+                  {
+                          'Technical Projects ...'.split('').map((char, index) => {
+                          return (
+                              <div className="word5" key={index}>
+                                  {char === ' ' ? '\u00A0' : char}
+                              </div>
+                          );
+                          })
+                  }
+                </div>
             </section>
-            <section className="sectionb2"></section>
+            <section className="sectionb2">
+              <div className="proj1wrapper">
+                <video className="proj1" src="./videos/proj1.mp4"/>
+              </div>
+            </section>
             <section className="sectionicons">
                 <div className="txticons">
-                  <a href="https://github.com/NathanThai2201" class="link1">
+                  <a href="https://github.com/NathanThai2201">
                     <img className="img2" src="./images/github.png" alt="hello"></img>
                   </a>
-                  <a href="https://www.linkedin.com/in/nathan-thai-762537240/" class="link1">
+                  <a href="https://www.linkedin.com/in/nathan-thai-762537240/" >
                     <img className="img3" src="./images/linkedin.png" alt="hello"></img>
                   </a>
-                  <a href= "mailto:thainhatanh2201@gmail.com" class="link1" >
+                  <a href= "mailto:thainhatanh2201@gmail.com">
                     <img className="img3" src="./images/gmail.png" alt="hello"></img>
                   </a>
                 </div>
@@ -183,4 +256,5 @@ export const Body = () => {
     //  </Scroll>
     )
   }
+  
   
