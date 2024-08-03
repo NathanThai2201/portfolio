@@ -7,31 +7,51 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 // prop test should be lowercase
 export const ProjHeader = ({ text }) => {
+    const chars = ['░', '▒', '▓', '█'];
+    const mixchar = () => chars[Math.floor(Math.random() * chars.length)];
+    const mix1 = (text) => {
+        return text.replace(/[ace]/gi, () => mixchar());
+    };
+
     useGSAP(() => {
-        gsap.from(".projheader", {
-            yPercent: -700,
-            ease: "steps(7)",
-            duration: 1,
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".projheaderwrapper",
                 start: "top 70.67%",
                 end: "bottom 70.67%",
                 scrub: false,
-            },
+            }
+        });
+
+        tl.from(".projheader", {
+            yPercent: -1000,
+            ease: "steps(10)",
+            duration: 0.4,
             delay: 0.2,
+        }).to('.projheader', {
+            yPercent: -100, 
+            repeat: -1, 
+            duration: 0.5, 
+            yoyo: true,
+            ease: "steps(1)", 
         });
     }, {});
     
     // chars ░ ▒ ▓ █
+    const text1 = mix1(text);
+
     return (
         <div className="projheaderwrapper">
+            <div className="projheader">{text} █</div>
             <div className="projheader">{text}</div>
-            <div className="projheader">░█▒▓█░█▒▓█▓░▒▒█▒ █▒▓</div>
-            <div className="projheader">▒▓ ▒▒██░▒ █░██▒░█▒▒</div>
-            <div className="projheader">▒██░▒░█░██▒▒▒█░ ▒▓█</div>
-            <div className="projheader">█░▒░█▒░ ▒█▒▒██▓█▒▓█▒▓</div>
-            <div className="projheader">███░▒▒▒▒█▒ █▒▒█▒ ██░</div>
-            <div className="projheader">▒██▓█▒ ░▒ ██▓█░▒░█▒</div>
+            <div className="projheader">{text1}</div>
+            <div className="projheader">░█▒▓█ ░█▒▓▒▒█▓░▒▒█▒ █</div>
+            <div className="projheader">▒▓ ▒▒██░▒ █░█▒▒█▒░█▒▒</div>
+            <div className="projheader">▒██░▒░█░██▒▒▒▒▒█░ ▒▓█</div>
+            <div className="projheader">█░▒░█▒░ ▒█▒▒█▒▒█▓ █▒▓█</div>
+            <div className="projheader">██░▒▒▒▒█▒ █▒▒█▒ ██░</div>
+            <div className="projheader">▒██▓█▒ ░▒ ██▓█░▒░▒▒▒</div>
+            <div className="projheader">▒▒░ ▒▓▓█▒▒░▓█░█ ▒█▒▒█</div>
             <div className="projheader"></div>
         </div>
     );
