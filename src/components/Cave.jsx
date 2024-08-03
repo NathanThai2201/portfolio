@@ -9,12 +9,12 @@ export function Cave(props) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollHeight = window.innerHeight;
       const scrollPercent = scrollY / scrollHeight;
 
     
       if (groupRef.current) {
-        groupRef.current.position.y = scrollPercent * 2.3 +0.1;
+        groupRef.current.position.y = scrollPercent * 1 +0.1;
       }
     };
 

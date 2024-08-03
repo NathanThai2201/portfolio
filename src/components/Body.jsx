@@ -133,20 +133,27 @@ export const Body = () => {
               scrub: false,
             }, delay: 0,
         });
+        gsap.to('.word5', {
+          yPercent: 50, 
+          repeat: -1, 
+          duration: 1, 
+          yoyo: true,
+          ease: "back.inOut(1.7)", 
+        });
         gsap.from(".plane2", {
-          y:200,
+          y:50,
           scrollTrigger: {
               trigger: ".sectionwtb",
-              start: "top 30.67%",
+              start: "top 20.67%",
               // end: "bottom 100%",
               scrub: true,
             }, delay: 0.6,
         });
         gsap.from(".plane3", {
-          y:400,
+          y:100,
           scrollTrigger: {
               trigger: ".sectionwtb",
-              start: "top 30.67%",
+              start: "top 20.67%",
               // end: "bottom 100%",
               scrub: true,
             }, delay: 0.6,
@@ -218,11 +225,13 @@ export const Body = () => {
             </section>
             <section className="sectionwtb">
               <StarCanvas/>
-              <img className="plane1" src="./images/plane1.png" alt="hello"></img>
-              <img className="plane2" src="./images/plane2.png" alt="hello"></img>
-              <img className="plane3" src="./images/plane3.png" alt="hello"></img>
-              <img className="w" src="./images/w.png" alt="hello"></img>
-                <div className="txtspace">
+              <div className="planewrapper">
+                <img className="plane1" src="./images/plane1.png" alt="hello"></img>
+                <img className="plane2" src="./images/plane2.png" alt="hello"></img>
+                <img className="plane3" src="./images/plane3.png" alt="hello"></img>
+                <img className="w" src="./images/w.png" alt="hello"></img>
+              </div>
+              <div className="txtspace">
                   {
                           'Technical Projects ...'.split('').map((char, index) => {
                           return (
@@ -232,11 +241,19 @@ export const Body = () => {
                           );
                           })
                   }
-                </div>
+              </div>
             </section>
             <section className="sectionb2">
-              <div className="proj1wrapper">
-                <video className="proj1" src="./videos/proj1.mp4"/>
+              <div className="proj1headerwrapper">
+                <div className="proj1header"> Old Portfolio Website</div>
+              </div>
+              <div>
+                <div className="proj1content"> There is cabin in the middle of the snowy mountains,
+                  who knows when the blizzard will subside. It may be worth the risk for a bit of shelter.
+                </div>
+                <div className="proj1wrapper">
+                  <video className="proj1" src="./videos/proj1.mp4"/>
+                </div>
               </div>
             </section>
             <section className="sectionicons">

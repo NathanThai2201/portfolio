@@ -66,29 +66,34 @@ hr {
   padding-left: 5px;
   padding-right: 5px;
 }
-.plane1 {
-  height: 110vh;
+.planewrapper {
   width: 100vw;
-  position: absolute;
+  height: 110vh;
+  position: absolute;  
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
+.plane1 {
+  height: 110vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+}
 .plane2, .plane3 {
   height: 110vh;
   position: absolute;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  overflow-y: visible;
 }
 .proj1wrapper {
   width: clamp(40px, 60vw, 100vh);
   height: clamp(40px, 50vw, 100vh);
   right: 0;
   border-radius: 20px;
-  position: absolute;
+  position: absolute;  
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -102,6 +107,29 @@ hr {
   position: absolute; 
   top: 0;
   left: 0;
+}
+.proj1headerwrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.proj1header {
+  font-family: 'SpaceGames', sans-serif;
+  font-size: 20px;
+  color: rgb(228, 243, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0%;
+}
+.proj1content {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px;
+  color: rgb(146, 186, 255);
+  margin-left: 10px;
+  margin-top: 5px;
+  top: 0%;
 }
 .w {
   height: 110vh;
@@ -136,7 +164,7 @@ hr {
 .sectionb2 {
   height: 100vh;
   width:100vw;
-  background-color: rgb(16, 57, 139);
+  background-color: rgb(0, 30, 89);
   padding: 5px;
   justify-content: center;
   align-items: center;
@@ -198,20 +226,17 @@ hr {
   overflow: hidden;
   z-index: 2;
 }
-.sectionw {
-  height: 110vh;
-  width:100vw;
-  background-color: rgb(228, 243, 255);
-  padding: 5px;
-}
 .sectionicons {
   height: 110px;
   width:100vw;
-  background-color: rgb(16, 57, 139);
+  background-color: rgb(0, 30, 89);
   padding: 5px;
   justify-content: center;
   align-items: center;
   z-index: 2;
+}
+.starCanvas {
+  position: absolute;
 }
 .text {
   line-height: 1em;
@@ -261,14 +286,12 @@ hr {
 }
 .txtspace{  
   font-family: Fussion;
-  position: absolute;
-  font-size: 25px;
+  font-size: 20px;
   color: rgb(228, 243, 255);
   display: flex;
-  top:160vh;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-top: -20vh;
 }
 .txticons{  
   font-family: Sterion;

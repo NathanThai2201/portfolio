@@ -16,7 +16,7 @@ const StarCanvas = () => {
     const draw = (context) => {
       context.fillStyle = "rgb(16, 57, 139)";
       context.fillRect(0, 0, canvas.width, canvas.height);
-      const effect = new Effect(window.innerWidth, window.innerHeight * 1.1, 12345); // Pass a seed value
+      const effect = new Effect(window.innerWidth, window.innerHeight * 1.1, 12345); // enter seed
       effect.init();
       Animate(effect, context);
     };
@@ -27,7 +27,7 @@ const StarCanvas = () => {
     return () => window.removeEventListener('resize', setCanvasSize);
   }, []);
 
-  return <canvas ref={canvasRef} />;
+  return <canvas className="starCanvas" ref={canvasRef} />;
 };
 
 export default StarCanvas;
@@ -35,18 +35,22 @@ export default StarCanvas;
 class LCG {
   constructor(seed) {
     this.seed = seed;
+    // ZX81 LCG
+    this.a = 75;
+    this.c = 74;
+    this.m = Math.pow(2, 16) + 1;
   }
 
   next() {
-    // ZX81 LCG
-    const a = 75;
-    const c = 74;
-    const m = Math.pow(2, 16) + 1;
+    this.seed = (this.a * this.seed + this.c) % this.m;
+    return this.seed;
+  }
 
-    this.seed = (a * this.seed + c) % m;
-    return this.seed / m;
+  getvalue() {
+    return this.seed / this.m;
   }
 }
+
 
 class Effect {
   constructor(width, height, seed) {
@@ -67,13 +71,13 @@ class Effect {
   }
 
   init() {
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 200; i++) {
       this.particles.push(new Particle(this, this.width, this.height, this.random));
     }
   }
 
   draw(context) {
-    this.particles.forEach(particle => particle.draw(context));
+    this.particles.forEach(particle => particle.draw(context,this.random));
   }
 
   update() {
@@ -84,8 +88,10 @@ class Effect {
 class Particle {
   constructor(effect, width, height, random) {
     this.effect = effect;
-    this.x = random.next() * width;
-    this.y = random.next() * height;
+    random.next()
+    this.x = random.getvalue() * width;
+    random.next()
+    this.y = random.getvalue() * height;
     this.Ox = Math.floor(this.x);
     this.Oy = Math.floor(this.y);
     this.size = 3;
@@ -98,18 +104,41 @@ class Particle {
     this.angle = 0;
   }
 
-  draw(context) {
+  draw(context,random) {
+    // last digit ectract
+    random.next()
+    let sparkleseed = random.getvalue() % 10
+    let factor = undefined
+
+    //console.log(seed)
+    //draw
     context.fillStyle = "rgb(146, 186, 255)";
-    //context.fillRect(this.x, this.y, this.size, this.size);
-    // context.beginPath();
-    // context.arc(this.x, this.y, 2, 0, 2 * Math.PI);
-    context.beginPath();
-    context.moveTo(this.x, this.y);
-    context.lineTo(this.x - 3, this.y + 3);
-    context.lineTo(this.x, this.y + 6);
-    context.lineTo(this.x + 3, this.y + 3);
-    context.closePath();   
-    context.fill();
+    if ((this.Ox % 10)*10 <9){
+      //diamond
+      factor=Math.abs(sparkleseed-5)*0.7;
+      context.beginPath();
+      context.moveTo(this.x, this.y);
+      context.lineTo(this.x - factor, this.y +  factor);
+      context.lineTo(this.x, this.y +  factor*2);
+      context.lineTo(this.x +  factor, this.y +  factor);
+      context.closePath();   
+      context.fill();
+    }else{
+      //star
+      factor=Math.abs(sparkleseed-5)*1.2+1;
+      context.beginPath();
+      context.moveTo(this.x, this.y);
+      context.lineTo(this.x - factor/4, this.y + 3*factor/4);
+      context.lineTo(this.x - factor, this.y +  factor);
+      context.lineTo(this.x - factor/4, this.y + 5*factor/4);
+      context.lineTo(this.x, this.y +  factor*2);
+      context.lineTo(this.x + factor/4, this.y + 5*factor/4);
+      context.lineTo(this.x +  factor, this.y +  factor);
+      context.lineTo(this.x + factor/4, this.y + 3*factor/4);
+      context.closePath();   
+      context.fill();
+    }
+    
   }
 
   update() {
