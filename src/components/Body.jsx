@@ -270,9 +270,9 @@ export const Body = () => {
                       ))}
                     </div>
                   </div> 
-                  <div className="proj1videowrapper">
+                  <a className="proj1videowrapper" href="https://coperimescabin.com">
                     <video className="proj1video" src="./videos/proj1.mp4"/>
-                  </div> 
+                  </a>
                 </div>
               </div>
             </section>
