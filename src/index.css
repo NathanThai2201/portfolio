@@ -101,8 +101,15 @@ hr {
 .proj1text {
   width: 40vw;
   font-family: 'Orbitron', sans-serif;
-  font-size: 20px;
+  font-size: clamp(10px,4vw,20px);
   color: rgb(146, 186, 255);
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.proj1tech {
+  width: 40vw;
   margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -337,4 +344,19 @@ hr {
   display: inline-flex;
   margin-right: 5px;
 }
-
+.button1 {
+  font-family: Fussion;
+  font-size: 12px;
+  height: 25px;
+  width: 100px;
+  margin: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(228, 243, 255);
+  border-radius: 5px;
+  border-style:solid;
+  border-width: 1px;
+  border-color: rgb(146, 186, 255);
+  background-color: rgb(16, 57, 139);
+}

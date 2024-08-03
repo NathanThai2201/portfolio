@@ -172,6 +172,18 @@ export const Body = () => {
               scrub: false,
             }, delay: 0,
         });
+        gsap.from(".button1", {
+          scale:0,
+          duration:0.4,
+          stagger: {
+            each: 0.2
+          },scrollTrigger: {
+              trigger: ".sectionb2",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.3,
+        });
         gsap.from(".proj1video", {
           scale:5,
           ease: "expo.out",
@@ -258,7 +270,7 @@ export const Body = () => {
               </div>
             </section>
             <section className="sectionb2">
-              <ProjHeader text="old portfolio website"/>
+              <ProjHeader text="portfolio websites"/>
               <div>
                 <div className="proj1wrapper">
                   <div className="proj1content">
@@ -268,6 +280,13 @@ export const Body = () => {
                           {word + '\u00A0'}
                         </div>
                       ))}
+                    </div>
+                    <div className="proj1tech">
+                      <div className="button1" key={1}>Three.js</div>
+                      <div className="button1" key={2}>R3F</div>
+                      <div className="button1" key={3}>GSAP</div>
+                      <div className="button1" key={3}>React.js</div>
+                      <div className="button1" key={4}>JQuery</div>
                     </div>
                   </div> 
                   <a className="proj1videowrapper" href="https://coperimescabin.com">
