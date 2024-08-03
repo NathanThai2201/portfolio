@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
 import StarCanvas from "./StarCanvas";
+import { ProjHeader } from "./ProjHeader";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -125,7 +126,7 @@ export const Body = () => {
           scaleX:0,
           duration:0.5,
           stagger: {
-              each: 0.05,
+              each: 0.03,
           }, scrollTrigger: {
               trigger: ".sectionwtb",
               start: "top 25.67%",
@@ -158,7 +159,7 @@ export const Body = () => {
               scrub: true,
             }, delay: 0.6,
         });
-        gsap.from(".proj1", {
+        gsap.from(".proj1video", {
           scale:5,
           ease: "expo.out",
           duration:2,
@@ -169,7 +170,7 @@ export const Body = () => {
               scrub: false,
             }, delay: 0,
         });
-        gsap.from(".proj1wrapper", {
+        gsap.from(".proj1videowrapper", {
           scale:0,
           ease: "expo.out",
           duration:2,
@@ -233,7 +234,7 @@ export const Body = () => {
               </div>
               <div className="txtspace">
                   {
-                          'Technical Projects ...'.split('').map((char, index) => {
+                          'Technical Projects:'.split('').map((char, index) => {
                           return (
                               <div className="word5" key={index}>
                                   {char === ' ' ? '\u00A0' : char}
@@ -244,15 +245,15 @@ export const Body = () => {
               </div>
             </section>
             <section className="sectionb2">
-              <div className="proj1headerwrapper">
-                <div className="proj1header"> Old Portfolio Website</div>
-              </div>
+              <ProjHeader text="old portfolio website"/>
               <div>
-                <div className="proj1content"> There is cabin in the middle of the snowy mountains,
-                  who knows when the blizzard will subside. It may be worth the risk for a bit of shelter.
-                </div>
                 <div className="proj1wrapper">
-                  <video className="proj1" src="./videos/proj1.mp4"/>
+                  <div className="proj1content"> There is cabin in the middle of the snowy mountains,
+                    who knows when the blizzard will subside. It may be worth the risk for a bit of shelter.
+                  </div> 
+                  <div className="proj1videowrapper">
+                    <video className="proj1video" src="./videos/proj1.mp4"/>
+                  </div> 
                 </div>
               </div>
             </section>
