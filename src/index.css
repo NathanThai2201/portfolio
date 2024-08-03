@@ -97,11 +97,16 @@ hr {
 .proj1content {
   width: 40vw;
   height: 50vh;
+}
+.proj1text {
+  width: 40vw;
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(15px, 4vw, 20px);
+  font-size: 20px;
   color: rgb(146, 186, 255);
-  justify-content: center;
-  align-items: center;
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 /* Hovered video class template, reusable for each project */
 .proj1videowrapper {
@@ -129,13 +134,14 @@ hr {
 /* Header template, made for pseudo scramble text animation */
 .projheaderwrapper {
   height: clamp(18px,4vw,40px);
+  margin-left: 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 .projheader {
-  font-family: 'SpaceGames';
-  font-size: clamp(18px,4vw,40px);
+  font-family: 'SpaceGames', sans-serif;
+  font-size: clamp(16px,4vw,40px);
   color: rgb(228, 243, 255);
   display: flex;
   justify-content: left;

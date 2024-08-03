@@ -31,11 +31,11 @@ export const Overlay = () => {
     useEffect(() => {
         const target = baffle('.scrollText');
         target.set({
-            characters: "░▒▓█",
+            characters: "ᛮᚸᛃᛨᛒᚭᚻᛥ",
             speed: 140
         });
         target.start();
-        target.reveal(4000);
+        target.reveal(10000);
     }, []);
 
     useGSAP(() => {

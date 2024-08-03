@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 // prop test should be lowercase
 export const ProjHeader = ({ text }) => {
-    const chars = ['░', '▒', '▓', '█'];
+    const chars = ['ᛮᚸ', 'ᛃᛨ', 'ᛒᚭ', 'ᚻᛥ'];
     const mixchar = () => chars[Math.floor(Math.random() * chars.length)];
     const mix1 = (text) => {
         return text.replace(/[ace]/gi, () => mixchar());
@@ -26,7 +26,7 @@ export const ProjHeader = ({ text }) => {
         tl.from(".projheader", {
             yPercent: -600,
             ease: "steps(6)",
-            duration: 0.5,
+            duration: 0.6,
             delay: 0.2,
         }).to('.projheader', {
             yPercent: -100, 
@@ -39,16 +39,15 @@ export const ProjHeader = ({ text }) => {
     
     // chars ░ ▒ ▓ █
     const text1 = mix1(text);
-    const textt = `${text} █`;
 
     return (
         <div className="projheaderwrapper">
-            <div className="projheader">{textt}</div>
+            <div className="projheader">{text} █</div>
             <div className="projheader">{text}</div>
             <div className="projheader">{text1}</div>
-            <div className="projheader">░█▒▓█ ░█▒▓▒▒█▓░▒▒█▒ █</div>
-            <div className="projheader">▒▓ ▒▒██░▒ █░█▒▒█▒░█▒▒</div>
-            <div className="projheader">▒██░▒░█░██▒▒▒▒▒█░ ▒▓█</div>
+            <div className="projheader">ᛮᛒᚭᚻᛃᛨᛥᚸᛃᛨᛒᚭᚻᛥ</div>
+            <div className="projheader">ᛃᛨᛮᚸᛃᛨᛒᚭᚻᛨᛥᛥᚸᛃ</div>
+            <div className="projheader">ᛁᚲᛖ x ᚨᚾᛞ x ᛊᚾᛟᚹ</div>
             <div className="projheader"></div>
         </div>
     );

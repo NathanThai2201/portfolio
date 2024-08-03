@@ -159,6 +159,19 @@ export const Body = () => {
               scrub: true,
             }, delay: 0.6,
         });
+        gsap.from(".word6", {
+          y:20,
+          opacity:0,
+          duration:1,
+          stagger: {
+            each: 0.01
+          },scrollTrigger: {
+              trigger: ".sectionb2",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0,
+        });
         gsap.from(".proj1video", {
           scale:5,
           ease: "expo.out",
@@ -248,8 +261,14 @@ export const Body = () => {
               <ProjHeader text="old portfolio website"/>
               <div>
                 <div className="proj1wrapper">
-                  <div className="proj1content"> There is cabin in the middle of the snowy mountains,
-                    who knows when the blizzard will subside. It may be worth the risk for a bit of shelter.
+                  <div className="proj1content">
+                    <div className="proj1text">
+                      {'There is cabin in the middle of these mountains. Who knows when the blizzard will subside. It may be worth the risk for a bit of shelter.'.split(' ').map((word, index) => (
+                        <div className="word6" key={index}>
+                          {word + '\u00A0'}
+                        </div>
+                      ))}
+                    </div>
                   </div> 
                   <div className="proj1videowrapper">
                     <video className="proj1video" src="./videos/proj1.mp4"/>
