@@ -24,9 +24,9 @@ export const ProjHeader = ({ text }) => {
         });
 
         tl.from(".projheader", {
-            yPercent: -1000,
-            ease: "steps(10)",
-            duration: 0.4,
+            yPercent: -600,
+            ease: "steps(6)",
+            duration: 0.5,
             delay: 0.2,
         }).to('.projheader', {
             yPercent: -100, 
@@ -48,10 +48,6 @@ export const ProjHeader = ({ text }) => {
             <div className="projheader">░█▒▓█ ░█▒▓▒▒█▓░▒▒█▒ █</div>
             <div className="projheader">▒▓ ▒▒██░▒ █░█▒▒█▒░█▒▒</div>
             <div className="projheader">▒██░▒░█░██▒▒▒▒▒█░ ▒▓█</div>
-            <div className="projheader">█░▒░█▒░ ▒█▒▒█▒▒█▓ █▒▓█</div>
-            <div className="projheader">██░▒▒▒▒█▒ █▒▒█▒ ██░</div>
-            <div className="projheader">▒██▓█▒ ░▒ ██▓█░▒░▒▒▒</div>
-            <div className="projheader">▒▒░ ▒▓▓█▒▒░▓█░█ ▒█▒▒█</div>
             <div className="projheader"></div>
         </div>
     );
