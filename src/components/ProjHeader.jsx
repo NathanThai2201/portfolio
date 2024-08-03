@@ -39,10 +39,11 @@ export const ProjHeader = ({ text }) => {
     
     // chars ░ ▒ ▓ █
     const text1 = mix1(text);
+    const textt = `${text} █`;
 
     return (
         <div className="projheaderwrapper">
-            <div className="projheader">{text} █</div>
+            <div className="projheader">{textt}</div>
             <div className="projheader">{text}</div>
             <div className="projheader">{text1}</div>
             <div className="projheader">░█▒▓█ ░█▒▓▒▒█▓░▒▒█▒ █</div>

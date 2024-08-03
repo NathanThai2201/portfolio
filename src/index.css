@@ -134,7 +134,7 @@ hr {
   overflow: hidden;
 }
 .projheader {
-  font-family: 'SpaceGames', sans-serif;
+  font-family: 'SpaceGames';
   font-size: clamp(18px,4vw,40px);
   color: rgb(228, 243, 255);
   display: flex;
@@ -266,7 +266,7 @@ hr {
   margin-top: 0px;
 }
 .txt1scroll{  
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron';
   font-size: 15px;
   color: rgb(228, 243, 255);
   margin-left: 10px;
