@@ -44,11 +44,11 @@ export const ProjHeader = ({ text }) => {
         <div className="projheaderwrapper">
             <div className="projheader">{text} █</div>
             <div className="projheader">{text}</div>
-            <div className="projheader">{text1}</div>
-            <div className="projheader">ᛮᛒᚭᚻᛃᛨᛥᚸᛃᛨᛒᚭᚻᛥᚭᚻᛃᛥ</div>
-            <div className="projheader">ᛃᛨᛮᚸᛃᛨᛒᚭᚻᛨᛥᚭᚻᛃᛥᚸᛃ</div>
-            <div className="projheader">ᛁᚲᛖ ᚨᚾᛞ ᛊᚾᛟᚹ ᚸᛃᛨᛒᚭ</div>
-            <div className="projheader">ᚻᛃᛨᛮᛒᛥᚸᚻᛃᛥᚭᚻᛨᛥᚸᛮᛒ</div>
+            <div className="projheader">{text1}█</div>
+            <div className="projheader">ᛮᛒᚭᚻᛃᛨᛥᚸᛃᛨᛒᚭᚻᛥᚭᚻᛃᛥ█</div>
+            <div className="projheader">ᛃᛨᛮᚸᛃᛨᛒᚭᚻᛨᛥᚭᚻᛃᛥᚸᛃ█</div>
+            <div className="projheader">ᛁᚲᛖ ᚨᚾᛞ ᛊᚾᛟᚹ ᚸᛃᛨᛒᚭ█</div>
+            <div className="projheader">ᚻᛃᛨᛮᛒᛥᚸᚻᛃᛥᚭᚻᛨᛥᚸᛮᛒ█</div>
             <div className="projheader"></div>
         </div>
     );
