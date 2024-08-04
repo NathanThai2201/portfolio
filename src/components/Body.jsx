@@ -200,6 +200,7 @@ export const Body = () => {
         gsap.from(".proj1videowrapper", {
           scale:0,
           ease: "expo.out",
+          borderRadius:"400px",
           duration:2,
           scrollTrigger: {
               trigger: ".sectionb2",
@@ -247,6 +248,7 @@ export const Body = () => {
         gsap.from(".proj2videowrapper", {
           scale:0,
           ease: "expo.out",
+          borderRadius:"400px",
           duration:2,
           scrollTrigger: {
               trigger: ".sectionb3",
