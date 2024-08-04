@@ -5,34 +5,36 @@ import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
 import StarCanvas from "./StarCanvas";
 import { ProjHeader } from "./ProjHeader";
+import { ProjHeader2 } from "./ProjHeader2";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export const Body = () => {
     //video hover
     useEffect(() => {
-      const video = document.querySelector("video");
-      video.muted = true;
-      video.playbackRate = 0.8;
-    function start() {
-      video.currentTime = 1;
-      video.play();
-    }
-    function stop() {
-      video.currentTime = 0;
-      video.pause();
-    }
-    let previewTimeout = null;
-    video.addEventListener("mouseenter", () => {
-      start();
-      previewTimeout = setTimeout(stop, 255000);
-    });
-    video.addEventListener("mouseleave", () => {
-      clearTimeout(previewTimeout);
-      previewTimeout = null;
-      stop();
-    });
-    
+      const videos = document.querySelectorAll("video");
+      videos.forEach((video) => {
+        video.muted = true;
+        video.playbackRate = 0.8;
+        function start() {
+          video.currentTime = 1;
+          video.play();
+        }
+        function stop() {
+          video.currentTime = 0;
+          video.pause();
+        }
+        let previewTimeout = null;
+        video.addEventListener("mouseenter", () => {
+          start();
+          previewTimeout = setTimeout(stop, 255000);
+        });
+        video.addEventListener("mouseleave", () => {
+          clearTimeout(previewTimeout);
+          previewTimeout = null;
+          stop();
+        });
+      });
     }, []);
     useGSAP(() => {
         gsap.from('.word3', {
@@ -206,6 +208,53 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.2,
         });
+        gsap.from(".word7", {
+          y:20,
+          opacity:0,
+          duration:1,
+          stagger: {
+            each: 0.01
+          },scrollTrigger: {
+              trigger: ".sectionb3",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0,
+        });
+        gsap.from(".button2", {
+          scale:0,
+          duration:0.4,
+          stagger: {
+            each: 0.2
+          },scrollTrigger: {
+              trigger: ".sectionb3",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.3,
+        });
+        gsap.from(".proj2video", {
+          scale:5,
+          ease: "expo.out",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb3",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0,
+        });
+        gsap.from(".proj2videowrapper", {
+          scale:0,
+          ease: "expo.out",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb3",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.2,
+        });
     }, {});
     return (
     //  <Scroll html>
@@ -285,13 +334,38 @@ export const Body = () => {
                       <div className="button1" key={1}>Three.js</div>
                       <div className="button1" key={2}>R3F</div>
                       <div className="button1" key={3}>GSAP</div>
-                      <div className="button1" key={3}>React.js</div>
-                      <div className="button1" key={4}>JQuery</div>
+                      <div className="button1" key={4}>React.js</div>
+                      <div className="button1" key={5}>JQuery</div>
                     </div>
                   </div> 
                   <a className="proj1videowrapper" href="https://coperimescabin.com">
                     <video className="proj1video" src="./videos/proj1.mp4"/>
                   </a>
+                </div>
+              </div>
+            </section>
+            <section className="sectionb3">
+              <ProjHeader2 text="CollatzCheckIn"/>
+              <div>
+                <div className="proj2wrapper">
+                  <a className="proj2videowrapper" href="https://github.com/NathanThai2201/CollatzCheckIn">
+                    <video className="proj2video" src="./videos/proj2.mp4"/>
+                  </a>
+                  <div className="proj2content">
+                    <div className="proj2text">
+                      {'An Android app for event organization with QR code scanning. Integrated google authentication, Firebase database, HTTP requests to Firebase Messaging.'.split(' ').map((word, index) => (
+                        <div className="word7" key={index}>
+                          {word + '\u00A0'}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="proj2tech">
+                      <div className="button2" key={1}>Java</div>
+                      <div className="button2" key={2}>Android</div>
+                      <div className="button2" key={3}>Firebase</div>
+                      <div className="button2" key={4}>Figma</div>
+                    </div>
+                  </div> 
                 </div>
               </div>
             </section>
