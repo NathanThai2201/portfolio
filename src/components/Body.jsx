@@ -17,13 +17,16 @@ export const Body = () => {
       videos.forEach((video) => {
         video.muted = true;
         video.playbackRate = 0.8;
+        video.style.opacity = 0;
         function start() {
-          video.currentTime = 1;
+          video.currentTime = 0;
           video.play();
+          video.style.opacity = 1;
         }
         function stop() {
           video.currentTime = 0;
           video.pause();
+          video.style.opacity = 0;
         }
         let previewTimeout = null;
         video.addEventListener("mouseenter", () => {
@@ -187,17 +190,6 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.3,
         });
-        gsap.from(".proj1video", {
-          scale:5,
-          ease: "expo.out",
-          duration:2,
-          scrollTrigger: {
-              trigger: ".sectionb2",
-              start: "top 70.67%",
-              end: "bottom 70.67%",
-              scrub: false,
-            }, delay: 0,
-        });
         gsap.from(".proj1videowrapper", {
           scale:0,
           ease: "expo.out",
@@ -235,17 +227,6 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.3,
         });
-        gsap.from(".proj2video", {
-          scale:5,
-          ease: "expo.out",
-          duration:2,
-          scrollTrigger: {
-              trigger: ".sectionb3",
-              start: "top 70.67%",
-              end: "bottom 70.67%",
-              scrub: false,
-            }, delay: 0,
-        });
         gsap.from(".proj2videowrapper", {
           scale:0,
           ease: "expo.out",
@@ -282,17 +263,6 @@ export const Body = () => {
               end: "bottom 70.67%",
               scrub: false,
             }, delay: 0.3,
-        });
-        gsap.from(".proj3video", {
-          scale:5,
-          ease: "expo.out",
-          duration:2,
-          scrollTrigger: {
-              trigger: ".sectionb4",
-              start: "top 70.67%",
-              end: "bottom 70.67%",
-              scrub: false,
-            }, delay: 0,
         });
         gsap.from(".proj3videowrapper", {
           scale:0,
