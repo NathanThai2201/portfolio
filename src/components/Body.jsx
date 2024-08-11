@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import StarCanvas from "./StarCanvas";
 import { ProjHeader } from "./ProjHeader";
 import { ProjHeader2 } from "./ProjHeader2";
+import { ProjHeader3 } from "./ProjHeader3";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -257,6 +258,54 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.2,
         });
+        gsap.from(".word8", {
+          y:20,
+          opacity:0,
+          duration:1,
+          stagger: {
+            each: 0.01
+          },scrollTrigger: {
+              trigger: ".sectionb4",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0,
+        });
+        gsap.from(".button3", {
+          scale:0,
+          duration:0.4,
+          stagger: {
+            each: 0.2
+          },scrollTrigger: {
+              trigger: ".sectionb4",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.3,
+        });
+        gsap.from(".proj3video", {
+          scale:5,
+          ease: "expo.out",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb4",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0,
+        });
+        gsap.from(".proj3videowrapper", {
+          scale:0,
+          ease: "expo.out",
+          borderRadius:"400px",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb4",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.2,
+        });
     }, {});
     return (
     //  <Scroll html>
@@ -338,6 +387,7 @@ export const Body = () => {
                       <div className="button1" key={3}>GSAP</div>
                       <div className="button1" key={4}>React.js</div>
                       <div className="button1" key={5}>JQuery</div>
+                      <div className="button1" key={5}>Javascript</div>
                     </div>
                   </div> 
                   <a className="proj1videowrapper" href="https://coperimescabin.com">
@@ -355,7 +405,7 @@ export const Body = () => {
                   </a>
                   <div className="proj2content">
                     <div className="proj2text">
-                      {'An Android app for event organization with QR code scanning. Integrated google authentication, Firebase database, HTTP requests to Firebase Messaging.'.split(' ').map((word, index) => (
+                      {'An Android app for event organization with QR code scanning. Integrated Google authentication, Firebase database, HTTP requests to Firebase Messaging.'.split(' ').map((word, index) => (
                         <div className="word7" key={index}>
                           {word + '\u00A0'}
                         </div>
@@ -368,6 +418,31 @@ export const Body = () => {
                       <div className="button2" key={4}>Figma</div>
                     </div>
                   </div> 
+                </div>
+              </div>
+            </section>
+            <section className="sectionb4">
+              <ProjHeader3 text="ImageBork"/>
+              <div>
+                <div className="proj3wrapper">
+                  <div className="proj3content">
+                    <div className="proj3text">
+                      {'An image processing app that is able to chain different image effects and algorithms. Able to work on batch images and animations.'.split(' ').map((word, index) => (
+                        <div className="word8" key={index}>
+                          {word + '\u00A0'}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="proj3tech">
+                      <div className="button3" key={1}>Python</div>
+                      <div className="button3" key={2}>Skimage</div>
+                      <div className="button3" key={3}>Scipy</div>
+                      <div className="button3" key={4}>Numpy</div>
+                    </div>
+                  </div> 
+                  <a className="proj3videowrapper" href="https://github.com/NathanThai2201/ImageBork">
+                    <video className="proj3video" src="./videos/proj3.mp4"/>
+                  </a>
                 </div>
               </div>
             </section>
