@@ -7,6 +7,7 @@ import StarCanvas from "./StarCanvas";
 import { ProjHeader } from "./ProjHeader";
 import { ProjHeader2 } from "./ProjHeader2";
 import { ProjHeader3 } from "./ProjHeader3";
+import { ProjHeader4 } from "./ProjHeader4";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -276,6 +277,43 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.2,
         });
+        gsap.from(".word9", {
+          y:20,
+          opacity:0,
+          duration:1,
+          stagger: {
+            each: 0.01
+          },scrollTrigger: {
+              trigger: ".sectionb5",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0,
+        });
+        gsap.from(".button4", {
+          scale:0,
+          duration:0.4,
+          stagger: {
+            each: 0.2
+          },scrollTrigger: {
+              trigger: ".sectionb4",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.3,
+        });
+        gsap.from(".proj4videowrapper", {
+          scale:0,
+          ease: "expo.out",
+          borderRadius:"400px",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb4",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.2,
+        });
     }, {});
     return (
     //  <Scroll html>
@@ -398,7 +436,7 @@ export const Body = () => {
                   <div className="proj3content">
                     <div className="proj3text">
                       {'An image processing app that is able to chain different image effects and algorithms. Able to work on batch images and animations.'.split(' ').map((word, index) => (
-                        <div className="word8" key={index}>
+                        <div className="word9" key={index}>
                           {word + '\u00A0'}
                         </div>
                       ))}
@@ -413,6 +451,29 @@ export const Body = () => {
                   <a className="proj3videowrapper" href="https://github.com/NathanThai2201/ImageBork">
                     <video className="proj3video" src="./videos/proj3.mp4"/>
                   </a>
+                </div>
+              </div>
+            </section>
+            <section className="sectionb5">
+              <ProjHeader4 text="CopeAudio VSTs"/>
+              <div>
+                <div className="proj4wrapper">
+                <a className="proj4videowrapper" href="https://github.com/NathanThai2201/CopeAudio">
+                    <video className="proj4video" src="./videos/proj4.mp4"/>
+                  </a>
+                  <div className="proj4content">
+                    <div className="proj4text">
+                      {'Audio plugins for your varied production and sound engineering needs. From modified sinefold distortion to white noise and sub oscillator sidechainer with high levels of customizability.'.split(' ').map((word, index) => (
+                        <div className="word8" key={index}>
+                          {word + '\u00A0'}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="proj4tech">
+                      <div className="button4" key={1}>C++</div>
+                      <div className="button4" key={2}>JUCE</div>
+                    </div>
+                  </div> 
                 </div>
               </div>
             </section>

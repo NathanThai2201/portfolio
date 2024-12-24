@@ -88,17 +88,17 @@ hr {
   display: flex;
   overflow-y: visible;
 }
-.proj1wrapper, .proj2wrapper, .proj3wrapper  {
+/* projects */
+.proj1wrapper, .proj2wrapper, .proj3wrapper, .proj4wrapper {
   margin-top: 10px;
-
   min-height: 40vh;
   overflow: hidden;
   display: flex;
 }
-.proj1content, .proj2content, .proj3content {
+.proj1content, .proj2content, .proj3content, .proj4content {
   width: 40vw;
 }
-.proj1text, .proj2text, .proj3text {
+.proj1text, .proj2text, .proj3text, .proj4text {
   width: 40vw;
   font-family: 'Orbitron', sans-serif;
   font-size: clamp(10px,4vw,20px);
@@ -108,7 +108,7 @@ hr {
   flex-wrap: wrap;
   align-items: flex-start;
 }
-.proj1tech, .proj2tech, .proj3tech {
+.proj1tech, .proj2tech, .proj3tech, .proj4tech {
   width: 40vw;
   margin-top: 10px;
   display: flex;
@@ -152,7 +152,19 @@ hr {
   align-items: center;
   display: flex;
 }
-.proj1video, .proj2video, .proj3video {
+.proj4videowrapper {
+  width: 100%;
+  border-radius: 20px;
+  background-image: url('/images/proj4.png');
+  background-size: cover;
+  background-position: 50%;
+  position: relative;  
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.proj1video, .proj2video, .proj3video, .proj4video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -162,14 +174,14 @@ hr {
 }
 
 /* Header template, made for pseudo scramble text animation */
-.projheaderwrapper, .projheaderwrapper2, .projheaderwrapper3 {
+.projheaderwrapper, .projheaderwrapper2, .projheaderwrapper3, .projheaderwrapper4  {
   height: clamp(18px,4vw,40px);
   margin-left: 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-.projheader, .projheader2, .projheader3 {
+.projheader, .projheader2, .projheader3, .projheader4{
   font-family: 'SpaceGames', sans-serif;
   font-size: clamp(16px,4vw,40px);
   color: rgb(228, 243, 255);
@@ -187,18 +199,6 @@ hr {
   justify-content: center;
   align-items: center;
 }
-
-.sectioncover1, .sectioncover2, .sectioncover3, .sectioncover4 {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  padding: 0%;
-  background-color:rgb(228, 243, 255);
-  position: absolute;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 1;
-}
 .sectionb {
   height: 60px;
   width:100vw;
@@ -208,7 +208,7 @@ hr {
   overflow: hidden;
   z-index: 2;
 }
-.sectionb2, .sectionb3, .sectionb4 {
+.sectionb2, .sectionb3, .sectionb4, .sectionb5 {
   width:100vw;
   height: auto;
   background-color: rgb(0, 30, 89);
@@ -216,6 +216,19 @@ hr {
   justify-content: center;
   align-items: center;
   z-index: 2;
+}
+/* end */
+
+.sectioncover1, .sectioncover2, .sectioncover3 {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  padding: 0%;
+  background-color:rgb(228, 243, 255);
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 .section {
   width: 100%;
@@ -367,7 +380,8 @@ hr {
   display: inline-flex;
   margin-right: 5px;
 }
-.button1, .button2, .button3 {
+/* projects */
+.button1, .button2, .button3, .button4 {
   font-family: Fussion;
   font-size: 12px;
   height: 25px;
@@ -383,3 +397,4 @@ hr {
   border-color: rgb(146, 186, 255);
   background-color: rgb(16, 57, 139);
 }
+/* end */
