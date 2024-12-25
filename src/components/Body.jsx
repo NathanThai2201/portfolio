@@ -296,7 +296,7 @@ export const Body = () => {
           stagger: {
             each: 0.2
           },scrollTrigger: {
-              trigger: ".sectionb4",
+              trigger: ".sectionb5",
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
@@ -436,7 +436,7 @@ export const Body = () => {
                   <div className="proj3content">
                     <div className="proj3text">
                       {'An image processing app that is able to chain different image effects and algorithms. Able to work on batch images and animations.'.split(' ').map((word, index) => (
-                        <div className="word9" key={index}>
+                        <div className="word8" key={index}>
                           {word + '\u00A0'}
                         </div>
                       ))}
@@ -464,7 +464,7 @@ export const Body = () => {
                   <div className="proj4content">
                     <div className="proj4text">
                       {'Audio plugins for your varied production and sound engineering needs. From modified sinefold distortion to white noise and sub oscillator sidechainer with high levels of customizability.'.split(' ').map((word, index) => (
-                        <div className="word8" key={index}>
+                        <div className="word9" key={index}>
                           {word + '\u00A0'}
                         </div>
                       ))}
