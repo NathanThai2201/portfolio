@@ -1,16 +1,16 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { DashBored } from './pages/DashBored'
 import { Home } from './pages/Home'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        {/*  For testing, use "http://localhost:3000/#/dashbored" */}
-        <Route path="/dashbored" element={<DashBored />} />
+        <Route index element = {<Home />}/>
         <Route path="/" element={<Home />} />
+        <Route path="/dashbored" element={<DashBored />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
