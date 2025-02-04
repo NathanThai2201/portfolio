@@ -308,7 +308,7 @@ export const Body = () => {
           borderRadius:"400px",
           duration:2,
           scrollTrigger: {
-              trigger: ".sectionb4",
+              trigger: ".sectionb5",
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,

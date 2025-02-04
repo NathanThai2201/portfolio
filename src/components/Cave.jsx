@@ -12,9 +12,9 @@ export function Cave(props) {
       const scrollHeight = window.innerHeight;
       const scrollPercent = scrollY / scrollHeight;
 
-    
+      // tweak this first param for scroll amount
       if (groupRef.current) {
-        groupRef.current.position.y = scrollPercent * 1 +0.1;
+        groupRef.current.position.y = scrollPercent * 0.1 +0.1;
       }
     };
 
