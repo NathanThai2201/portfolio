@@ -42,7 +42,7 @@ export const DashBoredCards = () => {
               randomCardNumber = 1;
           } else if (randomRarityNumber >= 400 && randomRarityNumber <= 3399) {
               rarity = 2;
-              randomCardNumber = 1;
+              randomCardNumber = Math.floor(Math.random() * 2) + 1; // 1-2
           } else {
               rarity = 1;
               randomCardNumber = Math.floor(Math.random() * 2) + 1; // 1-2
