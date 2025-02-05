@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import baffle from 'baffle';
 import { DashBoredCards } from "../components/DashBoredCards";
 import { DashBoredBulletin } from "../components/DashBoredBulletin";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -207,6 +208,9 @@ export function DashBored() {
   }, {});
   return (
       <div className ="container2">
+        <Link to="/">
+              <button className="backButton">back</button>
+        </Link>
         <section className="sectionscroll"> 
           <div className="txt1scroll">
             <div className="scrollText"> - SCROLL DOWN - </div>

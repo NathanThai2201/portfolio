@@ -23,6 +23,16 @@
   padding: 0%;
   background-color:rgb(16, 57, 139);
 }
+.backButton{  
+  font-family: Electrolize;
+  font-size: 15px;
+  position:absolute;
+  color: rgb(8, 87, 223);
+  margin-left: 0px;
+  margin-top: 0px;
+  cursor:pointer;
+  z-index: 3;
+}
 .txtDashboredMainTitle1{  
   font-family: Sterion;
   font-size: clamp(0px,10vw,100px);

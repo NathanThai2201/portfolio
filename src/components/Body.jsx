@@ -8,6 +8,7 @@ import { ProjHeader } from "./ProjHeader";
 import { ProjHeader2 } from "./ProjHeader2";
 import { ProjHeader3 } from "./ProjHeader3";
 import { ProjHeader4 } from "./ProjHeader4";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -190,6 +191,16 @@ export const Body = () => {
               end: "bottom 70.67%",
               scrub: false,
             }, delay: 0.3,
+        });
+        gsap.from(".dashboredButton", {
+          opacity:0,
+          scaleX:0,
+          ease:"elastic.inOut",
+          scrollTrigger: {
+              trigger: ".sectionbdashbored",
+              start: "top 70.67%",
+              // end: "bottom 100%",
+            }, delay: 0.1,
         });
         gsap.from(".proj1videowrapper", {
           scale:0,
@@ -376,6 +387,11 @@ export const Body = () => {
                           })
                   }
               </div>
+            </section>
+            <section className="sectionbdashbored">
+            <Link to="/dashbored">
+              <button className="dashboredButton">DASHBORED</button>
+            </Link>
             </section>
             <section className="sectionb2">
               <ProjHeader text="portfolio websites"/>
