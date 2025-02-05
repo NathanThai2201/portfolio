@@ -28,6 +28,9 @@
   font-size: 15px;
   position:absolute;
   color: rgb(8, 87, 223);
+  background-color: rgb(228, 243, 255);
+  border: 1px solid rgb(16, 57, 139);
+  border-radius: 10px;
   margin-left: 0px;
   margin-top: 0px;
   cursor:pointer;
