@@ -12,6 +12,10 @@
   font-family: Fussion;
   src: url(/fonts/Fussion-3zgAz.ttf);
 }
+@font-face {
+  font-family: Electrolize;
+  src: url(/fonts/Electrolize-Regular.ttf);
+}
 .container2 {
   position: relative;
   width: 100vw;
@@ -54,7 +58,6 @@
   z-index: 1;
 }
 .sectionDashboredCardBlock{
-  height: 110px;
   width:100vw;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -83,7 +86,7 @@
   color: rgb(16, 57, 139);
 }
 .txt1Post{  
-  font-family: 'Orbitron', sans-serif;
+  font-family: Electrolize;
   font-size: 15px;
   color: rgb(8, 87, 223);
   padding:10px;
@@ -107,5 +110,55 @@
   flex-wrap: wrap;
   justify-content: left;
   align-items: center;
+}
+.cardButton{
+  font-family: Orbitron;
+  font-size: 17px;
+  margin-bottom: 10px;
+  height: 30px;
+  color: rgb(16, 57, 139);
+  background-color: rgb(228, 243, 255);
+  border: 1px solid rgb(16, 57, 139);
+  transition: transform 0.3s ease-out;
+  border-radius:10px;
+}
+.cardButton:hover{
+  transform:scale(1.1);
+}
+.cardButtonWrapper{
+  display:flex;
+  justify-content: center;
+}
+.cardImageContainer{
+  width:100vw;
+  display:flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+.cardWrapper{
+  height:19.3vw;
+  margin: 1px;
+  position:relative;
+  transition: transform 0.3s ease-out;
+}
+.cardWrapper:hover{
+  transform: translateY(-7px);
+}
+.card{
+  height:19.3vw;
+  border: 1px solid rgb(16, 57, 139);
+  border-radius:10px;
+}
+.cardCount{
+  bottom:0px;
+  right:0px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  display:flex;
+  position:absolute;
+  justify-content: right;
+  color: rgb(16, 57, 139);
 }
 /* end */

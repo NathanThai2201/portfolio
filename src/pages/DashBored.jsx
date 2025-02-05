@@ -33,7 +33,7 @@ export function DashBored() {
       gsap.fromTo('.dashBoredImg1', {
         scale:0,
         opacity:0,
-        y:'-=6%',
+        y:'-=7%',
         x:'-=12%',
       },{
         scale:0.69,
@@ -216,9 +216,7 @@ export function DashBored() {
         <section className="sectionDashboredwtb">
           <div className="txtDashboredMainTitle1">d</div>
           <div className="txtDashboredMainTitle2">as</div>
-
           <div className="txtDashboredMainTitle3">h</div>
-
           <div className="txtDashboredMainTitle4">b</div>
           <div className="txtDashboredMainTitle5">o</div>
           <div className="txtDashboredMainTitle6">red</div>
