@@ -220,18 +220,14 @@ hr {
 }
 .dashboredButton{
   font-family: Sterion;
-  width: 100vw;
+  width: 80vw;
   font-size: clamp(40px,10vw,100px);
   color: rgb(146, 186, 255);
-  background-color: rgb(228, 243, 255);
-  border: 1px solid rgb(16, 57, 139);
-  transition: transform 0.3s ease-out;
+  background-color: rgb(0, 30, 89);
+  border: 1px solid rgb(146, 186, 255);
   border-radius:10px;
   cursor: pointer;
   z-index: 3;
-}
-.dashboredButton:hover{
-  transform:scale(1.1);
 }
 .sectionb2, .sectionb3, .sectionb4, .sectionb5 {
   width:100vw;

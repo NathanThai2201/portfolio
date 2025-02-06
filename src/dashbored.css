@@ -23,18 +23,68 @@
   padding: 0%;
   background-color:rgb(16, 57, 139);
 }
-.backButton{  
-  font-family: Electrolize;
-  font-size: 15px;
-  position:absolute;
-  color: rgb(8, 87, 223);
-  background-color: rgb(228, 243, 255);
-  border: 1px solid rgb(16, 57, 139);
-  border-radius: 10px;
-  margin-left: 0px;
-  margin-top: 0px;
-  cursor:pointer;
+.navbar {
+  display: flex;
+  background-color:rgb(0, 30, 89);
+  justify-content:space-between;
+  align-items: center;
+  padding: 5px 5px;
   z-index: 3;
+}
+.navbarLeft {
+  display: flex;
+  z-index: 4;
+}
+.navbarRight {
+  display: flex;
+  z-index: 4;
+}
+.genericButton{  
+  font-family: 'Orbitron';
+  font-size: 15px;
+  width: 100px;
+  color: rgb(228, 243, 255);
+  background-color: rgb(0, 30, 89);
+  border: 1px solid rgb(228, 243, 255);
+  border-radius:5px;
+  top: 0%;
+  cursor:pointer;
+}
+.txtLoginSignup {
+  font-family: Sterion;
+  font-size: clamp(50px,5vw,60px);
+  color: rgb(146, 186, 255);
+  padding:5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  z-index: 2;
+}
+.txtLoginSignupError{  
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px;
+  display:flex;
+  justify-content: center;
+  color: rgb(167, 199, 255);
+  margin-right: 10px;
+  margin-top: 0px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:20px;
+  padding:10px;
+}
+.sectionLoginSignup {
+  width:300px;
+  border-radius:20px;
+  background-color: rgb(228, 243, 255);
+  padding: 15px;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
 }
 .txtDashboredMainTitle1{  
   font-family: Sterion;
@@ -74,6 +124,14 @@
   width:100vw;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  background-color: rgb(228, 243, 255);
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.sectionDashboredTypingBlock{
+  width:100vw;
   background-color: rgb(228, 243, 255);
   padding: 5px;
   justify-content: center;
@@ -148,6 +206,68 @@
   justify-content: left;
   flex-wrap: wrap;
 }
+
+/* Typing Game start */
+
+.typingcontainer{
+  width:100vw;
+  margin:0px;
+  padding:30px;
+  position:relative;
+  display:inline-block;
+  background-color: rgb(228, 243, 255);
+}
+.test {
+  user-select:none;
+}
+input.typinginput{
+  width:100%;
+  height:inherit;
+  z-index: 1;
+  position: relative;
+}
+span {
+  font-family: Electrolize;
+  color: rgb(16, 57, 139);
+  font-size: 20px;
+  user-select: none;
+  cursor:text;
+}
+span.active {
+  border-left: 2px solid rgb(8, 87, 223);
+}
+span.correct {
+  color: rgb(0, 62, 88);
+  background-color:  rgb(125, 214, 206);
+}
+span.wrong {
+  color: rgb(106, 0, 0);
+  background-color: rgb(224, 123, 247);;
+}
+.stats {
+  font-family: Electrolize;
+  color: rgb(16, 57, 139);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.typingResetButton{
+  font-family: Electrolize;
+  font-size: 15px;
+  color: rgb(8, 87, 223);
+  background-color: rgb(228, 243, 255);
+  border: 1px solid rgb(16, 57, 139);
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-top: 0px;
+  cursor:pointer;
+  z-index: 3;
+}
+
+
+
+/* Typing Game end */
+
 .cardWrapper{
   height:19.3vw;
   margin: 1px;

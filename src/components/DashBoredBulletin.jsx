@@ -16,33 +16,18 @@ export const DashBoredBulletin = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("API Response:", data);
+        // console.log("API Response:", data);
         setPosts(Array.isArray(data.data) ? data.data : []);
       })
       .catch((error) => console.error("Error fetching posts:", error));
   }, []);  
-    useGSAP(() => {
-    gsap.from('.word2', {
-      y: 0,
-      opacity: 0,
-      stagger: {
-          each: 0.01,
-          from: "random"
-      },
-      scrollTrigger: {
-          trigger: ".sectionDashboredBulletinBlock",
-          start: "top 80.67%",
-          end: "bottom 80.67%",
-          scrub: false,
-      },
-  });}, []);
     return (
         <div>
             <section className="sectionDashboredBulletinBlock">   
             <div className="txt1">
               <div className="horizontalTextMap">
                 {' - BULLETIN - '.split('').map((char, index) => (
-                  <div className="word2" key={index}>
+                  <div className="word3" key={index}>
                       {char === ' ' ? '\u00A0' : char}
                   </div>
                 ))}

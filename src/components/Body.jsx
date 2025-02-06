@@ -195,11 +195,12 @@ export const Body = () => {
         gsap.from(".dashboredButton", {
           opacity:0,
           scaleX:0,
+          duration:1,
           ease:"elastic.inOut",
           scrollTrigger: {
               trigger: ".sectionbdashbored",
               start: "top 70.67%",
-              // end: "bottom 100%",
+              end: "bottom 70.67%",
             }, delay: 0.1,
         });
         gsap.from(".proj1videowrapper", {

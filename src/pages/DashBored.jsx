@@ -1,23 +1,44 @@
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
 import baffle from 'baffle';
 import { DashBoredCards } from "../components/DashBoredCards";
 import { DashBoredBulletin } from "../components/DashBoredBulletin";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export function DashBored() {
-
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
   let tl = gsap.timeline({repeat:-1})
   let tl2 = gsap.timeline()
   let tl3 = gsap.timeline()
   let tl4 = gsap.timeline()
   let tl5 = gsap.timeline()
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        navigate("/login");
+        return;
+    }
+    const id = localStorage.getItem("id");
+    const username = localStorage.getItem("username");
+    if (id && username) {
+      setUser({ id, username });
+    }
+  console.log("user:", { id, username }); 
+  }, [navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    localStorage.removeItem("username");
+    navigate("/login");
+  };
   useEffect(() => {
     document.title = 'DashBored';
   }, []);
@@ -208,15 +229,22 @@ export function DashBored() {
   }, {});
   return (
       <div className ="container2">
-        <Link to="/">
-              <button className="backButton">back</button>
-        </Link>
+        <div className="navbar">
+          <div className="navbarLeft">
+            <Link to="/">
+                  <button className="genericButton">BACK</button>
+            </Link>
+          </div>
+          <div className="navbarRight">
+            <button className="genericButton" onClick={handleLogout}>LOG OUT</button>
+          </div>
+        </div>
         <section className="sectionscroll"> 
           <div className="txt1scroll">
             <div className="scrollText"> - SCROLL DOWN - </div>
           </div> 
         </section>
-        <section className="sectionb2" style={{height:30}}></section>
+        <section className="sectionb2" style={{height:10}}></section>
         <section className="sectionDashboredwtb">
           <div className="txtDashboredMainTitle1">d</div>
           <div className="txtDashboredMainTitle2">as</div>
