@@ -65,7 +65,7 @@ export const DashBoredCards = () => {
             randomCardNumber = 1;
         } else if (randomRarityNumber >= 2 && randomRarityNumber <= 47) {
             rarity = 4;
-            randomCardNumber = 1;
+            randomCardNumber = Math.floor(Math.random() * 2) + 1;
         } else if (randomRarityNumber >= 48 && randomRarityNumber <= 399) {
             rarity = 3;
             randomCardNumber = Math.floor(Math.random() * 3) + 1;
@@ -74,7 +74,7 @@ export const DashBoredCards = () => {
             randomCardNumber = Math.floor(Math.random() * 2) + 1;
         } else {
             rarity = 1;
-            randomCardNumber = Math.floor(Math.random() * 2) + 1;
+            randomCardNumber = Math.floor(Math.random() * 3) + 1;
         }
     
         const randomCardSrc = `./images/cards/${rarity}_${randomCardNumber}.png`;
