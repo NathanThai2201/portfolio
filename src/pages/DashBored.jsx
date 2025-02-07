@@ -30,7 +30,7 @@ export function DashBored() {
     if (id && username) {
       setUser({ id, username });
     }
-  console.log("user:", { id, username }); 
+  // console.log("user:", { id, username }); 
   }, [navigate]);
 
   const handleLogout = () => {

@@ -37,7 +37,7 @@ export const DashBoredCards = () => {
             if (result && result.success && result.data && typeof result.data === "object") {
                 setCardArray(result.data.cardArray || []);
                 setId(result.data._id);
-                console.log("Updated ID:", result.data._id);
+                // console.log("Updated ID:", result.data._id);
             } else {
                 console.error("Unexpected response format:", result);
                 setCardArray([]);
@@ -56,25 +56,26 @@ export const DashBoredCards = () => {
     }, []);
     
     const generateRandomCard = async () => {
+        let amounts = [5,2,4,2,2]
         let randomCardNumber;
         const randomRarityNumber = Math.floor(Math.random() * 10000) + 1;
         let rarity;
     
         if (randomRarityNumber === 1) {
             rarity = 5;
-            randomCardNumber = Math.floor(Math.random() * 2) + 1;
+            randomCardNumber = Math.floor(Math.random() * amounts[4]) + 1;
         } else if (randomRarityNumber >= 2 && randomRarityNumber <= 47) {
             rarity = 4;
-            randomCardNumber = Math.floor(Math.random() * 2) + 1;
+            randomCardNumber = Math.floor(Math.random() * amounts[3]) + 1;
         } else if (randomRarityNumber >= 48 && randomRarityNumber <= 399) {
             rarity = 3;
-            randomCardNumber = Math.floor(Math.random() * 4) + 1;
+            randomCardNumber = Math.floor(Math.random() * amounts[2]) + 1;
         } else if (randomRarityNumber >= 400 && randomRarityNumber <= 3399) {
             rarity = 2;
-            randomCardNumber = Math.floor(Math.random() * 2) + 1;
+            randomCardNumber = Math.floor(Math.random() * amounts[1]) + 1;
         } else {
             rarity = 1;
-            randomCardNumber = Math.floor(Math.random() * 4) + 1;
+            randomCardNumber = Math.floor(Math.random() * amounts[0]) + 1;
         }
     
         const randomCardSrc = `./images/cards/${rarity}_${randomCardNumber}.png`;
@@ -100,7 +101,7 @@ export const DashBoredCards = () => {
     
     const updateCardArray = async (updatedCardArray,id) => {
         try {
-            console.log("a",cardArray,updatedCardArray,id);
+            // console.log("a",cardArray,updatedCardArray,id);
             const response = await fetch(`https://dashboredjsapi.onrender.com/api/cardarrays/${id}`, {
                 method: "PUT",
                 headers: {
