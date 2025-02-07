@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
 import StarCanvas from "./StarCanvas";
 import { ProjHeader } from "./ProjHeader";
+import { ProjHeader1 } from "./ProjHeader1";
 import { ProjHeader2 } from "./ProjHeader2";
 import { ProjHeader3 } from "./ProjHeader3";
 import { ProjHeader4 } from "./ProjHeader4";
@@ -69,15 +70,15 @@ export const Body = () => {
             },delay: 0.4,     
           });
         gsap.from('.word4', {
-        y: 20,
-        opacity: 0,
-        duration: 1.2,
-        scrollTrigger: {
-            trigger: ".sectionwMainTitle2",
-            start: "top 80.67%",
-            end: "bottom 80.67%",
-            scrub: false,
-        },delay: 0.3,     
+          y: 20,
+          opacity: 0,
+          duration: 1.2,
+          scrollTrigger: {
+              trigger: ".sectionwMainTitle2",
+              start: "top 80.67%",
+              end: "bottom 80.67%",
+              scrub: false,
+          },delay: 0.3,     
         });
         gsap.from('.img2', {
             opacity: 0,
@@ -192,17 +193,44 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.3,
         });
-        gsap.from(".dashboredButton", {
-          opacity:0,
-          scaleX:0,
-          duration:1,
-          ease:"elastic.inOut",
+        gsap.from(".projvideowrapper", {
+          scale:0,
+          ease: "expo.out",
+          borderRadius:"400px",
+          duration:2,
           scrollTrigger: {
-              trigger: ".sectionbdashbored",
+              trigger: ".sectionb2",
               start: "top 70.67%",
               end: "bottom 70.67%",
-            }, delay: 0.1,
+              scrub: false,
+            }, delay: 0.2,
         });
+        gsap.from(".word10", {
+          y:20,
+          opacity:0,
+          duration:1,
+          stagger: {
+            each: 0.01
+          },scrollTrigger: {
+              trigger: ".sectionb1",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0,
+        });
+        gsap.from(".button", {
+          scale:0,
+          duration:0.4,
+          stagger: {
+            each: 0.2
+          },scrollTrigger: {
+              trigger: ".sectionb1",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.3,
+        });
+
         gsap.from(".proj1videowrapper", {
           scale:0,
           ease: "expo.out",
@@ -389,13 +417,35 @@ export const Body = () => {
                   }
               </div>
             </section>
-            <section className="sectionbdashbored">
-            <Link to="/dashbored">
-              <button className="dashboredButton">DASHBORED</button>
-            </Link>
+
+            <section className="sectionb1">
+              <ProjHeader text="DashBored"/>
+              <div>
+                <div className="projwrapper">
+                  <a className="projvideowrapper" href="https://nathan-thai.com/#/dashbored/">
+                    <video className="proj1video" src="./videos/proj0.mp4"/>
+                  </a>
+                  <div className="projcontent">
+                    <div className="projtext">
+                      {'A fun typing game/gacha card collection game. Built with the MERN stack, cross origin resource sharing and advanced security measures like JWT and bcrypt. '.split(' ').map((word, index) => (
+                        <div className="word10" key={index}>
+                          {word + '\u00A0'}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="projtech">
+                      <div className="button" key={1}>Javascript</div>
+                      <div className="button" key={2}>GSAP</div>
+                      <div className="button" key={3}>React.js</div>
+                      <div className="button" key={4}>Express.js</div>
+                      <div className="button" key={4}>MongoDB</div>
+                    </div>
+                  </div> 
+                </div>
+              </div>
             </section>
             <section className="sectionb2">
-              <ProjHeader text="portfolio websites"/>
+              <ProjHeader1 text="portfolio websites"/>
               <div>
                 <div className="proj1wrapper">
                   <div className="proj1content">
