@@ -2,12 +2,17 @@ import gsap from "gsap";
 import { useEffect, useState } from "react";
 import { useGSAP } from '@gsap/react';
 import { Typing } from "./Typing";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const DashBoredCards = () => {
+    const [WPM, setWPM] = useState(0);
     const [clickCount, setClickCount] = useState(0);
     const [cardArray, setCardArray] = useState([]);
     const [loading, setLoading] = useState(true);
     const [id, setId] = useState(0);
+    const [sortOption, setSortOption] = useState("default");
+    const totalCardsCollected = cardArray.reduce((sum, card) => sum + card.count, 0);
+
 
     useGSAP(() => {
         gsap.from('.word3', {
@@ -78,7 +83,11 @@ export const DashBoredCards = () => {
             rarity = 1;
             randomCardNumber = Math.floor(Math.random() * amounts[0]) + 1;
         }
-    
+        
+        // // Force cheating to get cards
+        // randomCardNumber = Math.floor(Math.random() * amounts[3]) + 1;
+        // rarity = 4;
+
         const randomCardSrc = `./images/cards/${rarity}_${randomCardNumber}.png`;
     
         setCardArray(prevArray => {
@@ -134,16 +143,64 @@ export const DashBoredCards = () => {
     const handleClick = () => {
         setClickCount(prevCount => prevCount + 1);
     };
-
-    const handleTypingComplete = () => {
+    const notify = () => {
+        let notifytext = "Good! You earned 2 cards!";
+        if (WPM>=70){
+            notifytext = "Amazing! You earned 3 cards!";
+        }
+        if (WPM>=90){
+            notifytext = "Exceptional! You earned 4 cards!";
+        }
+        if (WPM>=110){
+            notifytext = "Speed Demon! You earned 5 cards!";
+        }
+            toast(notifytext, {
+                style: {
+                    fontFamily:"Electrolize",
+                    backgroundColor: "rgb(239, 247, 254)",
+                    color: "rgb(16, 57, 139)",
+                    borderRadius: "8px",
+                    padding: "10px",
+                }
+            });
+        };
+    const handleTypingComplete = async () => {
         //default generate 2 cards
-        generateRandomCard();
-        generateRandomCard();
+        await generateRandomCard();
+        await generateRandomCard();
+
+        //WPM bonuses
+        if (WPM>=70){
+            await generateRandomCard();
+        }
+        if (WPM>=90){
+            await generateRandomCard();
+        }
+        if (WPM>=100){
+            await generateRandomCard();
+        }
+        console.log(WPM);
+        notify();
     };
 
+    const sortedCards = [...cardArray].sort((a, b) => {
+        if (sortOption === "name") {
+            return a.src.localeCompare(b.src);
+        }
+        return 0;
+    });
+        
     return (
         <div>
-            <Typing onComplete={handleTypingComplete} /> 
+             <ToastContainer
+                position="bottom-right"
+                icon="none"
+                autoClose={2000}
+                hideProgressBar={true}/>
+            <Typing 
+                onComplete={handleTypingComplete}
+                onWPMChange={setWPM} 
+            /> 
             <div style={{ height: 1 }}></div>
             <section className="sectionDashboredCardBlock">
                 <div className="txt1">
@@ -156,11 +213,24 @@ export const DashBoredCards = () => {
                     </div>
                 </div>
                 <hr />
-                <div className="cardButtonWrapper">
-                    {/* <button className="cardButton" onClick={handleClick}>{clickCount} clicks</button> */}
+                <div className="aboveCards">
+                    <div className="cardButtonWrapper">
+                        {/* <button className="cardButton" onClick={handleClick}>{clickCount} clicks</button> */}
+                    </div>
+                    <div className="sortOptions">
+                        <label>Sort by: </label>
+                        <select className ="sorter" onChange={(e) => setSortOption(e.target.value)} value={sortOption}>
+                            <option value="default">DATE</option>
+                            <option value="name">RARITY</option>
+                        </select>
+                    </div>
+                    <div>
+                         Total Cards Collected: {totalCardsCollected}
+                    </div>
+                    <div></div>
                 </div>
                 <div className="cardImageContainer">
-                    {cardArray.map((card, index) => (
+                    {sortedCards.map((card, index) => (
                         <div key={index} className="cardWrapper">
                             <p className="cardCount">x{card.count}</p>
                             <img className="card" src={card.src} alt="none" />

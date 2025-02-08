@@ -182,6 +182,24 @@
   justify-content: left;
   align-items: center;
 }
+
+.aboveCards{
+  display:flex;
+  justify-content: space-between;
+  font-family: Orbitron;
+  font-size: 15px;
+  margin-bottom: 10px;
+  height: 20px;
+  color: rgb(16, 57, 139);
+  background-color: rgb(228, 243, 255);
+  transition: transform 0.3s ease-out;
+}
+/* .sortOptions{} */
+.sorter{
+  font-family: Orbitron;
+  color: rgb(16, 57, 139);
+}
+
 .cardButton{
   font-family: Orbitron;
   font-size: 17px;
@@ -274,6 +292,12 @@ span.wrong {
   position:relative;
   transition: transform 0.3s ease-out;
 }
+@media (max-width: 768px) {
+  .cardWrapper {
+    height:31.5vw;
+    width: 31.5vw;
+  }
+}
 .cardWrapper:hover{
   transform: translateY(-7px);
 }
@@ -281,6 +305,12 @@ span.wrong {
   height:19.3vw;
   border: 1px solid rgb(16, 57, 139);
   border-radius:10px;
+}
+@media (max-width: 768px) {
+  .card {
+    height: 31.5vw;
+    width: 31.5vw;
+  }
 }
 .cardCount{
   bottom:0px;

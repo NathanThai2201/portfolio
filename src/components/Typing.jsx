@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export const Typing = ({onComplete}) => {
-    const handleGameFinish = () => {
-        if (onComplete) onComplete(); // Notify parent component
-    };
+export const Typing = ({onComplete, onWPMChange}) => {
 
     const maxTime = 60;
     const [timeLeft, setTimeLeft] = useState(maxTime);
@@ -74,6 +71,7 @@ export const Typing = ({onComplete}) => {
         setTimeLeft(maxTime);
         setcharIndex(0);
         setWPM(0);
+        setMistakes(0);
         setCorrectWrong(Array(charRefs.current.length).fill(''));
         inputRef.current.value = "";
         inputRef.current.focus();
@@ -85,7 +83,7 @@ export const Typing = ({onComplete}) => {
         charRefs.current = [];
 
         if (finished == 1) {
-            console.log("finished");
+            // console.log("finished");
             handleGameFinish();
         }
     }
@@ -120,6 +118,16 @@ export const Typing = ({onComplete}) => {
             resetGame(0);
         }
     }
+
+    // handle sending data upstream
+    const handleGameFinish = () => {
+        if (onComplete) onComplete();
+    };
+    useEffect(() => {
+        if (onWPMChange) {
+            onWPMChange(WPM);
+        }
+    }, [WPM, onWPMChange]);
     
     return(
         <div>
