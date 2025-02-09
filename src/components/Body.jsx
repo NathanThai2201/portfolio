@@ -199,7 +199,7 @@ export const Body = () => {
           borderRadius:"400px",
           duration:2,
           scrollTrigger: {
-              trigger: ".sectionb2",
+              trigger: ".sectionb1",
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
@@ -423,7 +423,7 @@ export const Body = () => {
               <div>
                 <div className="projwrapper">
                   <a className="projvideowrapper" href="https://nathan-thai.com/#/dashbored/">
-                    <video className="proj1video" src="./videos/proj0.mp4"/>
+                    <video className="projvideo" src="./videos/proj0.mp4"/>
                   </a>
                   <div className="projcontent">
                     <div className="projtext">

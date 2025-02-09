@@ -62,7 +62,7 @@ export const DashBoredCards = () => {
     
     const generateRandomCard = async () => {
         // amounts: rarity from 1 -> 5
-        let amounts = [5,4,4,3,2]
+        let amounts = [6,6,5,3,3]
         let randomCardNumber;
         const randomRarityNumber = Math.floor(Math.random() * 10000) + 1;
         let rarity;
@@ -176,7 +176,7 @@ export const DashBoredCards = () => {
         if (WPM>=90){
             await generateRandomCard();
         }
-        if (WPM>=100){
+        if (WPM>=110){
             await generateRandomCard();
         }
         console.log(WPM);
