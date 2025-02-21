@@ -84,9 +84,9 @@ export const DashBoredCards = () => {
             randomCardNumber = Math.floor(Math.random() * amounts[0]) + 1;
         }
         
-        // Force cheating to get cards
-        randomCardNumber = Math.floor(Math.random() * amounts[2]) + 1;
-        rarity = 3;
+        // // Force cheating to get cards
+        // randomCardNumber = Math.floor(Math.random() * amounts[2]) + 1;
+        // rarity = 3;
 
         const randomCardSrc = `./images/cards/${rarity}_${randomCardNumber}.png`;
     
