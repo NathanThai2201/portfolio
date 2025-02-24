@@ -50,6 +50,10 @@
   top: 0%;
   cursor:pointer;
 }
+
+/* LOGIN/SIGNUP */
+
+
 .txtLoginSignup {
   font-family: Sterion;
   font-size: clamp(50px,5vw,60px);
@@ -77,15 +81,62 @@
   margin:20px;
   padding:10px;
 }
-.sectionLoginSignup {
-  width:300px;
-  border-radius:20px;
-  background-color: rgb(228, 243, 255);
-  padding: 15px;
-  margin: 15px;
+.containerLoginSignup {
+  height:50vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.sectionLoginSignup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  border-radius: 20px;
+  background-color: rgb(228, 243, 255);
+  padding: 15px;
+  margin: auto; /* Ensures it's centered */
+}
+.sectionLoginSignuptxt{
+  position: relative;
+  height: clamp(0px,150px);
+  width:100vw;
+  background-image: linear-gradient(rgb(0, 30, 89),rgba(0, 0, 0, 0));
+  /* background-color: rgb(16, 57, 139); */
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+.loginSignupImageContainer1{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 0%;
+  background-image: url("/images/login.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-position: 50%;
+  background-color:rgb(16, 57, 139);
+}
+.loginSignupImageContainer2{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 0%;
+  background-image: url("/images/signup.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-position: 50%;
+  background-color:rgb(16, 57, 139);
+}
+
+
+
 .txtDashboredMainTitle1{  
   font-family: Sterion;
   font-size: clamp(0px,10vw,100px);

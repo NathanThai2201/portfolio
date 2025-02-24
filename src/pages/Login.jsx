@@ -26,20 +26,29 @@ export function Login() {
     };
 
     return (
-        <div className ="container2">
-            <div className = "sectionDashboredwtb">
+        <div className ="loginSignupImageContainer1">
+            <div className="navbar">
+                <div className="navbarLeft">
+                    <Link to="/">
+                        <button className="genericButton">BACK</button>
+                    </Link>
+                </div>
+            </div>
+            <div className = "sectionLoginSignuptxt">
                 <div className="txtLoginSignup">Log In</div>
             </div>
-            <div className = "sectionLoginSignup">
-                {error && <p className="txtLoginSignupError">{error}</p>}
-                <form className = "form" onSubmit={handleSubmit}>
-                    <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
-                    <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-                    <button className="genericButton" type="submit">LOG IN</button>
-                    <Link to="/signup">
-                    <button className="genericButton">SIGN UP</button>
-                    </Link>
-                </form>
+            <div className ="containerLoginSignup">
+                <div className = "sectionLoginSignup">
+                    {error && <p className="txtLoginSignupError">{error}</p>}
+                    <form className = "form" onSubmit={handleSubmit}>
+                        <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
+                        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+                        <button className="genericButton" type="submit">LOG IN</button>
+                        <Link to="/signup">
+                        <button className="genericButton">SIGN UP</button>
+                        </Link>
+                    </form>
+                </div>
             </div>
         </div>
     );
