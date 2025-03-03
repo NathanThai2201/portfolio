@@ -67,7 +67,7 @@ export const DashBoredCards = () => {
             let updatedArray = [...prevArray];
     
             for (let i = 0; i < count; i++) {
-                let amounts = [10, 10, 8, 7, 5];
+                let amounts = [11, 10, 9, 7, 5];
                 let randomCardNumber;
                 const randomRarityNumber = Math.floor(Math.random() * 10000) + 1;
                 let rarity;
@@ -88,8 +88,14 @@ export const DashBoredCards = () => {
                     rarity = 1;
                     randomCardNumber = Math.floor(Math.random() * amounts[0]) + 1;
                 }
+
+
+                // // Force cheating to get cards
+                // randomCardNumber = 9;
+                // rarity = 3;
     
                 const randomCardSrc = `./images/cards/${rarity}_${randomCardNumber}.png`;
+
                 const existingCardIndex = updatedArray.findIndex((card) => card.src === randomCardSrc);
     
                 if (existingCardIndex !== -1) {
