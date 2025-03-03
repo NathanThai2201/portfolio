@@ -60,53 +60,75 @@ export const DashBoredCards = () => {
         fetchCardArray();
     }, []);
     
-    const generateRandomCard = async () => {
-        // amounts: rarity from 1 -> 5
-        let amounts = [10,10,8,7,5]
-        let randomCardNumber;
-        const randomRarityNumber = Math.floor(Math.random() * 10000) + 1;
-        let rarity;
-    
-        if (randomRarityNumber === 1) {
-            rarity = 5;
-            randomCardNumber = Math.floor(Math.random() * amounts[4]) + 1;
-        } else if (randomRarityNumber >= 2 && randomRarityNumber <= 47) {
-            rarity = 4;
-            randomCardNumber = Math.floor(Math.random() * amounts[3]) + 1;
-        } else if (randomRarityNumber >= 48 && randomRarityNumber <= 399) {
-            rarity = 3;
-            randomCardNumber = Math.floor(Math.random() * amounts[2]) + 1;
-        } else if (randomRarityNumber >= 400 && randomRarityNumber <= 3399) {
-            rarity = 2;
-            randomCardNumber = Math.floor(Math.random() * amounts[1]) + 1;
-        } else {
-            rarity = 1;
-            randomCardNumber = Math.floor(Math.random() * amounts[0]) + 1;
-        }
+    const generateRandomCard = async (count = 1) => {
+        let newCardDiscovered = false;
         
-        // // Force cheating to get cards
-        // randomCardNumber = Math.floor(Math.random() * amounts[2]) + 1;
-        // rarity = 3;
-
-        const randomCardSrc = `./images/cards/${rarity}_${randomCardNumber}.png`;
+        setCardArray((prevArray) => {
+            let updatedArray = [...prevArray];
     
-        setCardArray(prevArray => {
-            const updatedArray = [...prevArray];
-            const existingCardIndex = updatedArray.findIndex(card => card.src === randomCardSrc);
+            for (let i = 0; i < count; i++) {
+                let amounts = [10, 10, 8, 7, 5];
+                let randomCardNumber;
+                const randomRarityNumber = Math.floor(Math.random() * 10000) + 1;
+                let rarity;
     
-            if (existingCardIndex !== -1) {
-                updatedArray[existingCardIndex] = {
-                    ...updatedArray[existingCardIndex],
-                    count: updatedArray[existingCardIndex].count + 1
-                };
-            } else {
-                updatedArray.push({ src: randomCardSrc, count: 1 });
+                if (randomRarityNumber === 1) {
+                    rarity = 5;
+                    randomCardNumber = Math.floor(Math.random() * amounts[4]) + 1;
+                } else if (randomRarityNumber >= 2 && randomRarityNumber <= 47) {
+                    rarity = 4;
+                    randomCardNumber = Math.floor(Math.random() * amounts[3]) + 1;
+                } else if (randomRarityNumber >= 48 && randomRarityNumber <= 399) {
+                    rarity = 3;
+                    randomCardNumber = Math.floor(Math.random() * amounts[2]) + 1;
+                } else if (randomRarityNumber >= 400 && randomRarityNumber <= 3399) {
+                    rarity = 2;
+                    randomCardNumber = Math.floor(Math.random() * amounts[1]) + 1;
+                } else {
+                    rarity = 1;
+                    randomCardNumber = Math.floor(Math.random() * amounts[0]) + 1;
+                }
+    
+                const randomCardSrc = `./images/cards/${rarity}_${randomCardNumber}.png`;
+                const existingCardIndex = updatedArray.findIndex((card) => card.src === randomCardSrc);
+    
+                if (existingCardIndex !== -1) {
+                    updatedArray[existingCardIndex] = {
+                        ...updatedArray[existingCardIndex],
+                        count: updatedArray[existingCardIndex].count + 1,
+                    };
+                } else {
+                    updatedArray.push({ src: randomCardSrc, count: 1 });
+                    newCardDiscovered = true;
+                }
             }
     
-            updateCardArray(updatedArray,id);
-    
+            updateCardArray(updatedArray, id);
             return updatedArray;
         });
+    
+        // Notify if at least one new card was discovered
+        if (newCardDiscovered) {
+            toast(
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <img
+                    src={"./images/notifcards2.png"}
+                    alt="New Card"
+                    style={{ width: "40px", height: "auto", borderRadius: "5px" }}
+                />
+                <span style={{ fontSize: "16px"}} >New card discovered!</span>
+            </div>, 
+                {
+                position: "bottom-left",
+                style: {
+                    fontFamily: "Electrolize",
+                        backgroundColor: "rgb(239, 247, 254)",
+                        color: "rgb(16, 57, 139)",
+                        borderRadius: "8px",
+                        padding: "11px",
+                },
+            });
+        }
     };
     
     const updateCardArray = async (updatedCardArray,id) => {
@@ -154,33 +176,36 @@ export const DashBoredCards = () => {
         if (WPM>=110){
             notifytext = "Speed Demon! You earned 5 cards!";
         }
-            toast(notifytext, {
-                style: {
-                    fontFamily:"Electrolize",
-                    backgroundColor: "rgb(239, 247, 254)",
-                    color: "rgb(16, 57, 139)",
-                    borderRadius: "8px",
-                    padding: "10px",
-                }
-            });
+            toast(
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <img
+                        src={"./images/notifcards.png"}
+                        alt="New Card"
+                        style={{ width: "40px", height: "auto", borderRadius: "5px" }}
+                    />
+                    <span style={{ fontSize: "16px"}} >{notifytext}</span>
+                </div>, 
+                    {
+                    position: "bottom-right",
+                    style: {
+                        fontFamily: "Electrolize",
+                        backgroundColor: "rgb(239, 247, 254)",
+                        color: "rgb(16, 57, 139)",
+                        borderRadius: "8px",
+                        padding: "11px",
+                    },
+                });
         };
     const handleTypingComplete = async () => {
-        //default generate 2 cards
-        await generateRandomCard();
-        await generateRandomCard();
-
-        //WPM bonuses
-        if (WPM>=70){
-            await generateRandomCard();
-        }
-        if (WPM>=90){
-            await generateRandomCard();
-        }
-        if (WPM>=110){
-            await generateRandomCard();
-        }
+        let cardCount = 2; // Default card count
+    
+        if (WPM >= 70) cardCount++;
+        if (WPM >= 90) cardCount++;
+        if (WPM >= 110) cardCount++;
+    
         console.log(WPM);
         notify();
+        await generateRandomCard(cardCount);
     };
 
     const sortedCards = [...cardArray].sort((a, b) => {
@@ -195,7 +220,7 @@ export const DashBoredCards = () => {
              <ToastContainer
                 position="bottom-right"
                 icon="none"
-                autoClose={2000}
+                autoClose={3500}
                 hideProgressBar={true}/>
             <Typing 
                 onComplete={handleTypingComplete}
