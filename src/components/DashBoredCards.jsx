@@ -67,7 +67,7 @@ export const DashBoredCards = () => {
             let updatedArray = [...prevArray];
     
             for (let i = 0; i < count; i++) {
-                let amounts = [14, 10, 11, 11, 5];
+                let amounts = [14, 12, 11, 11, 5];
                 let randomCardNumber;
                 const randomRarityNumber = Math.floor(Math.random() * 10000) + 1;
                 let rarity;
