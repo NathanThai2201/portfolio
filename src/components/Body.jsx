@@ -427,7 +427,7 @@ export const Body = () => {
                   </a>
                   <div className="projcontent">
                     <div className="projtext">
-                      {'A fun typing game/gacha card collection game. Built with the MERN stack, cross origin resource sharing and advanced security measures like JWT and bcrypt. '.split(' ').map((word, index) => (
+                      {'A fun typing game/gacha card collection game. Built with the MERN stack, cross origin resource sharing and JWT and bcrypt security. '.split(' ').map((word, index) => (
                         <div className="word10" key={index}>
                           {word + '\u00A0'}
                         </div>

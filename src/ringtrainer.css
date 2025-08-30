@@ -1,0 +1,23 @@
+.ring_wrapper{
+    width: 500px;
+    height:500px;
+    position:relative;
+    background-image:url("./images/rings/ecos_base_circle.png");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    display: flex;
+}
+.correct_circle{
+    position:absolute;
+}
+.moving_circle{
+    position:absolute;
+}
+input.ringinput{
+  /* display:none; */
+  opacity: 0;
+  width:100%;
+  height:inherit;
+  z-index: 1;
+  position: relative;
+}
