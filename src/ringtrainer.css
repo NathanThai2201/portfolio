@@ -7,7 +7,7 @@
     width: 500px;
     height:500px;
     position:relative;
-    background-image:url("./images/rings/ecos_base_circle.png");
+    background-image:url("/images/rings/ecos_base_circle.png");
     background-repeat: no-repeat, repeat;
     background-size: cover;
     display: flex;
