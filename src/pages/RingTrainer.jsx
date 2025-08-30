@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
-
+import { Link, useNavigate } from "react-router-dom";
 
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -87,25 +87,39 @@ export function RingTrainer() {
       setDelay(1);
     }
     if (difficulty === 2) {
-      tl.current.timeScale(3.1);   // hard
+      tl.current.timeScale(3.2);   // hard
       setDelay(1);
     }
   }
   return (
       <div className ="container2">
-        <button className="genericButton" onClick={() => handleClick(0)}>EASY</button>
-        <button className="genericButton" onClick={() => handleClick(1)}>MEDIUM</button>
-        <button className="genericButton" onClick={() => handleClick(2)}>HARD</button>
+        <div className="navbar">
+          <div className="navbarLeft">
+            <Link to="/">
+                  <button className="genericButton">BACK</button>
+            </Link>
+          </div>
+          <div className="navbarRight">
+          </div>
+        </div>
+        <section className="sectionDashboredwtb"></section>
         {/* <div>hello!</div>  */}
-        <div className="ring_wrapper">
-          <img className="correct_circle" src="./images/rings/ecos_correct_circle.png" alt="hello"></img>
-          <img className="moving_circle" src="./images/rings/ecos_moving_circle.png" alt="hello"></img>
-          <input className="ringinput" type="text" ref={inputRef} onChange={handleChange}></input>
+        <div className="ring_game_block">
+          <div className="ring_wrapper">
+            <img className="correct_circle" src="./images/rings/ecos_correct_circle.png" alt="hello"></img>
+            <img className="moving_circle" src="./images/rings/ecos_moving_circle.png" alt="hello"></img>
+            <input className="ringinput" type="text" ref={inputRef} onChange={handleChange}></input>
+          </div>
         </div>
         <div>
-          <div className="txt1scroll">
-            <p>Accuracy: <strong>{accuracy.toFixed(2)}</strong></p>
-          </div>
+          <section className = "ring_stats">
+            <div className="txt1scroll">
+              <p>Accuracy: <strong>{accuracy.toFixed(2)}</strong></p>
+            </div>
+          </section>
+          <button className="genericButton" onClick={() => handleClick(0)}>EASY</button>
+            <button className="genericButton" onClick={() => handleClick(1)}>MEDIUM</button>
+            <button className="genericButton" onClick={() => handleClick(2)}>HARD</button>
         </div>
       </div>
   )
