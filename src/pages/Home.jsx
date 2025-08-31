@@ -20,7 +20,7 @@ export function Home() {
       <Overlay/>
       <Canvas  className="mainCanvas" dpr={[1,1]} gl={{ antialias: false }} camera={{ fov: 18, position: [0.1, 0, 0] }}>
         <fog attach="fog" args={['#FFFFFF', 0, 500]} />
-        {/* <Scene /> */}
+        <Scene />
       </Canvas>
       <Body/>
     </div>
