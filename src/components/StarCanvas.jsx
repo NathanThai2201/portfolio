@@ -56,6 +56,7 @@ class Effect {
   constructor(width, height, seed) {
     this.width = width;
     this.height = height;
+    this.block_dist = Math.sqrt(this.width**2 + this.height**2)/25
     this.particles = [];
     this.random = new LCG(seed);
     this.mouse = {
@@ -71,7 +72,7 @@ class Effect {
   }
 
   init() {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 150; i++) {
       this.particles.push(new Particle(this, this.width, this.height, this.random));
     }
   }
@@ -86,7 +87,7 @@ class Effect {
         const dy = this.particles[i].y - this.particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < this.width/15) {
+        if (dist < this.block_dist) {
           context.beginPath();
           context.moveTo(this.particles[i].x, this.particles[i].y+4);
           context.lineTo(this.particles[j].x, this.particles[j].y+4);

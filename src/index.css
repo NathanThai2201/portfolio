@@ -97,7 +97,8 @@ hr {
   overflow-y:hidden;
 }
 .starplane2{
-  height: 230vh;
+  height: 210vh;
+  width: 210vh;
   position: absolute;
   display: flex;
   overflow-y:hidden;
