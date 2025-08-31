@@ -197,7 +197,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0,
+            }, delay: 0.5,
         });
         gsap.from(".button1", {
           scale:0,
@@ -209,7 +209,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0.3,
+            }, delay: 0.5,
         });
         gsap.from(".projvideowrapper", {
           scale:0,
@@ -234,7 +234,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0,
+            }, delay: 0.5,
         });
         gsap.from(".button", {
           scale:0,
@@ -246,7 +246,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0.3,
+            }, delay: 0.5,
         });
 
         gsap.from(".proj1videowrapper", {
@@ -272,7 +272,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0,
+            }, delay: 0.5,
         });
         gsap.from(".button2", {
           scale:0,
@@ -284,7 +284,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0.3,
+            }, delay: 0.5,
         });
         gsap.from(".proj2videowrapper", {
           scale:0,
@@ -309,7 +309,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0,
+            }, delay: 0.5,
         });
         gsap.from(".button3", {
           scale:0,
@@ -321,7 +321,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0.3,
+            }, delay: 0.5,
         });
         gsap.from(".proj3videowrapper", {
           scale:0,
@@ -346,7 +346,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0,
+            }, delay: 0.5,
         });
         gsap.from(".button4", {
           scale:0,
@@ -358,7 +358,7 @@ export const Body = () => {
               start: "top 70.67%",
               end: "bottom 70.67%",
               scrub: false,
-            }, delay: 0.3,
+            }, delay: 0.5,
         });
         gsap.from(".proj4videowrapper", {
           scale:0,

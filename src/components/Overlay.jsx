@@ -57,7 +57,7 @@ export const Overlay = () => {
         gsap.to('.sectioncover1', {
             scaleY: 0,
             transformOrigin: "top",
-            duration: 2,
+            duration: 3,
             ease: "expo.out",
             opacity: 1,
             delay: 0.7,
@@ -65,7 +65,7 @@ export const Overlay = () => {
         gsap.to('.sectioncover2', {
             scaleY: 0,
             transformOrigin: "bottom",
-            duration: 2,
+            duration: 3,
             ease: "expo.out",
             opacity: 1,
             delay: 0.7,
@@ -74,7 +74,7 @@ export const Overlay = () => {
             scaleX: 0,
             rotation: 0,
             transformOrigin: "left",
-            duration: 2,
+            duration: 3,
             ease: "expo.out",
             opacity: 1,
             delay: 0.7,
@@ -82,7 +82,7 @@ export const Overlay = () => {
         gsap.fromTo('.sectioncover4', {}, {
             scaleX: 0,
             transformOrigin: "right",
-            duration: 2,
+            duration: 3,
             ease: "expo.out",
             opacity: 1,
             delay: 0.7,
