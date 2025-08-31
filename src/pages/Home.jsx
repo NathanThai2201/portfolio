@@ -16,7 +16,7 @@ export function Home() {
   }, []);
   return (
 
-    <div className="container">
+    <div className="temp_bg_container">
       <Overlay/>
       <Canvas  className="mainCanvas" dpr={[1,1]} gl={{ antialias: false }} camera={{ fov: 18, position: [0.1, 0, 0] }}>
         <fog attach="fog" args={['#FFFFFF', 0, 500]} />

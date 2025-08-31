@@ -16,7 +16,7 @@ const StarCanvas = () => {
     const draw = (context) => {
       context.fillStyle = "rgb(16, 57, 139)";
       context.fillRect(0, 0, canvas.width, canvas.height);
-      const effect = new Effect(window.innerWidth, window.innerHeight * 1.1, 12345); // enter seed
+      const effect = new Effect(window.innerWidth, window.innerHeight * 1.1, 12346); // enter seed
       effect.init();
       Animate(effect, context);
     };
@@ -71,7 +71,7 @@ class Effect {
   }
 
   init() {
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 100; i++) {
       this.particles.push(new Particle(this, this.width, this.height, this.random));
     }
   }
@@ -79,6 +79,25 @@ class Effect {
   draw(context) {
     this.particles.forEach(particle => particle.draw(context,this.random));
   }
+  drawlines(context) {
+    for (let i = 0; i < this.particles.length; i++) {
+      for (let j = i + 1; j < this.particles.length; j++) {
+        const dx = this.particles[i].x - this.particles[j].x;
+        const dy = this.particles[i].y - this.particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < this.width/15) {
+          context.beginPath();
+          context.moveTo(this.particles[i].x, this.particles[i].y+4);
+          context.lineTo(this.particles[j].x, this.particles[j].y+4);
+          context.strokeStyle = "white";   // You can change color
+          context.lineWidth = 0.5;         // Thin line
+          context.stroke();
+        }
+      }
+    }
+  }
+
 
   update() {
     this.particles.forEach(particle => particle.update());
@@ -160,7 +179,8 @@ class Particle {
 }
 
 function Animate(effect, context) {
-  context.clearRect(0,0,window.innerWidth, window.innerHeight * 1.1)
+  context.clearRect(0,0,window.innerWidth, window.innerHeight * 1.1);
+  effect.drawlines(context);
   effect.draw(context);
   effect.update();
   window.requestAnimationFrame(() => Animate(effect, context));

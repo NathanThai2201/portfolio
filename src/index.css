@@ -40,12 +40,14 @@ hr {
   display: flex;
   position: relative;
 }
-.container {
+.temp_bg_container {
   position: relative;
   width: 100vw;
   height: 100vh;
   padding: 0%;
-  background-color:rgb(11, 23, 48);
+  background-image: url('/images/temp_bg.png');
+  background-size: cover;
+  background-position: center;
 }
 .horizontalTextMap{
   display: flex;
@@ -88,6 +90,19 @@ hr {
   display: flex;
   overflow-y: visible;
 }
+.starplane{
+  height: 210vh;
+  position: absolute;
+  display: flex;
+  overflow-y:hidden;
+}
+.starplane2{
+  height: 230vh;
+  position: absolute;
+  display: flex;
+  overflow-y:hidden;
+}
+
 /* projects */
 .projwrapper, .proj1wrapper, .proj2wrapper, .proj3wrapper, .proj4wrapper {
   margin-top: 10px;
@@ -97,12 +112,23 @@ hr {
 }
 .projcontent, .proj1content, .proj2content, .proj3content, .proj4content {
   width: 40vw;
+  height: 100%;
+  background-image: linear-gradient(to right,rgba(255, 255, 255, 0),rgb(0, 18, 55));
+  /* clickthrough */
+  pointer-events: none;
+  /* centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 10px;
+  z-index:2;
 }
 .projtext, .proj1text, .proj2text, .proj3text, .proj4text {
   width: 40vw;
   font-family: 'Orbitron', sans-serif;
   font-size: clamp(10px,4vw,20px);
-  color: rgb(146, 186, 255);
+  color: rgb(228, 243, 255);
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -124,9 +150,10 @@ hr {
   background-position: 50%;
   position: relative;  
   overflow: hidden;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   display: flex;
+  text-decoration: none;
 }
 .proj1videowrapper{
   width: 100%;
@@ -136,9 +163,10 @@ hr {
   background-position: 50%;
   position: relative;  
   overflow: hidden;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   display: flex;
+  text-decoration: none;
 }
 .proj2videowrapper {
   width: 100%;
@@ -148,9 +176,10 @@ hr {
   background-position: 50%;
   position: relative;  
   overflow: hidden;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   display: flex;
+  text-decoration: none;
 }
 .proj3videowrapper {
   width: 100%;
@@ -160,9 +189,10 @@ hr {
   background-position: 50%;
   position: relative;  
   overflow: hidden;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   display: flex;
+  text-decoration: none;
 }
 .proj4videowrapper {
   width: 100%;
@@ -172,9 +202,10 @@ hr {
   background-position: 50%;
   position: relative;  
   overflow: hidden;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   display: flex;
+  text-decoration: none;
 }
 .projvideo, .proj1video, .proj2video, .proj3video, .proj4video {
   width: 100%;
@@ -183,6 +214,7 @@ hr {
   position: absolute; 
   top: 0;
   left: 0;
+  z-index:1;
 }
 
 /* Header template, made for pseudo scramble text animation */
@@ -405,7 +437,7 @@ hr {
 /* projects */
 .button, .button1, .button2, .button3, .button4 {
   font-family: Fussion;
-  font-size: 12px;
+  font-size: 11px;
   height: 25px;
   width: 110px;
   margin: 1px;
@@ -414,9 +446,11 @@ hr {
   align-items: center;
   color: rgb(228, 243, 255);
   border-radius: 5px;
+  background-color: rgba(16, 57, 139, 0.258);
   border-style:solid;
   border-width: 1px;
-  border-color: rgb(146, 186, 255);
-  background-color: rgb(16, 57, 139);
+  border-color: rgb(228, 243, 255);
+  /* border-color: rgb(146, 186, 255); */
+  /* background-color: rgb(16, 57, 139); */
 }
 /* end */

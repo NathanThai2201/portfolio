@@ -160,7 +160,25 @@ export const Body = () => {
             }, delay: 0.6,
         });
         gsap.from(".plane3", {
+          y:200,
+          scrollTrigger: {
+              trigger: ".sectionwtb",
+              start: "top 20.67%",
+              // end: "bottom 100%",
+              scrub: true,
+            }, delay: 0.6,
+        });
+         gsap.from(".starplane", {
           y:100,
+          scrollTrigger: {
+              trigger: ".sectionwtb",
+              start: "top 20.67%",
+              // end: "bottom 100%",
+              scrub: true,
+            }, delay: 0.6,
+        });
+        gsap.from(".starplane2", {
+          y:250,
           scrollTrigger: {
               trigger: ".sectionwtb",
               start: "top 20.67%",
@@ -417,15 +435,15 @@ export const Body = () => {
                   }
               </div>
             </section>
-
+            <img className="starplane" src="./images/starplane.png" alt="hello"></img>
+            <img className="starplane2" src="./images/starplane2.png" alt="hello"></img>
             <section className="sectionb1">
               <ProjHeader text="DashBored"/>
               <div>
                 <div className="projwrapper">
                   <a className="projvideowrapper" href="https://nathan-thai.com/#/dashbored/">
                     <video className="projvideo" src="./videos/proj0.mp4"/>
-                  </a>
-                  <div className="projcontent">
+                    <div className="projcontent">
                     <div className="projtext">
                       {'A fun typing game/gacha card collection game. Built with the MERN stack, cross origin resource sharing and JWT and bcrypt security. '.split(' ').map((word, index) => (
                         <div className="word10" key={index}>
@@ -441,14 +459,17 @@ export const Body = () => {
                       <div className="button" key={4}>MongoDB</div>
                     </div>
                   </div> 
+                  </a>
                 </div>
               </div>
             </section>
             <section className="sectionb2">
-              <ProjHeader1 text="portfolio websites"/>
+              <ProjHeader1 text="Interactive websites"/>
               <div>
                 <div className="proj1wrapper">
-                  <div className="proj1content">
+                   <a className="proj1videowrapper" href="https://coperimescabin.com">
+                    <video className="proj1video" src="./videos/proj1.mp4"/>
+                    <div className="proj1content">
                     <div className="proj1text">
                       {'There is cabin in the middle of these mountains. Who knows when the blizzard will subside. It may be worth the risk for a bit of shelter.'.split(' ').map((word, index) => (
                         <div className="word6" key={index}>
@@ -465,8 +486,6 @@ export const Body = () => {
                       <div className="button1" key={5}>Javascript</div>
                     </div>
                   </div> 
-                  <a className="proj1videowrapper" href="https://coperimescabin.com">
-                    <video className="proj1video" src="./videos/proj1.mp4"/>
                   </a>
                 </div>
               </div>
@@ -477,8 +496,7 @@ export const Body = () => {
                 <div className="proj2wrapper">
                   <a className="proj2videowrapper" href="https://github.com/NathanThai2201/CollatzCheckIn">
                     <video className="proj2video" src="./videos/proj2.mp4"/>
-                  </a>
-                  <div className="proj2content">
+                    <div className="proj2content">
                     <div className="proj2text">
                       {'An Android app for event organization with QR code scanning. Integrated Google authentication, Firebase database, HTTP requests to Firebase Messaging.'.split(' ').map((word, index) => (
                         <div className="word7" key={index}>
@@ -493,6 +511,7 @@ export const Body = () => {
                       <div className="button2" key={4}>Figma</div>
                     </div>
                   </div> 
+                  </a>
                 </div>
               </div>
             </section>
@@ -500,7 +519,9 @@ export const Body = () => {
               <ProjHeader3 text="ImageBork"/>
               <div>
                 <div className="proj3wrapper">
-                  <div className="proj3content">
+                  <a className="proj3videowrapper" href="https://github.com/NathanThai2201/ImageBork">
+                    <video className="proj3video" src="./videos/proj3.mp4"/>
+                     <div className="proj3content">
                     <div className="proj3text">
                       {'An image processing app that is able to chain different image effects and algorithms. Able to work on batch images and animations.'.split(' ').map((word, index) => (
                         <div className="word8" key={index}>
@@ -515,8 +536,6 @@ export const Body = () => {
                       <div className="button3" key={4}>Numpy</div>
                     </div>
                   </div> 
-                  <a className="proj3videowrapper" href="https://github.com/NathanThai2201/ImageBork">
-                    <video className="proj3video" src="./videos/proj3.mp4"/>
                   </a>
                 </div>
               </div>
@@ -527,8 +546,7 @@ export const Body = () => {
                 <div className="proj4wrapper">
                 <a className="proj4videowrapper" href="https://github.com/NathanThai2201/CopeAudio">
                     <video className="proj4video" src="./videos/proj4.mp4"/>
-                  </a>
-                  <div className="proj4content">
+                    <div className="proj4content">
                     <div className="proj4text">
                       {'Audio plugins for your varied production and sound engineering needs. From modified sinefold distortion to white noise and sub oscillator sidechainer with high levels of customizability.'.split(' ').map((word, index) => (
                         <div className="word9" key={index}>
@@ -541,6 +559,7 @@ export const Body = () => {
                       <div className="button4" key={2}>JUCE</div>
                     </div>
                   </div> 
+                  </a>
                 </div>
               </div>
             </section>
