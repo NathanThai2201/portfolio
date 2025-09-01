@@ -9,6 +9,7 @@ import { ProjHeader1 } from "./ProjHeader1";
 import { ProjHeader2 } from "./ProjHeader2";
 import { ProjHeader3 } from "./ProjHeader3";
 import { ProjHeader4 } from "./ProjHeader4";
+import { ProjHeader5 } from "./ProjHeader5";
 import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -372,6 +373,44 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.2,
         });
+
+        gsap.from(".word11", {
+          y:20,
+          opacity:0,
+          duration:1,
+          stagger: {
+            each: 0.01
+          },scrollTrigger: {
+              trigger: ".sectionb6",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.5,
+        });
+        gsap.from(".button5", {
+          scale:0,
+          duration:0.4,
+          stagger: {
+            each: 0.2
+          },scrollTrigger: {
+              trigger: ".sectionb6",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.5,
+        });
+        gsap.from(".proj5videowrapper", {
+          scale:0,
+          ease: "expo.out",
+          borderRadius:"400px",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb6",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.2,
+        });
     }, {});
     return (
     //  <Scroll html>
@@ -564,7 +603,28 @@ export const Body = () => {
               </div>
             </section>
             <section className="sectionb6">
-
+             <ProjHeader5 text="RingTrainer"/>
+              <div>
+                <div className="proj5wrapper">
+                  <a className="proj5videowrapper" href="https://nathan-thai.com/#/ringtrainer/">
+                    <video className="proj5video" src="./videos/proj5.mp4"/>
+                    <div className="proj5content">
+                    <div className="proj5text">
+                      {'A reaction time trainer, made in one day as a response to a frequent request. Contains various customizable features. '.split(' ').map((word, index) => (
+                        <div className="word11" key={index}>
+                          {word + '\u00A0'}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="proj5tech">
+                      <div className="button5" key={1}>Javascript</div>
+                      <div className="button5" key={2}>GSAP</div>
+                      <div className="button5" key={3}>React.js</div>
+                    </div>
+                  </div> 
+                  </a>
+                </div>
+              </div>
             </section>
             <section className="sectionicons">
                 <div className="txticons">

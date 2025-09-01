@@ -1,21 +1,83 @@
+.sectionTrainer {
+  position: relative;
+  height: 20px;
+  width:100vw;
+  background-image: linear-gradient(rgb(80, 80, 80),rgb(0, 0, 0));
+  /* background-color: rgb(16, 57, 139); */
+  padding: 5px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+}
+.navbarTrainer {
+  display: flex;
+  background-color:rgb(80, 80, 80);
+  justify-content:space-between;
+  align-items: center;
+  padding: 5px 5px;
+  z-index: 3;
+}
+.TrainerMenuWrapper {
+  position: fixed;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  overflow: hidden;
+  display: inline-block; 
+  top: 5px;      
+  right: 5px;      
+  z-index: 9;
+}
+.TrainerMenu {
+    width:35px;
+    height:35px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding:10px;
+    border-radius: 5px;
+    background-color:rgb(80, 80, 80);
+    
+}
+.TrainerMenuLine, .TrainerMenuLine1, .TrainerMenuLine2 {
+    width:25px;
+    height:3px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+
+}
+.TrainerMenuWhiteLine {
+    width:25px;
+    height:1px;
+    position: fixed;
+    top: 40px;
+    background-color: rgb(255, 255, 255);
+    pointer-events: none;
+}
+.container3 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 0%;
+  background-color:rgb(0, 0, 0);
+  overflow-y: hidden;
+}
 .ring_game_block{
     align-items: center;
     display:flex;
     justify-content: center;
 }
 .ring_wrapper{
-    width: 500px;
-    height:500px;
+    width: clamp(100px,50vh,600px);
+    height:clamp(100px,50vh,600px);
     position:relative;
-    background-image:url("/images/rings/ecos_base_circle.png");
-    background-repeat: no-repeat, repeat;
-    background-size: cover;
     display: flex;
 }
-.correct_circle{
-    position:absolute;
-}
-.moving_circle{
+.base_circle, .correct_circle, .moving_circle{
+    width: clamp(100px,50vh,600px);
+    height:clamp(100px,50vh,600px);
     position:absolute;
 }
 input.ringinput{
@@ -30,4 +92,49 @@ input.ringinput{
     align-items: center;
     display:flex;
     justify-content: center;
+}
+.genericButtonTrainer{  
+  font-family: 'Orbitron';
+  font-size: 15px;
+  width: 100px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius:5px;
+  top: 0%;
+  cursor:pointer;
+}
+.txt1scrollTrainer{  
+  font-family: 'Orbitron';
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+  margin-top: 5px;
+  top: 0%;
+}
+.difficultyOptions {
+  font-family: Orbitron;
+  position: fixed;
+  top: 50px;         /* distance from top */
+  right: 10px;    
+  color: rgb(255, 255, 255);
+  z-index: 10;
+}
+.difficultypicker{
+font-family: Orbitron;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0);
+}
+.skinOptions {
+  font-family: Orbitron;
+  position: fixed;
+  top: 80px;         /* distance from top */
+  right: 10px;    
+  color: rgb(255, 255, 255);
+  z-index: 10;
+}
+.skinpicker{
+font-family: Orbitron;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0);
 }

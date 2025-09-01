@@ -32,7 +32,7 @@ export const Overlay = () => {
         const target = baffle('.scrollText');
         target.set({
             characters: "ᛮᚸᛃᛨᛒᚭᚻᛥ",
-            speed: 140
+            speed: 200
         });
         target.start();
         target.reveal(10000);
