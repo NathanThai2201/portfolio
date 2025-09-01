@@ -280,7 +280,7 @@ export function RingTrainer() {
             <div className="skinOptions">
               <label>SKIN: </label>
               <select className ="skinpicker" onChange={(e) => handleSkin(parseInt(e.target.value))}>
-                  <option value="0">TRON</option>
+                  <option value="0">EXILE</option>
                   <option value="1">ECOS</option>
               </select>
             </div>
