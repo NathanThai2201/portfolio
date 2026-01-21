@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
+
+// in "name", you can rename to any of the faux vexapps. 
+// You also can switch out the three pngs in public with the corresponding app.
 export default defineConfig({
   plugins: [
     react(),
@@ -11,7 +14,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'My App',
+        name: 'Calculator',
         short_name: 'MyApp',
         description: 'My React PWA',
         theme_color: '#000000',

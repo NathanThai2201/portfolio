@@ -22,22 +22,35 @@
 }
 
 /* number displays*/
-.calccontainer1{
-  text-align: end;
+.calccontainer1,
+.calccontainer2 {
+  height: 5vh; /* overridden below */
   padding-right: 6%;
+  font-family: SFPro;
+  text-align: right;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.calccontainer1 {
   height: 5vh;
-  font-family: SFPro;
+  font-size: 38px;
   color: rgb(141, 141, 147);
-  font-size: 40px;
 }
-.calccontainer2{
-  text-align: end;
-  padding-right: 6%;
+
+.calccontainer2 {
   height: 11vh;
-  font-family: SFPro;
-  color: rgb(255, 255, 255);
-  font-size: 95px;
+  font-size: 85px;
+  color: white;
 }
+
 
 
 .calccontainer3{
@@ -92,3 +105,16 @@
   background-color: rgb(255, 159, 10);
   border:None;
 }
+.button-flash {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-flash .flash {
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+}
+

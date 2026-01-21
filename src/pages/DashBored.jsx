@@ -244,7 +244,7 @@ export function DashBored() {
             <div className="scrollText"> - SCROLL DOWN - </div>
           </div> 
         </section>
-        <section className="sectionb2" style={{height:10}}></section>
+        {/* <section className="sectionb2" style={{height:10}}></section> */}
         <section className="sectionDashboredwtb">
           <div className="txtDashboredMainTitle1">d</div>
           <div className="txtDashboredMainTitle2">as</div>

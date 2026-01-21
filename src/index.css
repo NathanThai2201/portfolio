@@ -13,6 +13,7 @@
   src: url(/fonts/Fussion-3zgAz.ttf);
 }
 html body {
+  background-color: #000;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
