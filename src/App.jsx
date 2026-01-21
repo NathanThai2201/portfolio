@@ -4,6 +4,7 @@ import { RingTrainer} from './pages/RingTrainer'
 import { Signup } from './pages/signup'
 import { Login } from './pages/login'
 import { Home } from './pages/Home'
+import { VexCalculator } from './pages/VexCalculator'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         {/*  For testing, use "http://localhost:3000/#/dashbored" */}
         <Route path="/dashbored" element={<DashBored />} />
         <Route path="/ringtrainer" element={<RingTrainer />} />
+        <Route path="/vexcalculator" element={<VexCalculator />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="/login" element={<Login />} /> */}

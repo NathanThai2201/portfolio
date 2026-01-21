@@ -607,6 +607,9 @@ export const Body = () => {
                   </div>
                 </div>
               </section>
+              <Link to="/vexcalculator">
+                        <button className="genericButton">VexCalculator</button>
+              </Link>
             </div>
             <section className="sectionicons">
                 <div className="txticons">

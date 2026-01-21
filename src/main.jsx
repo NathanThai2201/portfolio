@@ -4,6 +4,7 @@ import App from './App.jsx';
 import './index.css';
 import './dashbored.css';
 import './ringtrainer.css';
+import './vexcalculator.css';
 import { HashRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
