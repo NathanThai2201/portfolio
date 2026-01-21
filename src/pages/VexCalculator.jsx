@@ -139,6 +139,33 @@ export function VexCalculator() {
 
     return result;
   };
+  const normalizeScientific = (value) => {
+    return value.replace(/e\+/i, "e");
+  };
+
+  const formatResult = (value) => {
+  // If JS already switched to scientific notation, just normalize it
+  const str = value.toString();
+  if (/e/i.test(str)) {
+    return normalizeScientific(str);
+  }
+
+  // If it's an integer, strip decimals entirely
+  if (Number.isInteger(value)) {
+    // Superficial bypass: convert via BigInt string if safe
+    try {
+      return BigInt(Math.trunc(value)).toString();
+    } catch {
+      return Math.trunc(value).toString();
+    }
+  }
+
+  // Otherwise, round decimals normally
+  const rounded =
+    Math.round((value + Number.EPSILON) * 1e8) / 1e8;
+
+  return rounded.toString().replace(/\.0+$/, "");
+};
 
   const handleEquals = () => {
     if (!display) return;
@@ -153,7 +180,7 @@ export function VexCalculator() {
     // Check if user multiplied by 69420
     if (display.match(/×69420$/)) {
       setExpression(display);
-      setDisplay("972864627325e+27");
+      setDisplay("4273461592123e32");
       setJustEvaluated(true);
       return;
     }
@@ -199,10 +226,8 @@ export function VexCalculator() {
           return;
         }
 
-        const rounded =
-          Math.round((result + Number.EPSILON) * 1e8) / 1e8;
+        setDisplay(formatResult(result));
 
-        setDisplay(rounded.toString());
         return;
       } catch {
         setDisplay("Error");
@@ -239,10 +264,8 @@ export function VexCalculator() {
         return;
       }
 
-      const rounded =
-        Math.round((result + Number.EPSILON) * 1e8) / 1e8;
+      setDisplay(formatResult(result));
 
-      setDisplay(rounded.toString());
       setJustEvaluated(true);
     } catch {
       setDisplay("Error");

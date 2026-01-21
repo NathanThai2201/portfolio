@@ -104,6 +104,17 @@ input.ringinput{
   top: 0%;
   cursor:pointer;
 }
+.genericButtonTrainerSizeable{  
+  font-family: 'Orbitron';
+  font-size: 15px;
+  width: clamp(100px);
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius:5px;
+  top: 0%;
+  cursor:pointer;
+}
 .txt1scrollTrainer{  
   font-family: 'Orbitron';
   font-size: 15px;
@@ -137,4 +148,62 @@ font-family: Orbitron;
 font-family: Orbitron;
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+.vextoolsspace{
+  height: 5cqmax;
+}
+/*.  VEXTOOLS PASSWORD */
+.passwordOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.passwordPrompt{
+  font-size: 15px;
+}
+.passwordBox {
+   font-family: 'Orbitron';
+    font-size: 10px;
+    color: rgb(255, 255, 255);
+    padding:5px;
+    background: #111;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.passwordBox input {
+    width: 150px;
+    height: 15px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.passwordBox button {
+  font-family: 'Orbitron';
+  font-size: 15px;
+  width: clamp(100px);
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius:5px;
+  top: 0%;
+  cursor: pointer;
+}
+
+.errorText {
+    color: red;
+    margin-top: 10px;
 }

@@ -10,6 +10,7 @@ import { ProjHeader2 } from "./ProjHeader2";
 import { ProjHeader3 } from "./ProjHeader3";
 import { ProjHeader4 } from "./ProjHeader4";
 import { ProjHeader5 } from "./ProjHeader5";
+import { ProjHeader6 } from "./ProjHeader6";
 import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -393,6 +394,43 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.2,
         });
+        gsap.from(".word12", {
+          y:20,
+          opacity:0,
+          duration:1,
+          stagger: {
+            each: 0.01
+          },scrollTrigger: {
+              trigger: ".sectionb7",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.5,
+        });
+        gsap.from(".button6", {
+          scale:0,
+          duration:0.4,
+          stagger: {
+            each: 0.2
+          },scrollTrigger: {
+              trigger: ".sectionb7",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.5,
+        });
+        gsap.from(".proj6videowrapper", {
+          scale:0,
+          ease: "expo.out",
+          borderRadius:"400px",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb7",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.2,
+        });
     }, {});
     return (
     //  <Scroll html>
@@ -607,9 +645,30 @@ export const Body = () => {
                   </div>
                 </div>
               </section>
-              <Link to="/vexcalculator">
-                        <button className="genericButton">VexCalculator</button>
-              </Link>
+              <section className="sectionb7">
+              <ProjHeader6 text="VexTools"/>
+                <div>
+                  <div className="proj6wrapper">
+                    <a className="proj6videowrapper" href="https://nathan-thai.com/#/vextools/">
+                      
+                      <div className="proj6content">
+                      <div className="proj6text">
+                        {'Modern tools for the modern magician. A variety of digital tools to create predictable chaos and break concieved reality.'.split(' ').map((word, index) => (
+                          <div className="word12" key={index}>
+                            {word + '\u00A0'}
+                          </div>
+                        ))}
+                      </div>
+                      <div className="proj6tech">
+                        <div className="button6" key={1}>Javascript</div>
+                        <div className="button6" key={2}>GSAP</div>
+                        <div className="button6" key={3}>React.js</div>
+                      </div>
+                    </div> 
+                    </a>
+                  </div>
+                </div>
+              </section>
             </div>
             <section className="sectionicons">
                 <div className="txticons">

@@ -93,13 +93,13 @@ hr {
 }
 
 /* projects */
-.projwrapper, .proj1wrapper, .proj2wrapper, .proj3wrapper, .proj4wrapper, .proj5wrapper  {
+.projwrapper, .proj1wrapper, .proj2wrapper, .proj3wrapper, .proj4wrapper, .proj5wrapper, .proj6wrapper  {
   margin-top: 10px;
   min-height: 40vh;
   overflow: hidden;
   display: flex;
 }
-.projcontent, .proj1content, .proj2content, .proj3content, .proj4content, .proj5content {
+.projcontent, .proj1content, .proj2content, .proj3content, .proj4content, .proj5content, .proj6content {
   width: 40vw;
   height: 100%;
   background-image: linear-gradient(to right,rgba(255, 255, 255, 0),rgb(0, 18, 55));
@@ -113,7 +113,7 @@ hr {
   padding-right: 10px;
   z-index:2;
 }
-.projtext, .proj1text, .proj2text, .proj3text, .proj4text, .proj5text {
+.projtext, .proj1text, .proj2text, .proj3text, .proj4text, .proj5text, .proj6text {
   width: 40vw;
   font-family: 'Orbitron', sans-serif;
   font-size: clamp(10px,4vw,20px);
@@ -123,7 +123,7 @@ hr {
   flex-wrap: wrap;
   align-items: flex-start;
 }
-.projtech, .proj1tech, .proj2tech, .proj3tech, .proj4tech, .proj5tech {
+.projtech, .proj1tech, .proj2tech, .proj3tech, .proj4tech, .proj5tech, .proj6tech {
   width: 40vw;
   margin-top: 10px;
   display: flex;
@@ -209,7 +209,20 @@ hr {
   display: flex;
   text-decoration: none;
 }
-.projvideo, .proj1video, .proj2video, .proj3video, .proj4video, .proj5video {
+.proj6videowrapper {
+  width: 100%;
+  border-radius: 20px;
+  background-image: url('/images/proj6.png');
+  background-size: cover;
+  background-position: 50%;
+  position: relative;  
+  overflow: hidden;
+  justify-content: right;
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+}
+.projvideo, .proj1video, .proj2video, .proj3video, .proj4video, .proj5video, .proj6video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -220,14 +233,14 @@ hr {
 }
 
 /* Header template, made for pseudo scramble text animation */
-.projheaderwrapper, .projheaderwrapper1, .projheaderwrapper2, .projheaderwrapper3, .projheaderwrapper4, .projheaderwrapper5  {
+.projheaderwrapper, .projheaderwrapper1, .projheaderwrapper2, .projheaderwrapper3, .projheaderwrapper4, .projheaderwrapper5, .projheaderwrapper6  {
   height: clamp(18px,4vw,40px);
   margin-left: 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-.projheader, .projheader1, .projheader2, .projheader3, .projheader4, .projheader5{
+.projheader, .projheader1, .projheader2, .projheader3, .projheader4, .projheader5, .projheader6{
   font-family: 'SpaceGames', sans-serif;
   font-size: clamp(16px,4vw,40px);
   color: rgb(228, 243, 255);
@@ -270,7 +283,7 @@ hr {
   background-position: center top;
   background-size: cover;
 }
-.sectionb1, .sectionb2, .sectionb3, .sectionb4, .sectionb5, .sectionb6 {
+.sectionb1, .sectionb2, .sectionb3, .sectionb4, .sectionb5, .sectionb6, .sectionb7 {
   width:100vw;
   height: auto;
   /* background-color: rgb(0, 30, 89); */
@@ -443,7 +456,7 @@ hr {
   margin-right: 5px;
 }
 /* projects */
-.button, .button1, .button2, .button3, .button4, .button5 {
+.button, .button1, .button2, .button3, .button4, .button5, .button6 {
   font-family: Fussion;
   font-size: 11px;
   height: 25px;
