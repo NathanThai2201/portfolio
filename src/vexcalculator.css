@@ -105,6 +105,32 @@
   background-color: rgb(255, 159, 10);
   border:None;
 }
+
+/* Make sure all buttons use flex to center content */
+.greycalcbuttons,
+.darkgreycalcbuttons,
+.orangecalcbuttons {
+  display: flex;
+  align-items: center;     /* vertical centering */
+  justify-content: center; /* horizontal centering */
+  position: relative;
+  width: 22vw;
+  height: 22vw;
+  margin: 6px;
+  border-radius: 50%;
+  border: none;
+  overflow: hidden;
+}
+
+/* Images inside buttons */
+.calcimage {
+  max-width: 100%;   /* adjust this to fit inside button */
+  max-height: 100%;  /* adjust this to fit inside button */
+  object-fit: contain;
+}
+
+
+
 .button-flash {
   position: relative;
   overflow: hidden;
