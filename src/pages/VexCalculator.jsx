@@ -153,7 +153,7 @@ export function VexCalculator() {
     // Check if user multiplied by 69420
     if (display.match(/×69420$/)) {
       setExpression(display);
-      setDisplay("972864627325e27");
+      setDisplay("972864627325e+27");
       setJustEvaluated(true);
       return;
     }
