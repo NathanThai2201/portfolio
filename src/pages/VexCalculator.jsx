@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export function VexCalculator() {
   const operators = ["+", "-", "×", "÷"];
   const isPercent = (char) => char === "%";
-
+  const vexState = useRef(0);
   const [justEvaluated, setJustEvaluated] = useState(false);
 
   const [lastOp, setLastOp] = useState(null);
@@ -143,29 +143,39 @@ export function VexCalculator() {
     return value.replace(/e\+/i, "e");
   };
 
+  
   const formatResult = (value) => {
-  // If JS already switched to scientific notation, just normalize it
-  const str = value.toString();
-  if (/e/i.test(str)) {
-    return normalizeScientific(str);
-  }
+    let str = value.toString();
 
-  // If it's an integer, strip decimals entirely
-  if (Number.isInteger(value)) {
-    // Superficial bypass: convert via BigInt string if safe
-    try {
-      return BigInt(Math.trunc(value)).toString();
-    } catch {
-      return Math.trunc(value).toString();
+
+    // ===== vexcalc secret output =====
+    // looped cycle before e:
+    if (/e/i.test(str)) {
+
+      const cycle = ["25e", "32e", "42e"];
+
+      str = str.replace(/e/i, cycle[vexState.current]);
+
+      vexState.current = (vexState.current + 1) % 3;
+
+      return normalizeScientific(str);
     }
-  }
 
-  // Otherwise, round decimals normally
-  const rounded =
-    Math.round((value + Number.EPSILON) * 1e8) / 1e8;
+    if (Number.isInteger(value)) {
+      try {
+        return BigInt(Math.trunc(value)).toString();
+      } catch {
+        return Math.trunc(value).toString();
+      }
+    }
 
-  return rounded.toString().replace(/\.0+$/, "");
-};
+    const rounded =
+      Math.round((value + Number.EPSILON) * 1e8) / 1e8;
+
+    return rounded.toString().replace(/\.0+$/, "");
+  };
+
+
 
   const handleEquals = () => {
     if (!display) return;
