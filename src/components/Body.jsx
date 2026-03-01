@@ -425,6 +425,44 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.2,
         });
+
+        gsap.from(".word13", {
+          y:20,
+          opacity:0,
+          duration:1,
+          stagger: {
+            each: 0.01
+          },scrollTrigger: {
+              trigger: ".sectionb8",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.5,
+        });
+        gsap.from(".button8", {
+          scale:0,
+          duration:0.4,
+          stagger: {
+            each: 0.2
+          },scrollTrigger: {
+              trigger: ".sectionb8",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.5,
+        });
+        gsap.from(".proj8videowrapper", {
+          scale:0,
+          ease: "expo.out",
+          borderRadius:"400px",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb8",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.2,
+        });
     }, {});
     return (
     //  <Scroll html>
@@ -478,7 +516,7 @@ export const Body = () => {
               </div>
               <div className="txtspace">
                   {
-                          'Technical Projects:'.split('').map((char, index) => {
+                          'Projects'.split('').map((char, index) => {
                           return (
                               <div className="word5" key={index}>
                                   {char === ' ' ? '\u00A0' : char}
@@ -540,36 +578,32 @@ export const Body = () => {
                   </div>
                 </div>
               </section>
-
-
               <section className="sectionb8">
-                <ProjHeader text="Ani-ML Coloring Tool" projheader="projheader7" projheaderwrapper="projheaderwrapper7"/>
+                <ProjHeader text="Ani-ML Coloring Tool" projheader="projheader8" projheaderwrapper="projheaderwrapper8"/>
                 <div>
-                  <div className="proj2wrapper">
-                    <a className="proj2videowrapper" href="https://github.com/NathanThai2201/ML_animation_coloring_tool">
-                      <video className="proj2video" src="./videos/proj2.mp4"/>
-                      <div className="proj2content">
-                      <div className="proj2text">
-                        {'A machine learning-based approach to automatically color 2D animation cels. Trains and reconstructs images with your own data using analytical features of contours and pixel data. Made with the goal to uphold AI ethics'.split(' ').map((word, index) => (
-                          <div className="word7" key={index}>
+                  <div className="proj8wrapper">
+                    <a className="proj8videowrapper" href="https://github.com/NathanThai2201/ML_animation_coloring_tool">
+                      <video className="proj8video" src="./videos/proj8.mp4"/>
+                      <div className="proj8content">
+                      <div className="proj8text">
+                        {'A machine learning-based approach to automatically color 2D animation cels. Trains and reconstructs images with your own data using analytical features of contours and pixel data. Made with AI ethics at its foundation.'.split(' ').map((word, index) => (
+                          <div className="word13" key={index}>
                             {word + '\u00A0'}
                           </div>
                         ))}
                       </div>
-                      <div className="proj2tech">
-                        <div className="button2" key={1}>Python</div>
-                        <div className="button2" key={3}>Numpy</div>
-                        <div className="button2" key={4}>OpenCV</div>
-                        <div className="button2" key={5}>SkLearn</div>
-                        <div className="button2" key={6}>matplotlib</div>
+                      <div className="proj8tech">
+                        <div className="button8" key={1}>Python</div>
+                        <div className="button8" key={3}>Numpy</div>
+                        <div className="button8" key={4}>OpenCV</div>
+                        <div className="button8" key={5}>SkLearn</div>
+                        <div className="button8" key={6}>matplotlib</div>
                       </div>
                     </div> 
                     </a>
                   </div>
                 </div>
               </section>
-
-
               <section className="sectionb2">
                 <ProjHeader text="Interactive websites" projheader="projheader1" projheaderwrapper="projheaderwrapper1"/>
                 <div>
