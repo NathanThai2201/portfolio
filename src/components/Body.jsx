@@ -528,7 +528,7 @@ export const Body = () => {
             </section>
             <div className="projectSections">
               <section className="sectionb1">
-                <ProjHeader text="DashBored" projheader="projheader" projheaderwrapper="projheaderwrapper"/>
+                <ProjHeader text="Typing TCG Game" projheader="projheader" projheaderwrapper="projheaderwrapper"/>
                 <div>
                   <div className="projwrapper">
                     <a className="projvideowrapper" href="https://nathan-thai.com/#/dashbored/">
@@ -554,7 +554,7 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb3">
-                <ProjHeader text="CollatzCheckIn" projheader="projheader2" projheaderwrapper="projheaderwrapper2"/>
+                <ProjHeader text="Event Organization App" projheader="projheader2" projheaderwrapper="projheaderwrapper2"/>
                 <div>
                   <div className="proj2wrapper">
                     <a className="proj2videowrapper" href="https://github.com/NathanThai2201/CollatzCheckIn">
@@ -579,7 +579,7 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb8">
-                <ProjHeader text="Ani-ML Coloring Tool" projheader="projheader8" projheaderwrapper="projheaderwrapper8"/>
+                <ProjHeader text="AI Coloring Tool" projheader="projheader8" projheaderwrapper="projheaderwrapper8"/>
                 <div>
                   <div className="proj8wrapper">
                     <a className="proj8videowrapper" href="https://github.com/NathanThai2201/ML_animation_coloring_tool">
@@ -632,7 +632,7 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb4">
-                <ProjHeader text="ImageBork" projheader="projheader3" projheaderwrapper="projheaderwrapper3"/>
+                <ProjHeader text="Image Processing App" projheader="projheader3" projheaderwrapper="projheaderwrapper3"/>
                 <div>
                   <div className="proj3wrapper">
                     <a className="proj3videowrapper" href="https://github.com/NathanThai2201/ImageBork">
@@ -658,7 +658,7 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb5">
-                <ProjHeader text="CopeAudio VSTs" projheader="projheader4" projheaderwrapper="projheaderwrapper4"/>
+                <ProjHeader text="Audio Plugins" projheader="projheader4" projheaderwrapper="projheaderwrapper4"/>
                 <div>
                   <div className="proj4wrapper">
                   <a className="proj4videowrapper" href="https://github.com/NathanThai2201/CopeAudio">
@@ -681,7 +681,7 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb6">
-              <ProjHeader text="RingTrainer" projheader="projheader5" projheaderwrapper="projheaderwrapper5"/>
+              <ProjHeader text="Ring Minigame Trainer" projheader="projheader5" projheaderwrapper="projheaderwrapper5"/>
                 <div>
                   <div className="proj5wrapper">
                     <a className="proj5videowrapper" href="https://nathan-thai.com/#/ringtrainer/">
@@ -705,7 +705,7 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb7">
-              <ProjHeader text="VexTools" projheader="projheader6" projheaderwrapper="projheaderwrapper6"/>
+              <ProjHeader text="Digital Magic Tools" projheader="projheader6" projheaderwrapper="projheaderwrapper6"/>
                 <div>
                   <div className="proj6wrapper">
                     <a className="proj6videowrapper" href="https://nathan-thai.com/#/vextools/">
