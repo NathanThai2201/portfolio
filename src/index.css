@@ -233,14 +233,14 @@ hr {
 }
 
 /* Header template, made for pseudo scramble text animation */
-.projheaderwrapper, .projheaderwrapper1, .projheaderwrapper2, .projheaderwrapper3, .projheaderwrapper4, .projheaderwrapper5, .projheaderwrapper6  {
+.projheaderwrapper, .projheaderwrapper1, .projheaderwrapper2, .projheaderwrapper3, .projheaderwrapper4, .projheaderwrapper5, .projheaderwrapper6, .projheaderwrapper7  {
   height: clamp(18px,4vw,40px);
   margin-left: 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-.projheader, .projheader1, .projheader2, .projheader3, .projheader4, .projheader5, .projheader6{
+.projheader, .projheader1, .projheader2, .projheader3, .projheader4, .projheader5, .projheader6, .projheader7{
   font-family: 'SpaceGames', sans-serif;
   font-size: clamp(16px,4vw,40px);
   color: rgb(228, 243, 255);
@@ -283,7 +283,7 @@ hr {
   background-position: center top;
   background-size: cover;
 }
-.sectionb1, .sectionb2, .sectionb3, .sectionb4, .sectionb5, .sectionb6, .sectionb7 {
+.sectionb1, .sectionb2, .sectionb3, .sectionb4, .sectionb5, .sectionb6, .sectionb7, .sectionb8{
   width:100vw;
   height: auto;
   /* background-color: rgb(0, 30, 89); */

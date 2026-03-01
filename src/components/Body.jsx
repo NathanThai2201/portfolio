@@ -5,12 +5,6 @@ import { useRef } from "react";
 import { useGSAP } from '@gsap/react';
 import StarCanvas from "./StarCanvas";
 import { ProjHeader } from "./ProjHeader";
-import { ProjHeader1 } from "./ProjHeader1";
-import { ProjHeader2 } from "./ProjHeader2";
-import { ProjHeader3 } from "./ProjHeader3";
-import { ProjHeader4 } from "./ProjHeader4";
-import { ProjHeader5 } from "./ProjHeader5";
-import { ProjHeader6 } from "./ProjHeader6";
 import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -496,7 +490,7 @@ export const Body = () => {
             </section>
             <div className="projectSections">
               <section className="sectionb1">
-                <ProjHeader text="DashBored"/>
+                <ProjHeader text="DashBored" projheader="projheader" projheaderwrapper="projheaderwrapper"/>
                 <div>
                   <div className="projwrapper">
                     <a className="projvideowrapper" href="https://nathan-thai.com/#/dashbored/">
@@ -521,8 +515,63 @@ export const Body = () => {
                   </div>
                 </div>
               </section>
+              <section className="sectionb3">
+                <ProjHeader text="CollatzCheckIn" projheader="projheader2" projheaderwrapper="projheaderwrapper2"/>
+                <div>
+                  <div className="proj2wrapper">
+                    <a className="proj2videowrapper" href="https://github.com/NathanThai2201/CollatzCheckIn">
+                      <video className="proj2video" src="./videos/proj2.mp4"/>
+                      <div className="proj2content">
+                      <div className="proj2text">
+                        {'An Android app for event organization with QR code scanning. Integrated Google authentication, Firebase database, HTTP requests to Firebase Messaging.'.split(' ').map((word, index) => (
+                          <div className="word7" key={index}>
+                            {word + '\u00A0'}
+                          </div>
+                        ))}
+                      </div>
+                      <div className="proj2tech">
+                        <div className="button2" key={1}>Java</div>
+                        <div className="button2" key={2}>Android</div>
+                        <div className="button2" key={3}>Firebase</div>
+                        <div className="button2" key={4}>Figma</div>
+                      </div>
+                    </div> 
+                    </a>
+                  </div>
+                </div>
+              </section>
+
+
+              <section className="sectionb8">
+                <ProjHeader text="Ani-ML Coloring Tool" projheader="projheader7" projheaderwrapper="projheaderwrapper7"/>
+                <div>
+                  <div className="proj2wrapper">
+                    <a className="proj2videowrapper" href="https://github.com/NathanThai2201/ML_animation_coloring_tool">
+                      <video className="proj2video" src="./videos/proj2.mp4"/>
+                      <div className="proj2content">
+                      <div className="proj2text">
+                        {'A machine learning-based approach to automatically color 2D animation cels. Trains and reconstructs images with your own data using analytical features of contours and pixel data. Made with the goal to uphold AI ethics'.split(' ').map((word, index) => (
+                          <div className="word7" key={index}>
+                            {word + '\u00A0'}
+                          </div>
+                        ))}
+                      </div>
+                      <div className="proj2tech">
+                        <div className="button2" key={1}>Python</div>
+                        <div className="button2" key={3}>Numpy</div>
+                        <div className="button2" key={4}>OpenCV</div>
+                        <div className="button2" key={5}>SkLearn</div>
+                        <div className="button2" key={6}>matplotlib</div>
+                      </div>
+                    </div> 
+                    </a>
+                  </div>
+                </div>
+              </section>
+
+
               <section className="sectionb2">
-                <ProjHeader1 text="Interactive websites"/>
+                <ProjHeader text="Interactive websites" projheader="projheader1" projheaderwrapper="projheaderwrapper1"/>
                 <div>
                   <div className="proj1wrapper">
                     <a className="proj1videowrapper" href="https://coperimescabin.com">
@@ -548,33 +597,8 @@ export const Body = () => {
                   </div>
                 </div>
               </section>
-              <section className="sectionb3">
-                <ProjHeader2 text="CollatzCheckIn"/>
-                <div>
-                  <div className="proj2wrapper">
-                    <a className="proj2videowrapper" href="https://github.com/NathanThai2201/CollatzCheckIn">
-                      <video className="proj2video" src="./videos/proj2.mp4"/>
-                      <div className="proj2content">
-                      <div className="proj2text">
-                        {'An Android app for event organization with QR code scanning. Integrated Google authentication, Firebase database, HTTP requests to Firebase Messaging.'.split(' ').map((word, index) => (
-                          <div className="word7" key={index}>
-                            {word + '\u00A0'}
-                          </div>
-                        ))}
-                      </div>
-                      <div className="proj2tech">
-                        <div className="button2" key={1}>Java</div>
-                        <div className="button2" key={2}>Android</div>
-                        <div className="button2" key={3}>Firebase</div>
-                        <div className="button2" key={4}>Figma</div>
-                      </div>
-                    </div> 
-                    </a>
-                  </div>
-                </div>
-              </section>
               <section className="sectionb4">
-                <ProjHeader3 text="ImageBork"/>
+                <ProjHeader text="ImageBork" projheader="projheader3" projheaderwrapper="projheaderwrapper3"/>
                 <div>
                   <div className="proj3wrapper">
                     <a className="proj3videowrapper" href="https://github.com/NathanThai2201/ImageBork">
@@ -592,6 +616,7 @@ export const Body = () => {
                         <div className="button3" key={2}>Skimage</div>
                         <div className="button3" key={3}>Scipy</div>
                         <div className="button3" key={4}>Numpy</div>
+                        <div className="button3" key={6}>matplotlib</div>
                       </div>
                     </div> 
                     </a>
@@ -599,7 +624,7 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb5">
-                <ProjHeader4 text="CopeAudio VSTs"/>
+                <ProjHeader text="CopeAudio VSTs" projheader="projheader4" projheaderwrapper="projheaderwrapper4"/>
                 <div>
                   <div className="proj4wrapper">
                   <a className="proj4videowrapper" href="https://github.com/NathanThai2201/CopeAudio">
@@ -622,7 +647,7 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb6">
-              <ProjHeader5 text="RingTrainer"/>
+              <ProjHeader text="RingTrainer" projheader="projheader5" projheaderwrapper="projheaderwrapper5"/>
                 <div>
                   <div className="proj5wrapper">
                     <a className="proj5videowrapper" href="https://nathan-thai.com/#/ringtrainer/">
@@ -646,7 +671,7 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb7">
-              <ProjHeader6 text="VexTools"/>
+              <ProjHeader text="VexTools" projheader="projheader6" projheaderwrapper="projheaderwrapper6"/>
                 <div>
                   <div className="proj6wrapper">
                     <a className="proj6videowrapper" href="https://nathan-thai.com/#/vextools/">
