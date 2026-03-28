@@ -12,7 +12,7 @@ export const DashBoredCards = () => {
     const [id, setId] = useState(0);
     const [sortOption, setSortOption] = useState("default");
     const totalCardsCollected = cardArray.reduce((sum, card) => sum + card.count, 0);
-
+    const ADMIN_ID = "67a659aa462d80b756b99b5f";
 
     useGSAP(() => {
         gsap.from('.word3', {
@@ -67,7 +67,7 @@ export const DashBoredCards = () => {
             let updatedArray = [...prevArray];
     
             for (let i = 0; i < count; i++) {
-                let amounts = [14, 13, 11, 11, 5];
+                let amounts = [15, 14, 12, 11, 5];
                 let randomCardNumber;
                 const randomRarityNumber = Math.floor(Math.random() * 10000) + 1;
                 let rarity;
@@ -203,13 +203,47 @@ export const DashBoredCards = () => {
                 });
         };
     const handleTypingComplete = async () => {
-        let cardCount = 2; // Default card count
-    
+        if (id === ADMIN_ID) {
+            let updatedArray = [...cardArray];
+
+            const amounts = [15, 14, 12, 11, 5];
+
+            for (let rarity = 1; rarity <= 5; rarity++) {
+                for (let i = 0; i < 100; i++) {
+                    const randomCardNumber =
+                        Math.floor(Math.random() * amounts[rarity - 1]) + 1;
+
+                    const randomCardSrc = `./images/cards/${rarity}_${randomCardNumber}.png`;
+
+                    const existingCardIndex = updatedArray.findIndex(
+                        (card) => card.src === randomCardSrc
+                    );
+
+                    if (existingCardIndex !== -1) {
+                        updatedArray[existingCardIndex].count += 1;
+                    } else {
+                        updatedArray.push({ src: randomCardSrc, count: 1 });
+                    }
+                }
+            }
+
+            setCardArray(updatedArray);
+            await updateCardArray(updatedArray, id);
+
+            toast("admin: Generated 100 cards of each rarity", {
+                position: "bottom-right",
+            });
+
+            return; // 🚨 IMPORTANT: stop normal execution
+        }
+
+        // ===== Normal logic =====
+        let cardCount = 2;
+
         if (WPM >= 70) cardCount++;
         if (WPM >= 90) cardCount++;
         if (WPM >= 110) cardCount++;
-    
-        console.log(WPM);
+
         notify();
         await generateRandomCard(cardCount);
     };
