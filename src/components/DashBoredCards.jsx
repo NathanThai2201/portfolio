@@ -10,9 +10,10 @@ export const DashBoredCards = () => {
     const [cardArray, setCardArray] = useState([]);
     const [loading, setLoading] = useState(true);
     const [id, setId] = useState(0);
+    const [username, setUsername] = useState("");
     const [sortOption, setSortOption] = useState("default");
     const totalCardsCollected = cardArray.reduce((sum, card) => sum + card.count, 0);
-    const ADMIN_ID = "67a659aa462d80b756b99b5f";
+    const ADMIN_USERNAME = "Coperime";
 
     useGSAP(() => {
         gsap.from('.word3', {
@@ -30,6 +31,10 @@ export const DashBoredCards = () => {
     
     const fetchCardArray = async () => {
         const storedId = localStorage.getItem("id"); // Retrieve id from localStorage
+        
+        const storedUsername = localStorage.getItem("username"); 
+        setUsername(storedUsername);
+
         try {
             const response = await fetch(`https://dashboredjsapi.onrender.com/api/cardarrays/${storedId}`);
             if (!response.ok) {
@@ -203,7 +208,7 @@ export const DashBoredCards = () => {
                 });
         };
     const handleTypingComplete = async () => {
-        if (id === ADMIN_ID) {
+        if (username === ADMIN_USERNAME) {
             let updatedArray = [...cardArray];
 
             const amounts = [15, 14, 12, 11, 5];
@@ -254,7 +259,10 @@ export const DashBoredCards = () => {
         }
         return 0;
     });
-        
+    // header text
+    const headerText = username === ADMIN_USERNAME 
+        ? " - YOUR CARDS - ADMIN ACCESS " 
+        : " - YOUR CARDS - ";     
     return (
         <div>
              <ToastContainer
@@ -270,7 +278,8 @@ export const DashBoredCards = () => {
             <section className="sectionDashboredCardBlock">
                 <div className="txt1">
                     <div className="horizontalTextMap">
-                        {' - YOUR CARDS - '.split('').map((char, index) => (
+                        {/* Dynamic Header Logic */}
+                        {headerText.split('').map((char, index) => (
                             <div className="word3" key={index}>
                                 {char === ' ' ? '\u00A0' : char}
                             </div>
