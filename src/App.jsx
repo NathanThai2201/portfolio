@@ -3,7 +3,7 @@ import { DashBored } from './pages/DashBored'
 import { RingTrainer} from './pages/RingTrainer'
 import { Signup } from './pages/signup'
 import { Login } from './pages/login'
-import { VexTools } from './pages/VexTools'
+import { OtherProjects } from './pages/OtherProjects'
 import { Home } from './pages/Home'
 import { VexCalculator } from './pages/VexCalculator'
 
@@ -13,7 +13,7 @@ function App() {
         {/*  For testing, use "http://localhost:3000/#/dashbored" */}
         <Route path="/dashbored" element={<DashBored />} />
         <Route path="/ringtrainer" element={<RingTrainer />} />
-        <Route path="/vextools" element={<VexTools />} />
+        <Route path="/otherprojects" element={<OtherProjects />} />
         <Route path="/vexcalculator" element={<VexCalculator />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

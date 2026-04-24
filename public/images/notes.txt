@@ -1,0 +1,1 @@
+for other-proj.png -> add a white layer of 20% opacity on top

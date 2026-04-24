@@ -234,7 +234,7 @@ export function RingTrainer() {
       <div className ="container3">
         <div className="navbarTrainer">
           <div className="navbarLeft">
-            <Link to="/">
+            <Link to="/OtherProjects">
                   <button className="genericButtonTrainer">BACK</button>
             </Link>
           </div>

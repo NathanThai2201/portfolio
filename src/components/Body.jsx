@@ -388,81 +388,81 @@ export const Body = () => {
               scrub: false,
             }, delay: 0.2,
         });
-        gsap.from(".word12", {
-          y:20,
-          opacity:0,
-          duration:1,
-          stagger: {
-            each: 0.01
-          },scrollTrigger: {
-              trigger: ".sectionb7",
-              start: "top 70.67%",
-              end: "bottom 70.67%",
-              scrub: false,
-            }, delay: 0.5,
-        });
-        gsap.from(".button6", {
-          scale:0,
-          duration:0.4,
-          stagger: {
-            each: 0.2
-          },scrollTrigger: {
-              trigger: ".sectionb7",
-              start: "top 70.67%",
-              end: "bottom 70.67%",
-              scrub: false,
-            }, delay: 0.5,
-        });
-        gsap.from(".proj6videowrapper", {
-          scale:0,
-          ease: "expo.out",
-          borderRadius:"400px",
-          duration:2,
-          scrollTrigger: {
-              trigger: ".sectionb7",
-              start: "top 70.67%",
-              end: "bottom 70.67%",
-              scrub: false,
-            }, delay: 0.2,
-        });
+        // gsap.from(".word12", {
+        //   y:20,
+        //   opacity:0,
+        //   duration:1,
+        //   stagger: {
+        //     each: 0.01
+        //   },scrollTrigger: {
+        //       trigger: ".sectionb7",
+        //       start: "top 70.67%",
+        //       end: "bottom 70.67%",
+        //       scrub: false,
+        //     }, delay: 0.5,
+        // });
+        // gsap.from(".button6", {
+        //   scale:0,
+        //   duration:0.4,
+        //   stagger: {
+        //     each: 0.2
+        //   },scrollTrigger: {
+        //       trigger: ".sectionb7",
+        //       start: "top 70.67%",
+        //       end: "bottom 70.67%",
+        //       scrub: false,
+        //     }, delay: 0.5,
+        // });
+        // gsap.from(".proj6videowrapper", {
+        //   scale:0,
+        //   ease: "expo.out",
+        //   borderRadius:"400px",
+        //   duration:2,
+        //   scrollTrigger: {
+        //       trigger: ".sectionb7",
+        //       start: "top 70.67%",
+        //       end: "bottom 70.67%",
+        //       scrub: false,
+        //     }, delay: 0.2,
+        // });
 
-        gsap.from(".word13", {
-          y:20,
-          opacity:0,
-          duration:1,
-          stagger: {
-            each: 0.01
-          },scrollTrigger: {
-              trigger: ".sectionb8",
-              start: "top 70.67%",
-              end: "bottom 70.67%",
-              scrub: false,
-            }, delay: 0.5,
-        });
-        gsap.from(".button8", {
-          scale:0,
-          duration:0.4,
-          stagger: {
-            each: 0.2
-          },scrollTrigger: {
-              trigger: ".sectionb8",
-              start: "top 70.67%",
-              end: "bottom 70.67%",
-              scrub: false,
-            }, delay: 0.5,
-        });
-        gsap.from(".proj8videowrapper", {
-          scale:0,
-          ease: "expo.out",
-          borderRadius:"400px",
-          duration:2,
-          scrollTrigger: {
-              trigger: ".sectionb8",
-              start: "top 70.67%",
-              end: "bottom 70.67%",
-              scrub: false,
-            }, delay: 0.2,
-        });
+        // gsap.from(".word13", {
+        //   y:20,
+        //   opacity:0,
+        //   duration:1,
+        //   stagger: {
+        //     each: 0.01
+        //   },scrollTrigger: {
+        //       trigger: ".sectionb8",
+        //       start: "top 70.67%",
+        //       end: "bottom 70.67%",
+        //       scrub: false,
+        //     }, delay: 0.5,
+        // });
+        // gsap.from(".button8", {
+        //   scale:0,
+        //   duration:0.4,
+        //   stagger: {
+        //     each: 0.2
+        //   },scrollTrigger: {
+        //       trigger: ".sectionb8",
+        //       start: "top 70.67%",
+        //       end: "bottom 70.67%",
+        //       scrub: false,
+        //     }, delay: 0.5,
+        // });
+        // gsap.from(".proj8videowrapper", {
+        //   scale:0,
+        //   ease: "expo.out",
+        //   borderRadius:"400px",
+        //   duration:2,
+        //   scrollTrigger: {
+        //       trigger: ".sectionb8",
+        //       start: "top 70.67%",
+        //       end: "bottom 70.67%",
+        //       scrub: false,
+        //     }, delay: 0.2,
+        // });
     }, {});
     return (
     //  <Scroll html>
@@ -681,14 +681,14 @@ export const Body = () => {
                 </div>
               </section>
               <section className="sectionb6">
-              <ProjHeader text="Ring Minigame Trainer" projheader="projheader5" projheaderwrapper="projheaderwrapper5"/>
+              <ProjHeader text="Other Projects" projheader="projheader5" projheaderwrapper="projheaderwrapper5"/>
                 <div>
                   <div className="proj5wrapper">
-                    <a className="proj5videowrapper" href="https://nathan-thai.com/#/ringtrainer/">
+                    <a className="proj5videowrapper" href="https://nathan-thai.com/#/vextools/">
                       <video className="proj5video" src="./videos/proj5.mp4"/>
                       <div className="proj5content">
                       <div className="proj5text">
-                        {'A reaction time trainer, made in one day as a response to a frequent request. Contains various customizable features. '.split(' ').map((word, index) => (
+                        {'A collection of various small projects, games, utilities and experiments. Small experiences to fill in the monotonous moments of your day to day.'.split(' ').map((word, index) => (
                           <div className="word11" key={index}>
                             {word + '\u00A0'}
                           </div>
@@ -704,7 +704,7 @@ export const Body = () => {
                   </div>
                 </div>
               </section>
-              <section className="sectionb7">
+              {/* <section className="sectionb7">
               <ProjHeader text="Digital Magic Tools" projheader="projheader6" projheaderwrapper="projheaderwrapper6"/>
                 <div>
                   <div className="proj6wrapper">
@@ -727,7 +727,7 @@ export const Body = () => {
                     </a>
                   </div>
                 </div>
-              </section>
+              </section> */}
             </div>
             <section className="sectionicons">
                 <div className="txticons">

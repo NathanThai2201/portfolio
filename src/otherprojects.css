@@ -1,0 +1,150 @@
+@font-face {
+  font-family: Martius;
+  src: url(/fonts/Martius-LV9L4.ttf);
+}
+@font-face {
+  font-family: Fastelar;
+  src: url(/fonts/FastelarDemoRegular-lx4oV.ttf);
+}
+
+
+.otherproj-title {
+  font-family: Martius;
+  font-size: clamp(80px,30vw,160px);
+  color: rgb(0, 0, 0);
+  padding:5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.otherproj-title2 {
+  font-family: Fastelar;
+  font-size: clamp(10px,10vw,40px);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* projects */
+
+.container4 {
+  position: absolute;
+  width: 100vw;
+  height: 170vh;
+  top: 0%;
+  padding: 0%;
+  background-color:rgb(134, 134, 134);
+}
+.otherprojectsmaincontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 8px;
+  row-gap: 2px;
+}
+
+/* grid boxes*/
+
+.otherproj1wrapper {
+  grid-area: 1 / 1 / 3 / 2;
+  margin-top: 10px;
+  min-height: 40vh;
+  overflow: hidden;
+}
+.otherproj2wrapper {
+  grid-area: 1 / 2 / 2 / 3;
+  margin-top: 10px;
+  min-height: 40vh;
+  overflow: hidden;
+}
+.otherproj3wrapper {
+  grid-area: 2 / 2 / 3 / 4;
+  margin-top: 10px;
+  min-height: 40vh;
+  overflow: hidden;
+}
+.otherproj4wrapper {
+  grid-area: 1 / 3 / 2 / 4;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 300px;
+  margin-top: 10px;
+  min-height: 40vh;
+  overflow: hidden;
+}
+.otherproj5wrapper {
+  grid-area: 3 / 1 / 4 / 2;
+  margin-top: 10px;
+  min-height: 40vh;
+  overflow: hidden;
+}
+.otherproj6wrapper {
+  grid-area: 3 / 2 / 4 / 4;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-top: 10px;
+  min-height: 40vh;
+  overflow: hidden;
+}
+/* inside each box*/
+
+
+.otherproj1videowrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-image: url('/images/other-proj1.png');
+  background-size: cover;
+  background-position: 50%;
+  position: relative;  
+  overflow: hidden;
+  justify-content: right;
+  align-items: center;
+  text-decoration: none;
+}
+.otherproj2videowrapper {
+  display:block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-image: url('/images/other-proj2.png');
+  background-size: cover;
+  background-position: 50%;
+  position: relative;  
+  overflow: hidden;
+  justify-content: right;
+  align-items: center;
+  text-decoration: none;
+}
+.otherproj3videowrapper {
+  display:block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-image: url('/images/other-proj3.png');
+  background-size: cover;
+  background-position: 50%;
+  position: relative;  
+  overflow: hidden;
+  justify-content: right;
+  align-items: center;
+  text-decoration: none;
+}
+
+.other-proj-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index:1;
+}
