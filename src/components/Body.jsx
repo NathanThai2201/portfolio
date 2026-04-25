@@ -684,7 +684,7 @@ export const Body = () => {
               <ProjHeader text="Other Projects" projheader="projheader5" projheaderwrapper="projheaderwrapper5"/>
                 <div>
                   <div className="proj5wrapper">
-                    <a className="proj5videowrapper" href="https://nathan-thai.com/#/vextools/">
+                    <a className="proj5videowrapper" href="https://nathan-thai.com/#/OtherProjects/">
                       <video className="proj5video" src="./videos/proj5.mp4"/>
                       <div className="proj5content">
                       <div className="proj5text">
@@ -696,8 +696,11 @@ export const Body = () => {
                       </div>
                       <div className="proj5tech">
                         <div className="button5" key={1}>Javascript</div>
-                        <div className="button5" key={2}>GSAP</div>
-                        <div className="button5" key={3}>React.js</div>
+                        <div className="button5" key={2}>Typescript</div>
+                        <div className="button5" key={3}>GSAP</div>
+                        <div className="button5" key={4}>React.js</div>
+                        <div className="button5" key={5}>Godot</div>
+                        <div className="button5" key={6}>GLSL</div>
                       </div>
                     </div> 
                     </a>

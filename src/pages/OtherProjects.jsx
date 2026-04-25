@@ -39,7 +39,7 @@ export function OtherProjects() {
                     </Link>
                 </div>
                     <div className="otherproj-title">OTHER PROJECTS</div>
-                    <div className="otherproj-title2">More and More and More... </div>
+                    <div className="otherproj-title2">The End is Never The End... </div>
                 <div style={{padding:'8px'}}>
                     <div className="otherprojectsmaincontainer">
                             {/* PROJECTS */}
@@ -54,11 +54,14 @@ export function OtherProjects() {
                                 </a>
                             </div>
                             <div className="otherproj3wrapper">
-                                <a className="otherproj3videowrapper" href="https://nathan-thai.com/#/ringtrainer/">
+                                <a className="otherproj3videowrapper" href="https://coperime.itch.io/thanatosis-early-demo">
                                 <video className="other-proj-video" src="./videos/other-proj3.mp4" muted playsInline/>
                                 </a>
                             </div>
                             <div className="otherproj4wrapper">
+                                 <a className="otherproj4videowrapper" href="https://github.com/NathanThai2201/simple-watchparty-client">
+                                <video className="other-proj-video" src="./videos/other-proj4.mp4" muted playsInline/>
+                                </a>
                             </div>
                             <div className="otherproj5wrapper">
                             </div>
