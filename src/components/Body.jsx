@@ -426,43 +426,43 @@ export const Body = () => {
         //     }, delay: 0.2,
         // });
 
-        // gsap.from(".word13", {
-        //   y:20,
-        //   opacity:0,
-        //   duration:1,
-        //   stagger: {
-        //     each: 0.01
-        //   },scrollTrigger: {
-        //       trigger: ".sectionb8",
-        //       start: "top 70.67%",
-        //       end: "bottom 70.67%",
-        //       scrub: false,
-        //     }, delay: 0.5,
-        // });
-        // gsap.from(".button8", {
-        //   scale:0,
-        //   duration:0.4,
-        //   stagger: {
-        //     each: 0.2
-        //   },scrollTrigger: {
-        //       trigger: ".sectionb8",
-        //       start: "top 70.67%",
-        //       end: "bottom 70.67%",
-        //       scrub: false,
-        //     }, delay: 0.5,
-        // });
-        // gsap.from(".proj8videowrapper", {
-        //   scale:0,
-        //   ease: "expo.out",
-        //   borderRadius:"400px",
-        //   duration:2,
-        //   scrollTrigger: {
-        //       trigger: ".sectionb8",
-        //       start: "top 70.67%",
-        //       end: "bottom 70.67%",
-        //       scrub: false,
-        //     }, delay: 0.2,
-        // });
+        gsap.from(".word13", {
+          y:20,
+          opacity:0,
+          duration:1,
+          stagger: {
+            each: 0.01
+          },scrollTrigger: {
+              trigger: ".sectionb8",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.5,
+        });
+        gsap.from(".button8", {
+          scale:0,
+          duration:0.4,
+          stagger: {
+            each: 0.2
+          },scrollTrigger: {
+              trigger: ".sectionb8",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.5,
+        });
+        gsap.from(".proj8videowrapper", {
+          scale:0,
+          ease: "expo.out",
+          borderRadius:"400px",
+          duration:2,
+          scrollTrigger: {
+              trigger: ".sectionb8",
+              start: "top 70.67%",
+              end: "bottom 70.67%",
+              scrub: false,
+            }, delay: 0.2,
+        });
     }, {});
     return (
     //  <Scroll html>
@@ -492,6 +492,15 @@ export const Body = () => {
             </section>
             <section className="sectionb">
                 <div className="txtScrub1"> WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
+                                            WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME!
+                                            WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
+                                            WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME!  
+                                            WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
+                                            WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
+                                            WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
+                                            WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
+                                            WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
+                                            WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
                                             WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
                                             WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
                                             WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! WELCOME! 
@@ -546,32 +555,8 @@ export const Body = () => {
                         <div className="button" key={2}>GSAP</div>
                         <div className="button" key={3}>React.js</div>
                         <div className="button" key={4}>Express.js</div>
-                        <div className="button" key={4}>MongoDB</div>
-                      </div>
-                    </div> 
-                    </a>
-                  </div>
-                </div>
-              </section>
-              <section className="sectionb3">
-                <ProjHeader text="Event Organization App" projheader="projheader2" projheaderwrapper="projheaderwrapper2"/>
-                <div>
-                  <div className="proj2wrapper">
-                    <a className="proj2videowrapper" href="https://github.com/NathanThai2201/CollatzCheckIn">
-                      <video className="proj2video" src="./videos/proj2.mp4"/>
-                      <div className="proj2content">
-                      <div className="proj2text">
-                        {'An Android app for event organization with QR code scanning. Integrated Google authentication, Firebase database, HTTP requests to Firebase Messaging.'.split(' ').map((word, index) => (
-                          <div className="word7" key={index}>
-                            {word + '\u00A0'}
-                          </div>
-                        ))}
-                      </div>
-                      <div className="proj2tech">
-                        <div className="button2" key={1}>Java</div>
-                        <div className="button2" key={2}>Android</div>
-                        <div className="button2" key={3}>Firebase</div>
-                        <div className="button2" key={4}>Figma</div>
+                        <div className="button" key={5}>MongoDB</div>
+                        <div className="button" key={6}>...</div>
                       </div>
                     </div> 
                     </a>
@@ -598,6 +583,7 @@ export const Body = () => {
                         <div className="button8" key={4}>OpenCV</div>
                         <div className="button8" key={5}>SkLearn</div>
                         <div className="button8" key={6}>matplotlib</div>
+                        <div className="button8" key={7}>...</div>
                       </div>
                     </div> 
                     </a>
@@ -624,7 +610,8 @@ export const Body = () => {
                         <div className="button1" key={3}>GSAP</div>
                         <div className="button1" key={4}>React.js</div>
                         <div className="button1" key={5}>JQuery</div>
-                        <div className="button1" key={5}>Javascript</div>
+                        <div className="button1" key={6}>Javascript</div>
+                        <div className="button1" key={7}>...</div>
                       </div>
                     </div> 
                     </a>
@@ -651,6 +638,34 @@ export const Body = () => {
                         <div className="button3" key={3}>Scipy</div>
                         <div className="button3" key={4}>Numpy</div>
                         <div className="button3" key={6}>matplotlib</div>
+                        <div className="button3" key={7}>...</div>
+                      </div>
+                    </div> 
+                    </a>
+                  </div>
+                </div>
+              </section>
+              <section className="sectionb3">
+                <ProjHeader text="Event Organization App" projheader="projheader2" projheaderwrapper="projheaderwrapper2"/>
+                <div>
+                  <div className="proj2wrapper">
+                    <a className="proj2videowrapper" href="https://github.com/NathanThai2201/CollatzCheckIn">
+                      <video className="proj2video" src="./videos/proj2.mp4"/>
+                      <div className="proj2content">
+                      <div className="proj2text">
+                        {'An Android app for event organization with QR code scanning. Integrated Google authentication, Firebase database, HTTP requests to Firebase Messaging.'.split(' ').map((word, index) => (
+                          <div className="word7" key={index}>
+                            {word + '\u00A0'}
+                          </div>
+                        ))}
+                      </div>
+                      <div className="proj2tech">
+                        <div className="button2" key={1}>Java</div>
+                        <div className="button2" key={2}>Android</div>
+                        <div className="button2" key={3}>Firebase</div>
+                        <div className="button2" key={4}>JUnit</div>
+                        <div className="button2" key={5}>Figma</div>
+                        <div className="button2" key={6}>...</div>
                       </div>
                     </div> 
                     </a>
@@ -684,7 +699,7 @@ export const Body = () => {
               <ProjHeader text="Other Projects" projheader="projheader5" projheaderwrapper="projheaderwrapper5"/>
                 <div>
                   <div className="proj5wrapper">
-                    <a className="proj5videowrapper" href="https://nathan-thai.com/#/OtherProjects/">
+                    <a className="proj5videowrapper" href="https://nathan-thai.com/#/otherprojects/">
                       <video className="proj5video" src="./videos/proj5.mp4"/>
                       <div className="proj5content">
                       <div className="proj5text">
@@ -701,6 +716,7 @@ export const Body = () => {
                         <div className="button5" key={4}>React.js</div>
                         <div className="button5" key={5}>Godot</div>
                         <div className="button5" key={6}>GLSL</div>
+                        <div className="button5" key={7}>...</div>
                       </div>
                     </div> 
                     </a>

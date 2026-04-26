@@ -1,7 +1,25 @@
+import gsap from "gsap";
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export function OtherProjects() {
+    const { pathname } = useLocation();
+    useGSAP(() => {
+        gsap.to('.otherproj-title2', {
+                xPercent: -4000, 
+                repeat: -1, 
+                duration: 2000, 
+                ease: "linear", 
+            });
+    }, {});
+    // reset scroll
+    useEffect(() => {
+        window.scrollTo(0, 0); // Use { top: 0, behavior: "smooth" } for smooth scrolling
+    }, [pathname]);
     //video hover
     useEffect(() => {
         const videos = document.querySelectorAll(".other-proj-video");
@@ -39,7 +57,20 @@ export function OtherProjects() {
                     </Link>
                 </div>
                     <div className="otherproj-title">OTHER PROJECTS</div>
-                    <div className="otherproj-title2">The End is Never The End... </div>
+                    <div className="otherproj-title2">The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                                                        is Never The End is Never The End is Never The End is Never The End is Never The End is Never The End
+                    </div>
                 <div style={{padding:'8px'}}>
                     <div className="otherprojectsmaincontainer">
                             {/* PROJECTS */}

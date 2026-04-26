@@ -24,8 +24,8 @@
   font-size: clamp(10px,10vw,40px);
   color: rgb(0, 0, 0);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  white-space: nowrap;
+  justify-content: LEFT;
   align-items: center;
   z-index: 2;
 }
@@ -93,7 +93,6 @@
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
   background-image: url('/images/other-proj1.png');
   background-size: cover;
   background-position: 50%;
@@ -107,7 +106,6 @@
   display:block;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
   background-image: url('/images/other-proj2.png');
   background-size: cover;
   background-position: 50%;
@@ -121,7 +119,6 @@
   display:block;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
   background-image: url('/images/other-proj3.png');
   background-size: cover;
   background-position: 50%;
@@ -135,7 +132,6 @@
   display:block;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
   background-image: url('/images/other-proj4.png');
   background-size: cover;
   background-position: 50%;
