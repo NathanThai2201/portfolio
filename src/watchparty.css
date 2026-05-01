@@ -1,0 +1,49 @@
+
+
+/* main container fills screen exactly */
+.main-container-wp {
+width: 100vw;
+height: 100vh;
+top:0%;
+left:0%;
+background-color: #2e2e2e;
+box-sizing: border-box; /* prevents padding from adding to the width and height*/
+padding: 50px;
+position: absolute;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+
+
+.button-wp {
+    font-family: input-mono-narrow, monospace;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+    border: 1px solid;
+    border-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    color: #ffffff;
+    overflow: hidden;
+    background-color: var(--btn-bg-color-hover);
+}
+
+.button-wp span {
+    display: block;
+    position: relative;
+}
+
+.button-wp>span {
+    color: var(--font-color-black);
+
+    overflow: hidden;
+}
+
+.button-wp>span>span {
+    color: var(--font-color-black);
+    overflow: hidden;
+}

@@ -90,7 +90,8 @@ export function OtherProjects() {
                                 </a>
                             </div>
                             <div className="otherproj4wrapper">
-                                 <a className="otherproj4videowrapper" href="https://github.com/NathanThai2201/simple-watchparty-client">
+                                {/* <a className="otherproj4videowrapper" href="https://nathan-thai.com/#/watchparty/"> */}
+                                <a className="otherproj4videowrapper" href="https://github.com/NathanThai2201/simple-watchparty-client">
                                 <video className="other-proj-video" src="./videos/other-proj4.mp4" muted playsInline/>
                                 </a>
                             </div>
