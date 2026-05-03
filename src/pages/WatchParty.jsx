@@ -26,6 +26,7 @@ export function WatchParty () {
       <VideoPlayer />
       <div style={{height:'2vh'}}></div>
       <button className="button-wp" style={{borderColor:dynamiccol2, color:dynamiccol2}}onClick={handleClick}> Toggle Nightmode</button>
+      <a className="hyperlink-wp" style={{color:dynamiccol2}} href= "https://github.com/NathanThai2201/simple-watchparty-client">Click here for the desktop local version</a>
     </div>
   );
 }

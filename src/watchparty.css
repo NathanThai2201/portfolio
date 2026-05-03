@@ -13,10 +13,17 @@ position: absolute;
 display: flex;
 flex-direction: column;
 justify-content: center;
+text-align: center;
 align-items: center;
-overflow: hidden;
+overflow-x: hidden;
 }
 
+.hyperlink-wp{
+    font-family: input-mono-narrow, monospace;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+    color: #ffffff;
+}
 
 .button-wp {
     font-family: input-mono-narrow, monospace;
