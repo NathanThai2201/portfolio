@@ -20,6 +20,27 @@ const VIDEO_ID = params.get("i") || "I5pG1wbRKOg"; // 980431 for embos.top
 const PLAYER_TYPE = params.get("t") || "y"; // y = youtube, e = embos
 
 export const VideoPlayer = () => {
+  useEffect(() => {
+    const callServer = () => {
+      fetch("https://simple-watchparty-server.onrender.com/")
+        .then(res => res.json())
+        .then(data => {
+          console.log("Server response:", data);
+        })
+        .catch(err => {
+          console.error("Error calling server:", err);
+        });
+    };
+
+    // call immediately once
+    callServer();
+
+    // then repeat every 2 minutes (120000 ms)
+    const interval = setInterval(callServer, 120000);
+
+    // cleanup on unmount
+    return () => clearInterval(interval);
+  }, []);
   const playerRef = useRef(null);
   const isSyncing = useRef(false);
 
