@@ -114,7 +114,7 @@ export const VideoPlayer = () => {
   };
 
   return (
-    <div style={{ width: "100%", aspectRatio: "16/9" }}>
+    <div style={{ width: "100%", aspectRatio: "16/9", maxHeight: "70vh"}}>
       {PLAYER_TYPE === "y" ? (
         <div id="player"></div>
       ) : (
