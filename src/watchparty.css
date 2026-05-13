@@ -2,32 +2,61 @@
 
 /* main container fills screen exactly */
 .main-container-wp {
-width: 100vw;
-height: 100vh;
-top:0%;
-left:0%;
-background-color: #2e2e2e;
-box-sizing: border-box; /* prevents padding from adding to the width and height*/
-padding: 50px;
-position: absolute;
-display: flex;
-flex-direction: column;
-justify-content: center;
-text-align: center;
-align-items: center;
-overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    top:0%;
+    left:0%;
+    background-color: #2e2e2e;
+    box-sizing: border-box; /* prevents padding from adding to the width and height*/
+    padding: 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.input-wp{
+    height: 40px;
+    border: 1px solid;
+    color:#989898;
+    border-color: #989898;
+    background-color: #2e2e2e;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.text-wp{
+    font-family: input-mono-narrow, monospace;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #ffffff;
 }
 
 .hyperlink-wp{
     font-family: input-mono-narrow, monospace;
-    font-weight: 500;
+    font-weight: 300;
     padding: 1rem 1.5rem;
     color: #ffffff;
+}
+.url-generator-wp{
+    flex-direction: horizontal;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 0.5rem 1.2rem;
 }
 
 .button-wp {
     font-family: input-mono-narrow, monospace;
-    font-weight: 500;
+    height:40px;
+    font-weight: 300;
     padding: 1rem 1.5rem;
     border: 1px solid;
     border-color: #ffffff;

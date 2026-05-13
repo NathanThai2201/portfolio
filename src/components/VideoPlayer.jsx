@@ -4,6 +4,7 @@ import { socket } from "./socket";
 
 
 // /**
+//  *  The embos settings are purely for testing and educational purposes. There is no intention to use it as a video streaming service.
 //  *  Setting the room ID and embos.top tmdb_id
 //  *  for tmdb, search themoviedb.org and copy the numerical code in the URL
 //  *  for youtube links, add the alphanumeric code
@@ -53,7 +54,7 @@ export const VideoPlayer = () => {
       tag.src = "https://www.youtube.com/iframe_api";
       document.body.appendChild(tag);
     }
-
+    if (true){
     window.onYouTubeIframeAPIReady = () => {
       playerRef.current = new window.YT.Player("player", {
         height: "100%",
@@ -65,7 +66,7 @@ export const VideoPlayer = () => {
         },
       });
     };
-
+    }
     socket.emit("join_room", ROOM_ID);
 
     socket.on("video_event", ({ action, time }) => {
