@@ -46,26 +46,46 @@ export const VideoPlayer = () => {
   const isSyncing = useRef(false);
 
   useEffect(() => {
-    if (PLAYER_TYPE !== "y") return; // 🚫 don't run for iframe
-
+    const player_types=['y',"p"]
+    if (!player_types.includes(PLAYER_TYPE)) return; 
+    console.log("hey",PLAYER_TYPE);
     // Load YT API if not already loaded
     if (!window.YT) {
       const tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
       document.body.appendChild(tag);
     }
-    if (true){
-    window.onYouTubeIframeAPIReady = () => {
-      playerRef.current = new window.YT.Player("player", {
-        height: "100%",
-        width: "100%",
-        videoId: VIDEO_ID,
-        playerVars: { rel: 0, modestbranding: 1 },
-        events: {
-          onStateChange: onPlayerStateChange,
-        },
-      });
-    };
+    if (PLAYER_TYPE === "y"){
+      // single video
+      window.onYouTubeIframeAPIReady = () => {
+        playerRef.current = new window.YT.Player("player", {
+          height: "100%",
+          width: "100%",
+          videoId: VIDEO_ID,
+          playerVars: { rel: 0, modestbranding: 1 },
+          events: {
+            onStateChange: onPlayerStateChange,
+          },
+        });
+      };
+    }
+    if (PLAYER_TYPE === "p"){
+        // playlist
+        window.onYouTubeIframeAPIReady = () => {
+        playerRef.current = new window.YT.Player("player", {
+          height: "100%",
+          width: "100%",
+          playerVars: {
+            listType: "playlist",
+            list: VIDEO_ID,
+            rel: 0,
+            modestbranding: 1,
+          },
+          events: {
+            onStateChange: onPlayerStateChange,
+          },
+        });
+      };
     }
     socket.emit("join_room", ROOM_ID);
 
@@ -115,7 +135,7 @@ export const VideoPlayer = () => {
 
   return (
     <div style={{ width: "100%", aspectRatio: "16/9", maxHeight: "70vh"}}>
-      {PLAYER_TYPE === "y" ? (
+      {["y", "p"].includes(PLAYER_TYPE) ? (
         <div id="player"></div>
       ) : (
         <iframe

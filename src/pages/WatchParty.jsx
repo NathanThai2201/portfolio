@@ -30,13 +30,24 @@ export function WatchParty () {
       let room = formData.room;
       let youtube_url = formData.id;
       let id;
+      let urlstring;
       // account for different youtube string types
       if (youtube_url.startsWith("https://youtu.be")){
+        // generated link type
         id = youtube_url.split(/[?\/]+/).at(2);
+        urlstring = 'https://nathan-thai.com/#/watchparty/?r=' + room + '&i=' + id;
       } else {
-        id = youtube_url.split("=").at(-1);
+        if (youtube_url.includes("list")){
+          // playlist type
+          id = youtube_url.split("=").at(-1);
+          urlstring = 'https://nathan-thai.com/#/watchparty/?r=' + room + '&i=' + id + '&t=p' ;
+        }else{
+          // normal youtube link
+          id = youtube_url.split("=").at(-1);
+          urlstring = 'https://nathan-thai.com/#/watchparty/?r=' + room + '&i=' + id;
+        }
       }
-      let urlstring = 'https://nathan-thai.com/#/watchparty/?r=' + room + '&i=' + id;
+      
       navigator.clipboard.writeText(urlstring).then(function(){
         console.log('Async copy was succesful!', urlstring);
       }, function(err) {
