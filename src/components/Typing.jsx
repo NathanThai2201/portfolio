@@ -157,7 +157,15 @@ export const Typing = ({onComplete, onWPMChange}) => {
             ))}
             </div>
             <div className="stats">
-                <p>Time Left: <strong>{timeLeft}</strong></p>
+                <p>Time Left: <strong>
+                    {Math.floor(timeLeft / 60)
+                    .toString()
+                    .padStart(1, "0")}
+                    :
+                    {(timeLeft % 60)
+                    .toString()
+                    .padStart(2, "0")}
+                    </strong></p>
                 <p>WPM: <strong>{WPM}</strong></p>
                 {/* <button className="typingResetButton" onClick={resetGame}>Try Again</button> */}
             </div>
