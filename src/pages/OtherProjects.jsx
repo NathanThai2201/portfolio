@@ -95,6 +95,9 @@ export function OtherProjects() {
                                 </a>
                             </div>
                             <div className="otherproj5wrapper">
+                                <a className="otherproj5videowrapper" href="https://nathan-thai.com/#/imemorage/">
+                                <video className="other-proj-video" src="./videos/other-proj5.mp4" muted playsInline/>
+                                </a>
                             </div>
                     </div>  
                 </div>

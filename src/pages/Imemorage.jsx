@@ -165,9 +165,15 @@ export function Imemorage() {
   }
 
   return (
+    <div>
+    <div className="navbarLeft" style={{top:"0px",position:"absolute"}}>
+            <Link to="/OtherProjects">
+                  <button className="genericButtonTrainer" style={{backgroundColor:"#FFFFFF",color:"black",borderColor:"black",position:"absolute"}}>BACK</button>
+            </Link>
+      </div>
     <div className="imemorage-main">
       <div className="container-imemorage">
-        <div className="menu"style={{display:menuDisplay,flexDirection:"column",textAlign:"center"}}>
+        <div className="menu"style={{display:menuDisplay,flexDirection:"column",textAlign:"center",alignItems:"center",justifyContent:"center"}}>
           <p>Number of Images:</p>
           <input
             type="number"
@@ -176,6 +182,7 @@ export function Imemorage() {
             value={imageCount}
             onChange={(e) => setImageCount(Number(e.target.value))}
             placeholder="20"
+            style={{fontFamily: "input-mono-narrow, monospace;"}}
           />
           <p></p>
           <button className="imemorage-button2" onClick={() => {setMenuDisplay("None"),setStats([0,60,240]),setTimeLeft(20),setPhaseList(["block","None","None","None","None"]),fetchImageUrls()}}>
@@ -184,7 +191,7 @@ export function Imemorage() {
 
         </div>
         <div className="phase0"style={{display:phaseList[0]}}>
-          <p>Time Left: <strong>{timeLeft}</strong></p>
+          <p>Get Ready: <strong>{timeLeft}</strong></p>
           <button className="imemorage-button2" onClick={() => setTimeLeft(0)}>
             Ready
           </button>
@@ -193,7 +200,7 @@ export function Imemorage() {
           </button>
         </div>
         <div className="phase1" style={{display:phaseList[1]}}>
-          <p>Time Left: <strong>
+          <p>Memorization Time Left: <strong>
             {Math.floor(timeLeft / 60)
           .toString()
           .padStart(1, "0")}
@@ -203,7 +210,7 @@ export function Imemorage() {
           .padStart(2, "0")}
           </strong></p>
 
-          <Swiper
+          <Swiper className='custom-swiper-style'
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={50}
@@ -231,7 +238,7 @@ export function Imemorage() {
           </button>
         </div> 
         <div className="phase2" style={{display:phaseList[2]}}>              
-          <p>Time Left: <strong>  
+          <p>Recall Time Left: <strong>  
             {Math.floor(timeLeft / 60)
           .toString()
           .padStart(1, "0")}
@@ -312,7 +319,8 @@ export function Imemorage() {
             Exit to Menu
           </button>
         </div>
-        <div className="phase3" style={{display:phaseList[3]}}>         
+        <div className="phase3" style={{display:phaseList[3]}}>   
+            <p>Results:</p>      
           <div className="ImageContainerResults">
                       {
                       imageArray.slice(0,10).map((image, index) => (
@@ -393,14 +401,15 @@ export function Imemorage() {
           .toString()
           .padStart(2, "0")}
             </strong></p>
-          <button onClick={() => setTimeLeft(0)}>
-            Finished
+          <button className="imemorage-button2" onClick={() => setTimeLeft(0)}>
+            Start Again
           </button>
-          <button onClick={() => {setMenuDisplay("block"),setTimeLeft(-1),setPhaseList(["None","None","None","None","None"])}}>
+          <button className="imemorage-button2" onClick={() => {setMenuDisplay("flex"),setTimeLeft(-1),setPhaseList(["None","None","None","None","None"])}}>
             Exit to Menu
           </button>
         </div> 
       </div>
+    </div>
     </div>
   )
 }

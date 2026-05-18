@@ -1,6 +1,6 @@
 import { VideoPlayer } from "../components/VideoPlayer";
 import { useRef, useState } from "react";
-
+import { Link, useNavigate } from "react-router-dom";
 
 
 export function WatchParty () {
@@ -56,6 +56,12 @@ export function WatchParty () {
 
   }
   return (
+    <div>
+    <div className="navbarLeft" style={{top:"0px",position:"absolute"}}>
+            <Link to="/OtherProjects">
+                  <button className="genericButtonTrainer" style={{backgroundColor:"#2e2e2e"}}>BACK</button>
+            </Link>
+      </div>
     <div className='main-container-wp' style={{backgroundColor:dynamiccol}}>
       {/* <h1>Watch Party</h1> */}
       <VideoPlayer />
@@ -76,6 +82,7 @@ export function WatchParty () {
 
       
       <a className="hyperlink-wp" style={{color:dynamiccol2}} href= "https://github.com/NathanThai2201/simple-watchparty-client">Click here for the desktop local version</a>
+    </div>
     </div>
   );
 }
