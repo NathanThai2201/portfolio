@@ -6,6 +6,7 @@ import { Login } from './pages/login'
 import { OtherProjects } from './pages/OtherProjects'
 import { Home } from './pages/Home'
 import { VexCalculator } from './pages/VexCalculator'
+import { Imemorage } from './pages/Imemorage'
 import { WatchParty } from './pages/WatchParty' 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         {/*  For testing, use "http://localhost:3000/#/dashbored" */}
         <Route path="/dashbored" element={<DashBored />} />
         <Route path="/ringtrainer" element={<RingTrainer />} />
+        <Route path="/imemorage" element={<Imemorage />} />
         <Route path="/otherprojects" element={<OtherProjects />} />
         <Route path="/vexcalculator" element={<VexCalculator />} />
         <Route path="/watchparty" element={<WatchParty />} />
