@@ -37,46 +37,47 @@ export function Imemorage() {
   const [phaseList, setPhaseList] = useState(["None","None","None","None","None"]);
   const [menuDisplay, setMenuDisplay] = useState("flex");
   const [stats, setStats] = useState([0,60,240]) // score, memorization time, recall time
+  const [selectedBlankIndex, setSelectedBlankIndex] = useState(0);
 
   // game loop timer
   useEffect(() => {
-        let interval;
-        if(timeLeft > 0) {
-            interval = setInterval(()=>{
-
-                setTimeLeft(timeLeft - 1);
-                let totalTime = 60 - timeLeft;
-            }, 1000);
-
-        } else if (timeLeft === 0) {
-            clearInterval(interval);
-            if (phaseList[0] === "block"){
-              setPhaseList(["None","block","None","None","None"]);
-              setTimeLeft(60);
-            }
-            if (phaseList[1] === "block"){
-              setPhaseList(["None","None","block","None","None"]);
-              setTimeLeft(240);
-            }
-            if (phaseList[2] === "block"){
-              validateResults();
-              setPhaseList(["None","None","None","block","None"]);
-              setTimeLeft(-1);
-            }
-            if (phaseList[3] === "block"){
-              setPhaseList(["None","None","None","None","block"]);
-              setTimeLeft(-1);
-            }
-            if (phaseList[4] === "block"){
-              setPhaseList(["block","None","None","None","None"]);
-              setTimeLeft(20);
-              fetchImageUrls();
-            }
-        }
-        return () => {
-            clearInterval(interval);
-        };
-    },[timeLeft])
+    let interval;
+    if (timeLeft > 0) {
+      interval = setInterval(() => {
+        setTimeLeft(prevTime => prevTime - 1);
+      }, 1000);
+    } else if (timeLeft === 0) {
+      clearInterval(interval);
+      
+      if (phaseList[0] === "block") {
+        setPhaseList(["None", "block", "None", "None", "None"]);
+        setTimeLeft(60);
+      } 
+      else if (phaseList[1] === "block") {
+        // Memorization timer expired naturally (used all 60s)
+        setStats(prev => [prev[0], 0, prev[2]]);
+        setPhaseList(["None", "None", "block", "None", "None"]);
+        setTimeLeft(240);
+      } 
+      else if (phaseList[2] === "block") {
+        // Recall timer expired naturally (used all 240s)
+        setStats(prev => [prev[0], prev[1], 0]);
+        validateResults();
+        setPhaseList(["None", "None", "None", "block", "None"]);
+        setTimeLeft(-1);
+      } 
+      else if (phaseList[3] === "block") {
+        setPhaseList(["None", "None", "None", "None", "block"]);
+        setTimeLeft(-1);
+      } 
+      else if (phaseList[4] === "block") {
+        setPhaseList(["block", "None", "None", "None", "None"]);
+        setTimeLeft(20);
+        fetchImageUrls();
+      }
+    }
+    return () => clearInterval(interval);
+  }, [timeLeft, phaseList]);
 
   //console.log("FIRST",imageArray,userImageArray); 
   // **this also serves as a way to reset the game.**
@@ -130,24 +131,32 @@ export function Imemorage() {
     // console.log("input args:",i,list);
     // console.log("arrays:");
     // console.log(tempBlankArray,tempImageArray);
-    if (list === "image"){
-      // find first available blank and place it, shitty queue.
-      for (const a in tempBlankArray){
-        // console.log(tempBlankArray[a]);
-        if (tempBlankArray[a] === blank_url){
-          // disable if user image array is blank:
-          if (tempImageArray[i] === blank_url){break}
-          //copy over to blank array
-          tempBlankArray[a] = tempImageArray[i];
-          // set a reference back to the blank array.
-          tempImageArrayRefs[a] = i;
-          // set a blank for the image array
+    if (list === "image") {
+
+      // prevent placing blank images
+      if (tempImageArray[i] === blank_url) return;
+
+      // search starting from selected index
+      for (let offset = 0; offset < tempBlankArray.length; offset++) {
+
+        const targetIndex = (selectedBlankIndex + offset) % tempBlankArray.length;
+
+        if (tempBlankArray[targetIndex] === blank_url) {
+
+          // place image
+          tempBlankArray[targetIndex] = tempImageArray[i];
+
+          // store original location reference
+          tempImageArrayRefs[targetIndex] = i;
+
+          // blank out source
           tempImageArray[i] = blank_url;
 
-          // set states
+          // update states
           setUserBlankArray(tempBlankArray);
           setUserImageArrayRefs(tempImageArrayRefs);
           setUserImageArray([tempImageArray,[]]);
+
           break;
         }
       }
@@ -163,7 +172,20 @@ export function Imemorage() {
       }
     }
   }
+  const getNextAvailableIndex = () => {
+    for (let offset = 0; offset < userBlankArray.length; offset++) {
 
+      const targetIndex =
+        (selectedBlankIndex + offset) % userBlankArray.length;
+
+      if (userBlankArray[targetIndex] === blank_url) {
+        return targetIndex;
+      }
+    }
+
+    return -1; // no available slots
+  }
+  const nextAvailableIndex = getNextAvailableIndex();
   return (
     <div>
     <div className="navbarLeft" style={{top:"0px",position:"absolute"}}>
@@ -174,7 +196,7 @@ export function Imemorage() {
     <div className="imemorage-main">
       <div className="container-imemorage">
         <div className="menu"style={{display:menuDisplay,flexDirection:"column",textAlign:"center",alignItems:"center",justifyContent:"center"}}>
-          <p>Number of Images:</p>
+          <p>Number of Images to Remember:</p>
           <input
             type="number"
             min="1"
@@ -230,7 +252,16 @@ export function Imemorage() {
                           </SwiperSlide>
                       ))}
           </Swiper>
-          <button className="imemorage-button2" onClick={() => {setStats([[...stats][0],timeLeft,[...stats][2]]),setTimeLeft(0)}}>
+          <button 
+            className="imemorage-button2" 
+            onClick={() => {
+              // nave the exact remaining time right now
+              setStats(prev => [prev[0], timeLeft, prev[2]]);
+              // advance to 2, bypassing the natural timer-end overwrite
+              setPhaseList(["None", "None", "block", "None", "None"]);
+              setTimeLeft(240);
+            }}
+          >
             Done
           </button>
           <button className="imemorage-button2" onClick={() => {setMenuDisplay("block"),setTimeLeft(-1),setPhaseList(["None","None","None","None","None"])}}>
@@ -251,7 +282,19 @@ export function Imemorage() {
                       {
                       userBlankArray.slice(0,10).map((image, index) => (
                           <div key={index} className="imemorage-image-wrapper">
-                            <button className="imemorage-button"  style={{backgroundColor:"#c4c4c4"}} onClick={() => handleMoveables(index,"blank")}>
+                            <button
+                                className="imemorage-button"
+                                style={{
+                                  backgroundColor:
+                                  nextAvailableIndex === index
+                                    ? "#ffe44d"
+                                    : "#c4c4c4"
+                                }}
+                                onClick={() => {
+                                  setSelectedBlankIndex(index);
+                                  handleMoveables(index,"blank");
+                                }}
+                              >
                               <img className="imemorage-image" src={image} alt={index} />
                             </button>
                           </div>
@@ -261,7 +304,19 @@ export function Imemorage() {
                       {
                       userBlankArray.slice(10,20).map((image, index) => (
                           <div key={index} className="imemorage-image-wrapper">
-                            <button className="imemorage-button" style={{backgroundColor:"#c4c4c4"}} onClick={() => handleMoveables(index+10,"blank")}>
+                            <button
+                                className="imemorage-button"
+                                style={{
+                                  backgroundColor:
+                                  nextAvailableIndex === index + 10
+                                    ? "#ffe44d"
+                                    : "#c4c4c4"
+                                }}
+                                onClick={() => {
+                                  setSelectedBlankIndex(index + 10)
+                                  handleMoveables(index + 10,"blank");
+                                }}
+                              >
                               <img className="imemorage-image" src={image} alt={index} />
                             </button>
                           </div>
@@ -271,7 +326,19 @@ export function Imemorage() {
                       {
                       userBlankArray.slice(20,30).map((image, index) => (
                           <div key={index} className="imemorage-image-wrapper">
-                            <button className="imemorage-button" style={{backgroundColor:"#c4c4c4"}} onClick={() => handleMoveables(index+20,"blank")}>
+                            <button
+                                className="imemorage-button"
+                                style={{
+                                  backgroundColor:
+                                  nextAvailableIndex === index + 20
+                                    ? "#ffe44d"
+                                    : "#c4c4c4"
+                                }}
+                                onClick={() => {
+                                  setSelectedBlankIndex(index + 20)
+                                  handleMoveables(index + 20,"blank");
+                                }}
+                              >
                               <img className="imemorage-image" src={image} alt={index} />
                             </button>
                           </div>
@@ -312,7 +379,17 @@ export function Imemorage() {
                       ))}
                       
           </div>
-          <button className="imemorage-button2" onClick={() => {setStats([[...stats][0],[...stats][1],timeLeft]),setTimeLeft(0)}}>
+          <button 
+            className="imemorage-button2" 
+            onClick={() => {
+              // save the time right now
+              setStats(prev => [prev[0], prev[1], timeLeft]);
+              validateResults();
+              // advance to 3
+              setPhaseList(["None", "None", "None", "block", "None"]);
+              setTimeLeft(-1);
+            }}
+          >
             Finished
           </button>
           <button className="imemorage-button2" onClick={() => {setMenuDisplay("block"),setTimeLeft(-1),setPhaseList(["None","None","None","None","None"])}}>
