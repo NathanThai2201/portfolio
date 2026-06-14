@@ -212,7 +212,7 @@ export const DashBoredCards = () => {
             let updatedArray = [...cardArray];
 
             // IMPORTANT!!!!! - CHANGE TO UPDATE CARD AMOUNT
-            const amounts = [15, 14, 12, 11, 6];
+            const amounts = [15, 17, 12, 11, 6];
 
             for (let rarity = 1; rarity <= 5; rarity++) {
                 for (let i = 0; i < 100; i++) {
